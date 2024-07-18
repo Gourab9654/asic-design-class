@@ -4,9 +4,6 @@
 Compile the c code on RISC-V compiler
 ### Step 2
 See the dump of generated object file in assembly language
-* In the Linux Environment, create a new C Program file using any editor. Here the leafpad editor is used. 
-* Save the program and compile your code in the terminal window using GCC compiler
- 
 
 ### Step 2
 *Run the executable program and see the output in the terminal window.
