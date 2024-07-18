@@ -2,6 +2,7 @@
 ## RISC-V Compilation Of a simple C Program
 ### Step 1
 Compile the C code on RISC-V compiler
+![Screenshot 2024-07-17 145045](https://github.com/user-attachments/assets/1440d896-d10e-4be8-84a3-2274caaeefb3)
 ### Step 2
 See the dump of generated object file in assembly language
 
