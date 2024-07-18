@@ -6,8 +6,8 @@ Compile the c code on RISC-V compiler
 See the dump of generated object file in assembly language
 
 ### Step 2
-*Run the executable program and see the output in the terminal window.
-*For the "main" section, we can calculate the number of instructions either by counting each individual instruction or we can subtract the address of the first instruction in the next section with the first instruction of the main section and divide the difference with 4 since it is a byte addressable memory, so 4 memory block form one instruction
+* Run the executable program and see the output in the terminal window.
+* For the "main" section, we can calculate the number of instructions either by counting each individual instruction or we can subtract the address of the first instruction in the next section with the first instruction of the main section and divide the difference with 4 since it is a byte addressable memory, so 4 memory block form one instruction
 
 
 
