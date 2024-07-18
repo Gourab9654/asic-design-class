@@ -1,7 +1,7 @@
 # ASIC Design Class
 ## RISC-V Compilation Of a simple C Program
 ### Step 1
-Compile the C code on RISC-V compiler
+* Compile the C code on RISC-V compiler
 ![Screenshot 2024-07-17 145045](https://github.com/user-attachments/assets/1440d896-d10e-4be8-84a3-2274caaeefb3)
 
 ### Step 2
@@ -17,7 +17,7 @@ Compile the C code on RISC-V compiler
 * Compile the code again with the compiler flag set as **-Ofast** and observe the generated assembly code
 ![Screenshot 2024-07-17 150613](https://github.com/user-attachments/assets/c808bb07-659a-44c3-b75f-1e51c5e27ea8)
 
-Assembly code generated with **-Ofast** compiler flag
+* Assembly code generated with **-Ofast** compiler flag
 ![Screenshot 2024-07-17 150839](https://github.com/user-attachments/assets/33aa5b33-b0cf-4198-ac25-97d080ea8a75)
 ![Screenshot 2024-07-17 150920](https://github.com/user-attachments/assets/726b7516-90fa-45fb-ba2e-39ef6f1735f1)
 ### Observation
