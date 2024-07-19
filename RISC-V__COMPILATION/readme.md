@@ -3,7 +3,8 @@
 ### Step 1
 * Compile the C code on RISC-V compiler
 ![Screenshot 2024-07-17 145045](https://github.com/user-attachments/assets/1440d896-d10e-4be8-84a3-2274caaeefb3)
-
+* Now create the object file (.o) that is the output of the compiler as shown in the procedure shown below.
+* 
 ### Step 2
 * Run the executable program and see the output in the terminal window.
 ![Screenshot 2024-07-17 145751](https://github.com/user-attachments/assets/34bd3441-d2da-49b2-914b-6672252fda8e)
