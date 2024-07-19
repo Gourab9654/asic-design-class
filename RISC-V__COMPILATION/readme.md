@@ -1,10 +1,24 @@
 # ASIC Design Class
 ## RISC-V Compilation Of a simple C Program
 ### Step 1
+1. **Code Snippet:**
+    ```c
+    #include <stdio.h>
+
+    int main() {
+        int i, n=5, sum=0;
+        for(i=1; i<=n; i++){
+          sum = sum + i;
+        }
+        printf("The sum from 1 to %d is %d\n", n, sum);
+        return 0;
+    }
+    ```
 * Compile the C code on RISC-V compiler
 ![Screenshot 2024-07-17 145045](https://github.com/user-attachments/assets/1440d896-d10e-4be8-84a3-2274caaeefb3)
 * Now create the object file (.o) that is the output of the compiler as shown in the procedure shown below.
-* 
+![Screenshot 2024-07-17 145313](https://github.com/user-attachments/assets/120bef44-0acf-4fcd-88b9-02b48cc71609)
+
 ### Step 2
 * Run the executable program and see the output in the terminal window.
 ![Screenshot 2024-07-17 145751](https://github.com/user-attachments/assets/34bd3441-d2da-49b2-914b-6672252fda8e)
