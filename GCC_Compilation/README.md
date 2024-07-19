@@ -1,7 +1,20 @@
 # ASIC Design Class
 ## GCC Compilation Of a simple C Program
 ### Step 1
-* In the Linux Environment, create a new C Program file using any editor. Here the leafpad editor is used. 
+* In the Linux Environment, create a new C Program file using any editor. Here the leafpad editor is used.
+  1. **Code Snippet:**
+    ```c
+    #include <stdio.h>
+
+    int main() {
+        int i, n=5, sum=0;
+        for(i=1; i<=n; i++){
+          sum = sum + i;
+        }
+        printf("The sum from 1 to %d is %d\n", n, sum);
+        return 0;
+    }
+    ```
 * Save the program and compile your code in the terminal window using GCC compiler.
   
 ![Screenshot 2024-07-16 230409](https://github.com/user-attachments/assets/84f6f628-42a9-4a0d-8139-8605f1749a35)
