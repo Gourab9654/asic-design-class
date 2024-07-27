@@ -28,7 +28,6 @@ The picture below represents the C code and its output
 
 
 
-# ASIC Design Class
 ## RISC-V Compilation Of a simple C Program
 ### Step 1
 1. **Code Snippet:**
@@ -71,7 +70,7 @@ Here we can observe that the number of instructions are reduced to 12 as compare
 * -O1 maintains strict adherence to standards while -Ofast may violate some standards to achieve better performance
 
 
-# RISC-V COMPILER OUTPUT and DEBUGGING
+## RISC-V COMPILER OUTPUT and DEBUGGING
 
 Find the output of the C program on the RISC V Compiler using the Spike command and debug the code
 
@@ -113,3 +112,241 @@ until pc 0 10184
 
 ![Screenshot 2024-07-21 220856](https://github.com/user-attachments/assets/d852482f-7f0a-42ca-85f1-5c8de1839ed1)
 ![Screenshot 2024-07-21 220943](https://github.com/user-attachments/assets/abbe402d-6c31-436b-8d7e-cec5f1690be2)
+
+## ASSIGNMENT 3
+### 1. Identifying Instruction Types
+
+* As the activity suggests, intruction types are being indentified for the instructions provided. The 32bit code is identified to do so. Each instruction type has it's own instruction format.
+
+**What are instruction formats in RISCV?** 
+
+Instruction formats can be considered as a 'contract' betwwen the assembly language and the hardware where, if the assembly language 'demands' to execute the instruction, the hardware knows exactly what to do with it. Therefore, there exists certain instructions and their respective format for the hardware to understand. They are made up of series of 0s and 1s depending upon their format, which includes the type of operation, location of data, etc.
+
+There exists 6 types of instruction formats in RISCV.
+
+* R type
+
+    + 'R' here stands for register. 
+    + This type inculcates all arithmetic and logical operations.
+    +  They are used for operations that involve 3 registers.
+    +  The format of R-type instructions is consistent and includes fields for specifying two source registers, one destination register, a function code to specify the operation, and an opcode.
+    +  Examples: ADD, SUB, OR, XOR, etc.
+    +  The instruction format is as follows: 
+  
+  <img src="imagessessionthree\rtype.png" alt="Step 1.1" width="400"/> <br>
+    + funct7 (7 bits): Function code for additional instruction differentiation.
+    + rs2 (5 bits): Second source register.
+    + rs1 (5 bits): First source register.
+    + funct3 (3 bits): Function code for primary instruction differentiation.
+    + rd (5 bits): Destination register.
+    + opcode (7 bits): Basic operation code for R-type instructions (0110011 for integer operations).
+* I type
+
+    + I-type instructions in the RISC-V architecture are used for operations that involve an immediate value along with one or two registers.
+    +  These instructions typically perform operations such as arithmetic with immediate values, load operations, and certain branch instructions.
+    +  The format of I-type instructions includes fields for a source register, destination register, an immediate value, a function code, and an opcode.
+    +  The instruction format is as follows:
+  
+  <img src="imagessessionthree\itype.png" alt="Step 1.1" width="400"/> <br>
+    + immediate (12 bits): Immediate value used for operations.
+    + rs1 (5 bits): Source register.
+    + funct3 (3 bits): Function code for instruction differentiation.
+    + rd (5 bits): Destination register.
+    + opcode (7 bits): Basic operation code for I-type instructions.
+  
+* S Type 
+  
+    + S-type instructions in the RISC-V architecture are used for store operations, where data is stored from a register into memory.
+   + The format of S-type instructions includes fields for two source registers, an immediate value that determines the memory offset, a function code, and an opcode.
+   +  The format is as follows: 
+
+  <img src="imagessessionthree\stype.png" alt="Step 1.1" width="400"/> <br>
+    + imm[11:5] (7 bits): Upper 7 bits of the immediate value.
+    + rs2 (5 bits): Second source register (contains the data to be stored).
+    + rs1 (5 bits): First source register (base address register).
+    + funct3 (3 bits): Function code for instruction differentiation.
+    + imm[4:0] (5 bits): Lower 5 bits of the immediate value.
+    + opcode (7 bits): Basic operation code for S-type instructions.
+
+* B Type
+
+    + B-type instructions in the RISC-V architecture are used for conditional branch operations.
+    +  These instructions are designed to alter the flow of execution based on comparisons between two registers. 
+    +  The format of B-type instructions includes fields for two source registers, an immediate value that determines the branch offset, a function code, and an opcode.
+    +  Following is the instruction format:
+    
+     <img src="imagessessionthree\btype.png" alt="Step 1.1" width="400"/> <br>
+    + imm[12] (1 bit): The 12th bit of the immediate value.
+    + imm[10:5] (6 bits): The 10th to 5th bits of the immediate value.
+    + rs2 (5 bits): Second source register.
+    + rs1 (5 bits): First source register.
+    + funct3 (3 bits): Function code for instruction differentiation.
+    + imm[4:1] (4 bits): The 4th to 1st bits of the immediate value.
+    + imm[11] (1 bit): The 11th bit of the immediate value.
+    + opcode (7 bits): Basic operation code for B-type instructions
+
+* U Type
+
+    + U-type instructions in the RISC-V architecture are used for operations involving large immediate values, typically for loading upper immediate values or computing addresses.
+    +  The format of U-type instructions includes fields for a destination register, a large immediate value, and an opcode.
+    +  The instruction format is as follows:
+  
+     <img src="imagessessionthree\utype.png" alt="Step 1.1" width="400"/> <br>
+    + immediate[31:12] (20 bits): The upper 20 bits of the immediate value.
+    + rd (5 bits): Destination register.
+    + opcode (7 bits): Operation code for U-type instructions.
+    + The immediate value is stored in the upper 20 bits of a 32-bit word, with the lower 12 bits set to zero when used in calculations.
+
+* J type
+    + J-type instructions in the RISC-V architecture are used for jump operations, allowing for altering the program control flow by jumping to a specified address.
+    + These instructions are typically used for unconditional jumps, like calling functions or implementing loops.
+    + Following is the instruction format: 
+     
+    <img src="imagessessionthree\jtype.png" alt="Step 1.1" width="400"/> <br>
+    + imm[20] (1 bit): The 20th bit of the immediate value.
+    + imm[10:1] (10 bits): The 10th to 1st bits of the immediate value.
+    + imm[11] (1 bit): The 11th bit of the immediate value.
+    + imm[19:12] (8 bits): The 19th to 12th bits of the immediate value.
+    + rd (5 bits): Destination register where the return address is stored.
+    + opcode (7 bits): Operation code for J-type instructions.
+   
+  
+  ## Decoding each instruction type provided: 
+
+1. ```ADD r0, r1, r2```
+
+    + Opcode for ADD = 0110011
+    + rd = r0 = 00000
+    + rs1 = r1 = 00001
+    + rs2 = r2 = 00010
+    + func3 = 000
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00010_00001_000_00000_0110011
+
+2. ```SUB r2, r0, r1```
+
+    + Opcode for SUB = 0110011
+    + rd = r2 = 00010
+    + rs1 = r0 = 00000
+    + rs2 = r1 = 00001
+    + func3 = 000
+    + func7 = 0100000
+    + **R Type**
+    + 32 Bit Instruction: 0100000_00001_00000_000_00010_0110011
+
+3. ```AND r1, r0, r2```
+
+    + Opcode for AND = 0110011
+    + rd = r1 = 00001
+    + rs1 = r0 = 00000
+    + rs2 = r2 = 00010
+    + func3 = 111
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00010_00000_111_00001_0110011
+
+4. ```OR r8, r1, r5```
+
+    + Opcode for OR = 0110011
+    + rd = r8 = 01000
+    + rs1 = r1 = 00001
+    + rs2 = r5 = 00101
+    + func3 = 110
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00101_00001_110_01000_0110011
+
+5. ```XOR r8, r0, r4```
+
+    + Opcode for XOR = 0110011
+    + rd = r8 = 01000
+    + rs1 = r0 = 00000
+    + rs2 = r4 = 00100
+    + func3 = 100
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00100_00000_100_01000_0110011
+
+6. ```SLT r0, r1, r4```
+
+    + Opcode for SLT = 0110011
+    + rd = r0 = 00000
+    + rs1 = r1 = 00001
+    + rs2 = r4 = 00100
+    + func3 = 010
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00100_00001_010_00000_0110011
+
+7. ```ADDI r2, r2, 5```
+
+    + Opcode for ADDI = 0010011
+    + rd = r2 = 00010
+    + rs1 = r2 = 00010
+    + imm = 000000000101
+    + func3 = 000
+    + **I Type**
+    + 32 Bit Instruction: 000000000101_00010_000_00010_0010011
+
+8. ```SW r2, r0, 4```
+
+    + Opcode for SW = 0100011
+    + rs1 = r0 = 00000
+    + rs2 = r2 = 00010
+    + imm = 0000000 0100
+    + func3 = 010
+    + **S Type**
+    + 32 Bit Instruction: 0000000_00010_00000_010_00100_0100011
+
+9. ```SRL r6, r1, r1```
+
+    + Opcode for SRL = 0110011
+    + rd = r6 = 00110
+    + rs1 = r1 = 00001
+    + rs2 = r1 = 00001
+    + func3 = 101
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00001_00001_101_00110_0110011
+
+10. ```BNE r0, r0, 20```
+
+    + Opcode for BNE = 1100011
+    + rs1 = r0 = 00000
+    + rs2 = r0 = 00000
+    + imm = 000000 001010
+    + func3 = 001
+    + **B Type**
+    + 32 Bit Instruction: 0000000_00000_00000_001_01010_1100011
+
+11. ```BEQ r0, r0, 15```
+
+    + Opcode for BEQ = 1100011
+    + rs1 = r0 = 00000
+    + rs2 = r0 = 00000
+    + imm = 000000 001111
+    + func3 = 000
+    + **B Type**
+    + 32 Bit Instruction: 0000000_00000_00000_000_01111_1100011
+
+12. ```LW r3, r1, 2```
+
+    + Opcode for LW = 0000011
+    + rd = r3 = 00011
+    + rs1 = r1 = 00001
+    + imm = 000000000010
+    + func3 = 010
+    + **I Type**
+    + 32 Bit Instruction: 000000000010_00001_010_00011_0000011
+
+13. ```SLL r5, r1, r1```
+
+    + Opcode for SLL = 0110011
+    + rd = r5 = 00101
+    + rs1 = r1 = 00001
+    + rs2 = r1 = 00001
+    + func3 = 001
+    + func7 = 0000000
+    + **R Type**
+    + 32 Bit Instruction: 0000000_00001_00001_001_00101_0110011
