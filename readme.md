@@ -133,7 +133,7 @@ There exists 6 types of instruction formats in RISCV.
     +  Examples: ADD, SUB, OR, XOR, etc.
     +  The instruction format is as follows: 
   
-  <img src="imagessessionthree\rtype.png" alt="Step 1.1" width="400"/> <br>
+  ![rtype](https://github.com/user-attachments/assets/518e5b3b-046d-452b-90a4-4dc22a78accf)
     + funct7 (7 bits): Function code for additional instruction differentiation.
     + rs2 (5 bits): Second source register.
     + rs1 (5 bits): First source register.
@@ -147,7 +147,7 @@ There exists 6 types of instruction formats in RISCV.
     +  The format of I-type instructions includes fields for a source register, destination register, an immediate value, a function code, and an opcode.
     +  The instruction format is as follows:
   
-  <img src="imagessessionthree\itype.png" alt="Step 1.1" width="400"/> <br>
+  ![itype](https://github.com/user-attachments/assets/044814e2-9f7b-453a-8541-d2650c4e15ab)
     + immediate (12 bits): Immediate value used for operations.
     + rs1 (5 bits): Source register.
     + funct3 (3 bits): Function code for instruction differentiation.
@@ -160,7 +160,7 @@ There exists 6 types of instruction formats in RISCV.
    + The format of S-type instructions includes fields for two source registers, an immediate value that determines the memory offset, a function code, and an opcode.
    +  The format is as follows: 
 
-  <img src="imagessessionthree\stype.png" alt="Step 1.1" width="400"/> <br>
+  ![stype](https://github.com/user-attachments/assets/6d2c61ec-2ab2-46f3-98a7-a351d43387a2)
     + imm[11:5] (7 bits): Upper 7 bits of the immediate value.
     + rs2 (5 bits): Second source register (contains the data to be stored).
     + rs1 (5 bits): First source register (base address register).
@@ -175,7 +175,7 @@ There exists 6 types of instruction formats in RISCV.
     +  The format of B-type instructions includes fields for two source registers, an immediate value that determines the branch offset, a function code, and an opcode.
     +  Following is the instruction format:
     
-     <img src="imagessessionthree\btype.png" alt="Step 1.1" width="400"/> <br>
+     ![btype](https://github.com/user-attachments/assets/f8c4c251-9d0e-43bb-bc2d-5d62f6546a94)
     + imm[12] (1 bit): The 12th bit of the immediate value.
     + imm[10:5] (6 bits): The 10th to 5th bits of the immediate value.
     + rs2 (5 bits): Second source register.
@@ -191,7 +191,8 @@ There exists 6 types of instruction formats in RISCV.
     +  The format of U-type instructions includes fields for a destination register, a large immediate value, and an opcode.
     +  The instruction format is as follows:
   
-     <img src="imagessessionthree\utype.png" alt="Step 1.1" width="400"/> <br>
+     ![utype](https://github.com/user-attachments/assets/27da568d-cc13-49f7-b291-fe9bec1e0a0f)
+
     + immediate[31:12] (20 bits): The upper 20 bits of the immediate value.
     + rd (5 bits): Destination register.
     + opcode (7 bits): Operation code for U-type instructions.
@@ -202,7 +203,7 @@ There exists 6 types of instruction formats in RISCV.
     + These instructions are typically used for unconditional jumps, like calling functions or implementing loops.
     + Following is the instruction format: 
      
-    <img src="imagessessionthree\jtype.png" alt="Step 1.1" width="400"/> <br>
+    ![jtype](https://github.com/user-attachments/assets/d2b575bf-f23f-4064-8cce-015d24a712c4)
     + imm[20] (1 bit): The 20th bit of the immediate value.
     + imm[10:1] (10 bits): The 10th to 1st bits of the immediate value.
     + imm[11] (1 bit): The 11th bit of the immediate value.
