@@ -368,7 +368,21 @@ There exists 6 types of instruction formats in RISCV.
 | LW r03, r01, 2    | I    | 000000000010_00001_010_00011_0000011 |
 | SLL r05, r01, r1  | R    | 0000000_00001_00001_001_00101_0110011 |
 
-
+| Assembly Instruction | Hexadecimal Representation |
+|----------------------|----------------------------|
+| ADD r0, r1, r2       | 0x00208033                 |
+| SUB r2, r0, r1       | 0x40100033                 |
+| AND r1, r0, r2       | 0x00207833                 |
+| OR r8, r1, r5        | 0x0050C833                 |
+| XOR r8, r0, r4       | 0x00408433                 |
+| SLT r00, r1, r4      | 0x00402833                 |
+| ADDI r02, r2, 5      | 0x00510093                 |
+| SW r2, r0, 4         | 0x002020A3                 |
+| SRL r06, r01, r1     | 0x0010A833                 |
+| BNE r0, r0, 20       | 0x00012A63                 |
+| BEQ r0, r0, 15       | 0x00000F63                 |
+| LW r03, r01, 2       | 0x00210883                 |
+| SLL r05, r01, r1     | 0x00109233                 |
 
 There are some differences between RISCV ISA and Hardcoded ISA.So for the above Instructions the difference between RISCV ISA and Hardcoded ISA is
 | Operation           | Standard RISC-V ISA | Standard RISC-V ISA (Binary)               | Hardcoded ISA     | Hardcoded ISA (Binary)                  |
