@@ -402,95 +402,95 @@ There are some differences between RISCV ISA and Hardcoded ISA.So for the above 
 ### 2. Identifying Instruction Types
 The given hardcoded instructions are:
 
+![Screenshot 2024-07-29 120125](https://github.com/user-attachments/assets/7c95b29a-40ca-4ce3-a8a9-fd8858bbfb79)
 
-
-`ADD R8, R9, R10`
+`ADD R6, R2, R1`
 
 This is the waveform of the given hardcoded verilog program:
 
+![ADD](https://github.com/user-attachments/assets/bf8c2366-2cdd-409e-912e-9f8326e8bd87)
 
 This is the waveform of our verilog program:
 
 
-`SUB R10, R8, R9`
+`SUB R7, R1, R2`
 
 This is the waveform of the given hardcoded verilog program:
 
-
+![SUB](https://github.com/user-attachments/assets/facff573-4992-4bbe-96f2-11f9128ada45)
 
 This is the waveform of our verilog program:
 
 
-`AND R9, R8, R10`
+`AND R8, R1, R3`
 
  This is the waveform of the given hardcoded verilog program:
 
+![AND](https://github.com/user-attachments/assets/5cf420f5-1bfa-4b9f-9133-415dfc7baf21)
 
  This is the waveform of our verilog program:
 
 
 
- `OR R8, R9, R5`
+ `OR R9, R2, R5`
 
   This is the waveform of the given hardcoded verilog program:
 
-  
+  ![OR](https://github.com/user-attachments/assets/f191347d-1866-4e74-aac2-2d4558114f18)
 
   This is the waveform of our verilog program:
 
 
-  `XOR r8, r8, r4`
+  `XOR r10, r1, r4`
 
   This is the waveform of the given hardcoded verilog program:
 
-
+![XOR](https://github.com/user-attachments/assets/defbe708-cd86-4de6-9f72-20c31d26ec06)
 
   This is the waveform of our verilog program:
 
  
 
-  `SLT r00, r1, r4 `
+  `SLT r1, r2, r4 `
 
   This is the waveform of the given hardcoded verilog program:
 
-  
+![SLT](https://github.com/user-attachments/assets/e21bc999-f45c-4713-b9a9-91cb2894fe93)  
 
   This is the waveform of our verilog program:
 
 
-  `ADDI r02, r2, 5 `
+  `ADDI r12, r4, 5 `
 
   This is the waveform of the given hardcoded verilog program:
 
-
+![ADDI](https://github.com/user-attachments/assets/9c599bde-01e6-4cc9-a138-ee22457a89b6)
 
   This is the waveform of our verilog program:
 
 
 
-  `SW r2, r0, 4`
+  `SW r3, r1, 2`
 
    This is the waveform of the given hardcoded verilog program:
 
-
-
-   This is the waveform of our verilog program:
-
-
-
-   `SRL r06, r01, r1`
+![SW](https://github.com/user-attachments/assets/c7dc6c31-3e07-4ce2-880b-cffa18b32adf)
 
    This is the waveform of our verilog program:
 
 
 
-   `BNE r0, r0, 20`
+   `LW r13, r01, 2`
+
+![LW](https://github.com/user-attachments/assets/1640b1a1-7693-453c-9338-dd2a6e589428)
 
    This is the waveform of our verilog program:
 
   
 
    `BEQ r0, r0, 15`
+
+   ![BEQ](https://github.com/user-attachments/assets/2868d2aa-09a0-4670-96f5-2535efdb9e6f)
 
    This is the waveform of our verilog program:
 
