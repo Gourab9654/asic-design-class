@@ -400,7 +400,7 @@ There are some differences between RISCV ISA and Hardcoded ISA.So for the above 
 | SRL R16, R14, R2    | 32'h0030a123        | 000000000011 00000 010 00001 0100011       | 32'h00271803      | 000000100010 00000 011 00110 01100000  |
 | SLL R15, R1, R2     | 32'h002097b3        | 000000000010 00000 111 01111 0110011       | 32'h00208783      | 000000100010 00000 111 01111 01100000  |
 ### 2. Identifying Instruction Types
-The given hardcoded instructions are:
+A.The given hardcoded instructions are:
 
 ![Screenshot 2024-07-29 120125](https://github.com/user-attachments/assets/7c95b29a-40ca-4ce3-a8a9-fd8858bbfb79)
 
@@ -494,4 +494,97 @@ This is the waveform of our verilog program:
 
    This is the waveform of our verilog program:
 
+B.The given custom instructions are:
+
+
+
+`ADD R0, R1, R2`
+
+This is the waveform of the given hardcoded verilog program:
+
+
+
+This is the waveform of our verilog program:
+
+
+`SUB R2, R0, R1`
+
+This is the waveform of the given hardcoded verilog program:
+
+
+
+This is the waveform of our verilog program:
+
+
+`AND R1, R0, R2`
+
+ This is the waveform of the given hardcoded verilog program:
+
+
+
+ This is the waveform of our verilog program:
+
+
+
+ `OR R8, R1, R5`
+
+  This is the waveform of the given hardcoded verilog program:
+
+
+
+  This is the waveform of our verilog program:
+
+
+  `XOR r8, r0, r4`
+
+  This is the waveform of the given hardcoded verilog program:
+
+
+
+  This is the waveform of our verilog program:
+
+ 
+
+  `SLT r00, r1, r4 `
+
+  This is the waveform of the given hardcoded verilog program:
+
+  
+
+  This is the waveform of our verilog program:
+
+
+  `ADDI r2, r2, 5 `
+
+  This is the waveform of the given hardcoded verilog program:
+
+
+
+  This is the waveform of our verilog program:
+
+
+
+  `SW r2, r0, 4`
+
+   This is the waveform of the given hardcoded verilog program:
+
+
+
+   This is the waveform of our verilog program:
+
+
+
+   `LW r03, r01, 2`
+
+
+
+   This is the waveform of our verilog program:
+
+  
+
+   `BEQ r0, r0, 15`
+
+
+
+   This is the waveform of our verilog program:
 
