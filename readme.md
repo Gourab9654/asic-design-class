@@ -496,13 +496,13 @@ This is the waveform of our verilog program:
 
 B.The given custom instructions are:
 
-
+![Screenshot 2024-07-29 142902](https://github.com/user-attachments/assets/590e675d-343e-4223-95dc-e0f27be14af7)
 
 `ADD R0, R1, R2`
 
 This is the waveform of the given hardcoded verilog program:
 
-
+![add](https://github.com/user-attachments/assets/ab6d346b-e69f-42a3-8719-bf7f07a66140)
 
 This is the waveform of our verilog program:
 
@@ -511,7 +511,7 @@ This is the waveform of our verilog program:
 
 This is the waveform of the given hardcoded verilog program:
 
-
+![sub](https://github.com/user-attachments/assets/4e54ff97-2aa1-4884-b334-996edff4ac7c)
 
 This is the waveform of our verilog program:
 
@@ -520,7 +520,7 @@ This is the waveform of our verilog program:
 
  This is the waveform of the given hardcoded verilog program:
 
-
+![and](https://github.com/user-attachments/assets/781c3125-a6aa-4881-b8c3-dd9e0475b5b8)
 
  This is the waveform of our verilog program:
 
@@ -530,7 +530,7 @@ This is the waveform of our verilog program:
 
   This is the waveform of the given hardcoded verilog program:
 
-
+![or](https://github.com/user-attachments/assets/6f9c4a18-d244-4b8f-8213-723d775011a2)
 
   This is the waveform of our verilog program:
 
@@ -539,7 +539,7 @@ This is the waveform of our verilog program:
 
   This is the waveform of the given hardcoded verilog program:
 
-
+![xor](https://github.com/user-attachments/assets/3c520ef7-8a64-4a2b-9c60-7c36511f9953)
 
   This is the waveform of our verilog program:
 
@@ -549,7 +549,7 @@ This is the waveform of our verilog program:
 
   This is the waveform of the given hardcoded verilog program:
 
-  
+  ![slt](https://github.com/user-attachments/assets/10667b1b-95ee-4368-8d55-d037c24ea465)
 
   This is the waveform of our verilog program:
 
@@ -558,7 +558,7 @@ This is the waveform of our verilog program:
 
   This is the waveform of the given hardcoded verilog program:
 
-
+![ADDI](https://github.com/user-attachments/assets/4de3ad07-947e-4d7d-a535-0a738b8f2c36)
 
   This is the waveform of our verilog program:
 
@@ -568,7 +568,7 @@ This is the waveform of our verilog program:
 
    This is the waveform of the given hardcoded verilog program:
 
-
+![SW](https://github.com/user-attachments/assets/5845f1b1-0f53-4749-b7ba-181f07faf9a5)
 
    This is the waveform of our verilog program:
 
@@ -576,7 +576,7 @@ This is the waveform of our verilog program:
 
    `LW r03, r01, 2`
 
-
+![lw](https://github.com/user-attachments/assets/999490c3-2e8f-47bd-986e-1f0c0e5113a0)
 
    This is the waveform of our verilog program:
 
@@ -584,7 +584,7 @@ This is the waveform of our verilog program:
 
    `BEQ r0, r0, 15`
 
-
+![BEQ](https://github.com/user-attachments/assets/ae0dd3ed-e09c-468e-a3c3-a81e410d822a)
 
    This is the waveform of our verilog program:
 
