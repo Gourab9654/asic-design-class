@@ -400,3 +400,98 @@ There are some differences between RISCV ISA and Hardcoded ISA.So for the above 
 | SRL R16, R14, R2    | 32'h0030a123        | 000000000011 00000 010 00001 0100011       | 32'h00271803      | 000000100010 00000 011 00110 01100000  |
 | SLL R15, R1, R2     | 32'h002097b3        | 000000000010 00000 111 01111 0110011       | 32'h00208783      | 000000100010 00000 111 01111 01100000  |
 ### 2. Identifying Instruction Types
+The given hardcoded instructions are:
+
+
+
+`ADD R8, R9, R10`
+
+This is the waveform of the given hardcoded verilog program:
+
+
+This is the waveform of our verilog program:
+
+
+`SUB R10, R8, R9`
+
+This is the waveform of the given hardcoded verilog program:
+
+
+
+This is the waveform of our verilog program:
+
+
+`AND R9, R8, R10`
+
+ This is the waveform of the given hardcoded verilog program:
+
+
+ This is the waveform of our verilog program:
+
+
+
+ `OR R8, R9, R5`
+
+  This is the waveform of the given hardcoded verilog program:
+
+  
+
+  This is the waveform of our verilog program:
+
+
+  `XOR r8, r8, r4`
+
+  This is the waveform of the given hardcoded verilog program:
+
+
+
+  This is the waveform of our verilog program:
+
+ 
+
+  `SLT r00, r1, r4 `
+
+  This is the waveform of the given hardcoded verilog program:
+
+  
+
+  This is the waveform of our verilog program:
+
+
+  `ADDI r02, r2, 5 `
+
+  This is the waveform of the given hardcoded verilog program:
+
+
+
+  This is the waveform of our verilog program:
+
+
+
+  `SW r2, r0, 4`
+
+   This is the waveform of the given hardcoded verilog program:
+
+
+
+   This is the waveform of our verilog program:
+
+
+
+   `SRL r06, r01, r1`
+
+   This is the waveform of our verilog program:
+
+
+
+   `BNE r0, r0, 20`
+
+   This is the waveform of our verilog program:
+
+  
+
+   `BEQ r0, r0, 15`
+
+   This is the waveform of our verilog program:
+
+
