@@ -1,4 +1,15 @@
 # ASIC Design Class
+### Tools used
+- **Software Tools:**
+  - GCC (GNU Compiler Collection)
+  - RISC-V GNU Compiler Toolchain
+  - Spike RISC-V Simulator
+  - Ubuntu OS 
+
+<details>
+<summary> Assignment 1</summary>
+<br>
+  
 ## GCC Compilation Of a simple C Program
 ### Step 1
 * In the Linux Environment, create a new C Program file using any editor. Here the leafpad editor is used.
@@ -25,8 +36,10 @@ Run the executable program and see the output in the terminal window.
 The picture below represents the C code and its output
 
 ![Screenshot 2024-07-16 220224](https://github.com/user-attachments/assets/4dbde6dc-0ff0-43c4-92a3-2d6c839e3f7e)
-
-
+</details>
+<details>
+<summary> Assignment 2</summary>
+<br>
 
 ## RISC-V Compilation Of a simple C Program
 ### Step 1
@@ -68,13 +81,16 @@ The picture below represents the C code and its output
 Here we can observe that the number of instructions are reduced to 12 as compared to 15 in the previous case
 * -O1 is moderate in it's code optimization while -Ofast is highly aggressive to achieve highest possible performance
 * -O1 maintains strict adherence to standards while -Ofast may violate some standards to achieve better performance
-
-
-## RISC-V COMPILER OUTPUT and DEBUGGING
+</details>
+<details>
+<summary> Assignment 3</summary>
+<br>
+  
+##  RISC-V COMPILER OUTPUT and DEBUGGING
 
 Find the output of the C program on the RISC V Compiler using the Spike command and debug the code
 
-## Check the Output and compare with previous output.
+### Check the Output and compare with previous output.
 In our previous lab, we compiled our C code using both gcc and a RISC-V compiler. In assignment 3 we are going to have find the result of n numbers on the RISCV compiler using the SPIKE command.
 
 ### Code for compiling the objdump file
@@ -87,9 +103,9 @@ spike pk sum1ton.o
 
 ![objectdump that is to be debugged](https://github.com/user-attachments/assets/4f80656e-beaa-4453-b348-0072af306c4a)
 
-## Debug using SPIKE debugger
+### Debug using SPIKE debugger
 
-### Code for debugging the assembly code 
+Code for debugging the assembly code 
 ```bash
 spike -d pk sum1ton.o
 ```
@@ -104,7 +120,7 @@ reg 0 sp
 In the assembly code we can see that the value of the stack pointer is being reduced by 10 in hexadecimal we is equivalent to being reduced by 16 in decimal notation.
 ![Screenshot 2024-07-21 213722](https://github.com/user-attachments/assets/48ca0385-d9e0-43f4-aa4f-d420becdc79d)
 
-## The same thing happens for -O1 as well
+### The same thing happens for -O1 as well
 
 ```bash
 until pc 0 10184
@@ -112,9 +128,13 @@ until pc 0 10184
 
 ![Screenshot 2024-07-21 220856](https://github.com/user-attachments/assets/d852482f-7f0a-42ca-85f1-5c8de1839ed1)
 ![Screenshot 2024-07-21 220943](https://github.com/user-attachments/assets/abbe402d-6c31-436b-8d7e-cec5f1690be2)
+</details>
+<details>
+<summary> Assignment 4 </summary>
+<br>
 
 ## ASSIGNMENT 3
-### 1. Identifying Instruction Types
+### 1.Identifying Instruction Types
 
 * As the activity suggests, intruction types are being indentified for the instructions provided. The 32bit code is identified to do so. Each instruction type has it's own instruction format.
 
@@ -212,7 +232,7 @@ There exists 6 types of instruction formats in RISCV.
     + opcode (7 bits): Operation code for J-type instructions.
    
   
-  ## Decoding each instruction type provided: 
+  ### Decoding each instruction type provided: 
 
 1. ```ADD r0, r1, r2```
 
