@@ -133,7 +133,7 @@ until pc 0 10184
 <summary> Assignment 4 </summary>
 <br>
 
-## ASSIGNMENT 3
+## ASSIGNMENT 4
 ### 1.Identifying Instruction Types
 
 * As the activity suggests, intruction types are being indentified for the instructions provided. The 32bit code is identified to do so. Each instruction type has it's own instruction format.
