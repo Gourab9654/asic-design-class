@@ -646,3 +646,11 @@ This is the waveform of our verilog program:
    }
 
     ```
+
+
+2. **Compilation of the program with GCC compiler**
+![Screenshot 2024-08-13 210507](https://github.com/user-attachments/assets/bbb9deb3-8111-4358-b98e-30632b86d248)
+
+
+3. **Compilation of the Program with RISC-V Compiler**
+![Screenshot 2024-08-13 211320](https://github.com/user-attachments/assets/1c9cb625-28e0-4266-8cf8-8f2d7f655809)
