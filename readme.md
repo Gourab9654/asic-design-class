@@ -659,3 +659,158 @@ This is the waveform of our verilog program:
 ![Screenshot 2024-08-14 110030](https://github.com/user-attachments/assets/b684d855-c008-466d-b84b-73b53a57994a)
 
 ![Screenshot 2024-08-14 105945](https://github.com/user-attachments/assets/f237132f-da25-45f1-bb3a-723849205cfc)
+
+</details>
+<details>
+<summary> Assignment 6</summary>
+<br>
+## Combinational Circuits in TL-Verilog
+
+**Introduction to TL-Verilog and Makerchip:**
+Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
+
+
+### 1. Inverter
+Code is given below
+```tl-verilog
+$out = ! $in;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/1.png)
+
+
+### 2. 2-Input And Gate(&&)
+Code is given below
+```tl-verilog
+$out = $in1 && $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/2.png)
+
+### 3. 2-Input OR Gate
+Code is given below
+```tl-verilog
+$out = $in1 || $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/3.png)
+
+### 4. 2-Input XOR Gate
+Code is given below
+```tl-verilog
+$out = $in1 ^ $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/4.png)
+
+### 5. Arithmetic Operation on Vectors
+Code is given below
+```tl-verilog
+$out[4:0] = $in1[3:0] + $in2[3:0];
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/5.png)
+
+### 6. 2:1 MUX
+Code is given below
+```tl-verilog
+$out = $sel ? $in1 : $in0;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/6.png)
+
+### 7. 2:1 MUX Using Vectors
+Code is given below
+```tl-verilog
+$out[7:0] = $sel ? $in1[7:0] : $in0[7:0];
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/7.png)
+
+### 8. Combinational Calculator Implementation in TL-Verilog
+
+**Calculator Overview:**
+In this section, we demonstrate a basic combinational calculator implemented using TL-Verilog on the Makerchip platform. The calculator performs four fundamental arithmetic operations: addition, subtraction, multiplication, and division.
+
+```tl-verilog
+$val1[31:0] = $rand1[3:0];
+$val2[31:0] = $rand2[3:0];
+
+$sum[31:0]  = $val1[31:0] + $val2[31:0];
+$diff[31:0] = $val1[31:0] - $val2[31:0];
+$prod[31:0] = $val1[31:0] * $val2[31:0];
+$quot[31:0] = $val1[31:0] / $val2[31:0];
+
+$out[31:0]  = $sel[1] ? ($sel[0] ? $quot[31:0] : $prod[31:0])
+                      : ($sel[0] ? $diff[31:0] : $sum[31:0]);
+```
+Description: 
+In this code snippet, two random 4-bit values, `$rand1[3:0]` and `$rand2[3:0]`, are assigned to the 32-bit variables `$val1[31:0]` and `$val2[31:0]`, respectively. The calculator then performs four arithmetic operations on these values:
+
+The result of one of these operations is selected by a multiplexer (MUX), controlled by the selection bits `$sel[1:0]`. The MUX determines which operation's output is assigned to `$out[31:0]`.
+
+The generated block diagram and waveforms are as shown
+![Step 2](./Lab7/8.png)
+
+#### **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
+
+## Sequential Circuits in TL-Verilog
+
+A sequential circuit is a type of digital circuit that uses memory components to retain data, enabling it to generate outputs based on both the current inputs and the circuit's prior state. This distinguishes it from combinational circuits, where the output is solely determined by the present inputs without any regard to past activity. Sequential circuits rely on feedback loops and storage elements like flip-flops or registers to keep track of their internal state over time. This internal state, combined with the present input, influences the circuit's behavior, allowing it to perform tasks that require a history of previous inputs or operations, such as counting, storing data, or sequencing events.
+
+### 1. Fibbonacci Series
+- Next Value is the sum of previous two values
+![Step 2](./Lab7/9.png)
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+$num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/10.png)
+
+### 2. Free Running Counter
+- Next Value increments by 1 of the previous value
+![Step 2](./Lab7/11.png)
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+$cnt[31:0] = $reset ? 0 : (>>1$cnt + 1);
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/12.png)
+
+### 3. Sequential Calculator
+- Works the same way as combinational calculator but mimics real scenario in which the result of the previous operation is considered as one of the operand for the next operation. Upon reset the result becomes zero.
+
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+   
+$val1[31:0] = >>1$out;
+$val2[31:0] = $rand[3:0];
+   
+$sum[31:0] =  $val1[31:0] +  $val2[31:0];
+$diff[31:0] =  $val1[31:0] -  $val2[31:0];
+$prod[31:0] =  $val1[31:0] *  $val2[31:0];
+$quot[31:0] =  $val1[31:0] /  $val2[31:0];
+   
+   
+$out[31:0] = $reset ? 32'h0 : ($choose[1] ? ($choose[0] ? $quot : $prod):($choose[0] ? $diff : $sum));
+
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/13.png)
