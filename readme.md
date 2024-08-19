@@ -664,6 +664,7 @@ This is the waveform of our verilog program:
 <details>
 <summary> Assignment 6</summary>
 <br>
+  
 ## Combinational Circuits in TL-Verilog
 
 **Introduction to TL-Verilog and Makerchip:**
