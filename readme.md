@@ -738,6 +738,179 @@ The program counter points to the next address where the instruction is present 
 
 ![adding to instruction memory](https://github.com/user-attachments/assets/63eb64d5-3bba-4d9b-ba93-1d3940cfa1a2)
 
+```bash
+$imem_rd_en = >>1$reset ? 0 : 1;
+$imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
+$instr[31:0] = $imem_rd_data[31:0];
+```
+
+The output of the following code is as follows:-
+
+
+
+### Decoding the instruction
+
+We have decoded the instruction on the basis of all the 6 types of RISC V instruction set. The code for decoding is as follows:-
+
+```bash
+$is_i_instr = $instr[6:2] ==? 5'b0000x ||
+              $instr[6:2] ==? 5'b001x0 ||
+              $instr[6:2] ==? 5'b11001;
+$is_r_instr = $instr[6:2] ==? 5'b01011 ||
+              $instr[6:2] ==? 5'b011x0 ||
+              $instr[6:2] ==? 5'b10100;
+$is_s_instr = $instr[6:2] ==? 5'b0100x;
+$is_b_instr = $instr[6:2] ==? 5'b11000;
+$is_j_instr = $instr[6:2] ==? 5'b11011;
+$is_u_instr = $instr[6:2] ==? 5'b0x101;
+```
+
+The output is as follows:-
+
+
+
+### Immediate Decode Logic
+
+The instruction sets have an immediate field. In order to decoder this field we use the following code:-
+
+```bash
+$imm[31:0] = $is_i_instr ? {{21{$instr[31]}}, $instr[30:20]} :
+                      $is_s_instr ? {{21{$instr[31]}}, $instr[30:25], $instr[11:7]} :
+                      $is_b_instr ? {{20{$instr[31]}}, $instr[7], $instr[30:25], $instr[11:8], 1'b0} :
+                      $is_u_instr ? {$instr[31:12], 12'b0} :
+                      $is_j_instr ? {{12{$instr[31]}}, $instr[19:12], $instr[20], $instr[30:21], 1'b0} :
+                      32'b0;
+```
+
+
+
+### Decode logic for other fields
+
+Apart from the immediate we have other fields which also need to be decoded. The code for the same is as follows:-
+
+```bash
+$rs2_valid = $is_r_instr || $is_s_instr || $is_b_instr;
+         ?$rs2_valid
+            $rs2[4:0] = $instr[24:20];
+            
+         $rs1_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         ?$rs1_valid
+            $rs1[4:0] = $instr[19:15];
+         
+         $funct3_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         ?$funct3_valid
+            $funct3[2:0] = $instr[14:12];
+            
+         $funct7_valid = $is_r_instr ;
+         ?$funct7_valid
+            $funct7[6:0] = $instr[31:25];
+            
+         $rd_valid = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
+         ?$rd_valid
+            $rd[4:0] = $instr[11:7];
+```
+At a time only one instruction is passed on to for decode. This instruction can be of any 1 of the 6 instruction set types. Thus we need to validate that it belongs to the respective category or else there may be a clash of different instruction set types.
+
+
+### Decoding Individual Instructions
+
+We are decoding the individual instructions using the following code
+
+```bash
+$dec_bits [10:0] = {$funct7[5], $funct3, $opcode};
+$is_beq = $dec_bits ==? 11'bx_000_1100011;
+$is_bne = $dec_bits ==? 11'bx_001_1100011;
+$is_blt = $dec_bits ==? 11'bx_100_1100011;
+$is_bge = $dec_bits ==? 11'bx_101_1100011;
+$is_bltu = $dec_bits ==? 11'bx_110_1100011;
+$is_bgeu = $dec_bits ==? 11'bx_111_1100011;
+$is_addi = $dec_bits ==? 11'bx_000_0010011;
+$is_add = $dec_bits ==? 11'b0_000_0110011;
+```
+
+The output for the above code is as follows:-
+
+
+### Register File Read and Enable
+
+Here we read the instructions from the respective instruction memory and store it in the registers. We have 2 register slots the read the instructions from the memory. We send these stored instructions to the ALU after this process.
+
+The code is as follows:-
+
+```bash
+$rf_rd_en1 = $rs1_valid;
+$rf_rd_index1[4:0] = $rs1;
+$rf_rd_en2 = $rs2_valid;
+$rf_rd_index2[4:0] = $rs2;
+
+$src1_value[31:0] = $rf_rd_data1;
+$src2_value[31:0] = $rf_rd_data2;
+```
+
+The output for the code is as follows:-
+
+
+
+### Arithmetic and Logic Unit
+
+Used to perform arithmetic operations on the values stored in the registers. The code for the same is as follows:-
+
+```bash
+$result[31:0] = $is_addi ? $src1_value + $imm :
+                $is_add ? $src1_value + $src2_value :
+                32'bx ;
+```
+
+Here we have written code for the addi and add operation.
+
+
+### Register File Write
+
+Once the ALU performs the operations on the values stored in ther registers we may need to put these values back into these registers based. For this we use the register file write. We also have to make sure that we should not write into the register if the destination register is x0 as it is always meant to be 0. The code is as follows:-
+
+```bash
+$rf_wr_en = $rd_valid && $rd != 5'b0;
+$rf_wr_index[4:0] = $rd;
+$rf_wr_data[31:0] = $result;
+```
+
+
+### Branch instructions
+
+Based on the control input we may need to jump to some different address after a particular instruction based on some condition generated during run-time. This is when we use the branch instructions. The code is as follows:-
+
+```bash
+$taken_branch = $is_beq ? ($src1_value == $src2_value):
+	        $is_bne ? ($src1_value != $src2_value):
+	        $is_blt ? (($src1_value < $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+	        $is_bge ? (($src1_value >= $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+                $is_bltu ? ($src1_value < $src2_value):
+                $is_bgeu ? ($src1_value >= $src2_value):
+	        1'b0;
+$br_target_pc[31:0] = $pc +$imm;
+```
+The output is as follows:-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -745,3 +918,9 @@ The program counter points to the next address where the instruction is present 
 
 
 </details>
+
+
+
+
+
+
