@@ -669,6 +669,9 @@ This is the waveform of our verilog program:
 Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
 
 ## Combinational Circuits in TL-Verilog
+![Screenshot 2024-08-19 183054](https://github.com/user-attachments/assets/36b3aec3-a78c-4080-8ab6-988590695d7d)
+![Screenshot 2024-08-19 183101](https://github.com/user-attachments/assets/27f0ac73-2684-481f-b8a5-828bae0edcc4)
+
 ### inverter
 
 ### 2 input AND gate
