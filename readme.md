@@ -671,147 +671,322 @@ This is the waveform of our verilog program:
 Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
 
 
-### 1. Inverter
-Code is given below
-```tl-verilog
-$out = ! $in;
-```
-The generated block diagram and waveforms are as shown
+### Sequential Calculator
 
-![Step 2](./Lab7/1.png)
+Calculators tend to remember the previous result and use it for the next operation. The sequential calculator does this and feeds back the output to the next input. The code for the same is as follows:-
 
-
-### 2. 2-Input And Gate(&&)
-Code is given below
-```tl-verilog
-$out = $in1 && $in2;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/2.png)
-
-### 3. 2-Input OR Gate
-Code is given below
-```tl-verilog
-$out = $in1 || $in2;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/3.png)
-
-### 4. 2-Input XOR Gate
-Code is given below
-```tl-verilog
-$out = $in1 ^ $in2;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/4.png)
-
-### 5. Arithmetic Operation on Vectors
-Code is given below
-```tl-verilog
-$out[4:0] = $in1[3:0] + $in2[3:0];
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/5.png)
-
-### 6. 2:1 MUX
-Code is given below
-```tl-verilog
-$out = $sel ? $in1 : $in0;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/6.png)
-
-### 7. 2:1 MUX Using Vectors
-Code is given below
-```tl-verilog
-$out[7:0] = $sel ? $in1[7:0] : $in0[7:0];
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/7.png)
-
-### 8. Combinational Calculator Implementation in TL-Verilog
-
-**Calculator Overview:**
-In this section, we demonstrate a basic combinational calculator implemented using TL-Verilog on the Makerchip platform. The calculator performs four fundamental arithmetic operations: addition, subtraction, multiplication, and division.
-
-```tl-verilog
-$val1[31:0] = $rand1[3:0];
-$val2[31:0] = $rand2[3:0];
-
-$sum[31:0]  = $val1[31:0] + $val2[31:0];
-$diff[31:0] = $val1[31:0] - $val2[31:0];
-$prod[31:0] = $val1[31:0] * $val2[31:0];
-$quot[31:0] = $val1[31:0] / $val2[31:0];
-
-$out[31:0]  = $sel[1] ? ($sel[0] ? $quot[31:0] : $prod[31:0])
-                      : ($sel[0] ? $diff[31:0] : $sum[31:0]);
-```
-Description: 
-In this code snippet, two random 4-bit values, `$rand1[3:0]` and `$rand2[3:0]`, are assigned to the 32-bit variables `$val1[31:0]` and `$val2[31:0]`, respectively. The calculator then performs four arithmetic operations on these values:
-
-The result of one of these operations is selected by a multiplexer (MUX), controlled by the selection bits `$sel[1:0]`. The MUX determines which operation's output is assigned to `$out[31:0]`.
-
-The generated block diagram and waveforms are as shown
-![Step 2](./Lab7/8.png)
-
-#### **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
-
-## Sequential Circuits in TL-Verilog
-
-A sequential circuit is a type of digital circuit that uses memory components to retain data, enabling it to generate outputs based on both the current inputs and the circuit's prior state. This distinguishes it from combinational circuits, where the output is solely determined by the present inputs without any regard to past activity. Sequential circuits rely on feedback loops and storage elements like flip-flops or registers to keep track of their internal state over time. This internal state, combined with the present input, influences the circuit's behavior, allowing it to perform tasks that require a history of previous inputs or operations, such as counting, storing data, or sequencing events.
-
-### 1. Fibbonacci Series
-- Next Value is the sum of previous two values
-![Step 2](./Lab7/9.png)
-
-Code is given below
-```tl-verilog
-$reset = *reset;
-$num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/10.png)
-
-### 2. Free Running Counter
-- Next Value increments by 1 of the previous value
-![Step 2](./Lab7/11.png)
-
-Code is given below
-```tl-verilog
-$reset = *reset;
-$cnt[31:0] = $reset ? 0 : (>>1$cnt + 1);
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/12.png)
-
-### 3. Sequential Calculator
-- Works the same way as combinational calculator but mimics real scenario in which the result of the previous operation is considered as one of the operand for the next operation. Upon reset the result becomes zero.
-
-
-Code is given below
-```tl-verilog
-$reset = *reset;
+```bash
+\m5_TLV_version 1d: tl-x.org
+\m5
    
-$val1[31:0] = >>1$out;
-$val2[31:0] = $rand[3:0];
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
    
-$sum[31:0] =  $val1[31:0] +  $val2[31:0];
-$diff[31:0] =  $val1[31:0] -  $val2[31:0];
-$prod[31:0] =  $val1[31:0] *  $val2[31:0];
-$quot[31:0] =  $val1[31:0] /  $val2[31:0];
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+	
+\TLV
+   //$count[31:0] = 32'b0;
    
+   // Sequential Clock
    
-$out[31:0] = $reset ? 32'h0 : ($choose[1] ? ($choose[0] ? $quot : $prod):($choose[0] ? $diff : $sum));
+   |calc
+      @1
+         $clk_omkar = *clk;
+         $reset = *reset;
+         $val1[31:0] = >>1$result[31:0];
+         $val2[31:0] = $rand2[3:0];
+         $result[31:0] = $reset ? 32'b0 : ($sel[1:0] == 2'b00)
+                         ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01)
+                         ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10)
+                         ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11)
+                         ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
+         //$count[31:0] = $reset  ? 0 : (>>1$count + 1);
+   
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+	endmodule;
 
 ```
-The generated block diagram and waveforms are as shown
 
-![Step 2](./Lab7/13.png)
+This gives us the following waveforms and block diagram:-
+
+![image](https://github.com/user-attachments/assets/55434301-1098-4344-ae9f-2246f605a276)
+
+### Pipelined Logic:-
+
+Pipelining is used to maximise resource utilisation and thus reduce the delays in performing all the operations in a given task. In order to do so me make sure that every block in our system is working almost in every cycle such that it does not affect the operation of any other block which may be dependent or independent of its result. We have used a pythagorean calculator in our case. The code for the same is as follows.
+
+```bash
+\m5_TLV_version 1d: tl-x.org
+\m5
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+	`include "sqrt32.v"
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   |calc
+      @1
+         $reset = *reset;
+         $clk_omkar = *clk;
+      ?$valid
+         @1
+            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
+            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0] = sqrt($cc_sq);
+         //@4
+         //$tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
+            
+         //@4
+         //$adder[31:0] = $cc + >>1$tot_dist;
+         //@5
+         //$tot_dist[31:0] = $valid ? ( >>1$tot_dist + $adder ) : >>1$tot_dist
+   
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 16'd30;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+
+The output for the following code is as follows:-
+
+![Pipelined_logic](https://github.com/user-attachments/assets/291685cf-eb23-46ea-a894-68b6faf91deb)
+
+### Cycle Calculator
+
+In the sequential calculator we have taken the output of the previous result and fed it back to the next input but in this case we are using 3 stages of pipeline instead of 2 and therefore the calculator input will receive input which is 2 cycles older.
+
+```bash
+
+\m5_TLV_version 1d: tl-x.org
+\m5
+   
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   //$count[31:0] = 32'b0;
+   |calc
+      @1
+         $clk_omkar = *clk;
+         $reset = *reset;
+         $val1[31:0] = >>2$result[31:0];
+         $val2[31:0] = $rand2[3:0];
+         
+      @2
+         $valid = $reset ? 0 : (>>1$valid + 1);
+         $out[31:0] = ($reset | !($valid)) ? 32'b0 : ($sel[1:0] == 2'b00) ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01) ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10) ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11) ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
+         
+   
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+
+```
+
+The output for the cycle calculator is as follows:-
+
+![Cycle_calculator](https://github.com/user-attachments/assets/264f1c05-9198-4440-b2ec-fbf17d0d14ca)
+
+### Validity
+
+When we generate a waveform as in all the previous cases we are receiving a result for all the clock cycles. Here there are no compilation errors but it is quite possible that logical errors can be present in these cases. These errors will be ignored during compile time and it will be difficult to debug them by simply looking at the waveforms. Also there might be certain cases where a dont care condition comes up. These cases are insignificant to us and thus should be neglected . In order to do so we use the Validity. The global clock is also running all the time. There might be instances in our code when we do not need a particular case to run but still does as the clock triggers it. In order to execute a clock physically voltage or current sources are used. These sources use some power during that clock cycle. In complex circuits if such cases are ignored a lot of power will be wasted. So in order to reduce power consumption we remove the clock during such cycles and this process is called as clock gating. The validity helps us with this.
+
+The code for Validity is as follows for the pythagorean calculator:-
+
+```bash
+\m5_TLV_version 1d: tl-x.org
+\m5
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+	`include "sqrt32.v"
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   |calc
+      @1
+         $reset = *reset;
+         $clk_omkar = *clk;
+      ?$valid
+         @1
+            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
+            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0] = sqrt($cc_sq);
+            //@4
+            //$tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
+            //@4
+            //$adder[31:0] = $cc + >>1$tot_dist;
+            //@5
+            //$tot_dist[31:0] = $valid ? ( >>1$tot_dist + $adder ) : >>1$tot_dist
+
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 16'd30;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+
+The output for the following code is as follows:-
+
+![validity_pytha](https://github.com/user-attachments/assets/722d8573-052f-461d-9642-d88027b8fa5d)
+
+### Total Distance Calculator
+
+Used to calculate the total distance travelled in a series of hops. The code for the same is given as follows:-
+
+```bash
+\m5_TLV_version 1d: tl-x.org
+\m5
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+	`include "sqrt32.v"
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   |calc
+      @1
+         $reset = *reset;
+         $clk_omkar = *clk;
+      ?$valid
+         @1
+            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
+            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0] = sqrt($cc_sq);
+         @4
+            $tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
+
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 16'd30;
+   *failed = 1'b0;
+\SV
+   endmodule
+```
+The output for the above code is as follows:-
+
+![Total_distance_calculator](https://github.com/user-attachments/assets/49ba4c3c-893b-40c0-9742-cb75a2b8d182)
+
+
+### Validity on Cycle Calculator
+
+The code is as follows:-
+
+```bash
+\m5_TLV_version 1d: tl-x.org
+\m5
+   
+   // =================================================
+   // Welcome!  New to Makerchip? Try the "Learn" menu.
+   // =================================================
+   
+   //use(m5-1.0)   /// uncomment to use M5 macro library.
+\SV
+   // Macro providing required top-level module definition, random
+   // stimulus support, and Verilator config.
+   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+\TLV
+   //$count[31:0] = 32'b0;
+   |calc
+      @1
+         $clk_omkar = *clk;
+         $reset = *reset;
+         $valid = $reset ? 0 : (>>1$valid + 1);
+         $valid_or_reset = $valid || $reset;
+      ?$valid
+         @1
+            $val1[31:0] = >>2$result[31:0];
+            $val2[31:0] = $rand2[3:0];
+         @2
+            $out[31:0] = $valid_or_reset ? 32'b0 : ($sel[1:0] == 2'b00) ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01) ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10) ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11) ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
+   // Assert these to end simulation (before Makerchip cycle limit).
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
+\SV
+   endmodule
+
+```
+
+The output is as follows:-
+
+![validity_cycle_calculator](https://github.com/user-attachments/assets/459c4f68-b246-448a-8845-5665fff4f4f8)
+
+
+
+
+
+## Basic RISC V architecture
+
+![image](https://github.com/user-attachments/assets/58c6a3f1-ba27-43a9-aff0-1fa285ff7a73)
+
+
+  
+### Program Counter
+
+The program counter is supposed to increase its value by 4 to fetch the next instruction from the memory. The below image specifies the same. In case a reset is triggered the program counter will be initialised to zero for the next instruction.
+
+The following diagram explains the working of the program counter
+
+![image](https://github.com/user-attachments/assets/72baefa6-30cb-4a22-8caa-b370954765bc)
+
+The following is the code for the working of the program counter
+
+```bash
+$pc[31:0] = >>1$reset ? 0 : ( >>1$pc + 31'h4 );
+```
+We get the following output after executing the code:-
+
+![image](https://github.com/user-attachments/assets/9eef0a38-71d1-4fa4-bbf6-aa98283bc534)
+
+
+### Adding the instruction memory
+
+The program counter points to the next address where the instruction is present in the instruction memory. We need to fetch this instruction in order to process it and make further calculations.
+
+![image](https://github.com/user-attachments/assets/076a1cc9-81f8-4603-8612-394ddd2078fd)
+
+
+
+
+
+
+
+</details>
