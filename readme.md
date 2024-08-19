@@ -692,8 +692,7 @@ The output for the following code is as follows:-
 ![pipelined logic](https://github.com/user-attachments/assets/6b3728e4-6aee-4a13-91d0-47664c4d15ba)
 ### Cycle Calculator
 The output for the cycle calculator is as follows:-
-![Cycle_calculator](https://github.com/user-attachments/assets/264f1c05-9198-4440-b2ec-fbf17d0d14ca)
-
+![cycle calculator](https://github.com/user-attachments/assets/9cbe36a6-6f96-4770-a1aa-61fa5a8616d9)
 ### Validity
 When we generate a waveform as in all the previous cases we are receiving a result for all the clock cycles. Here there are no compilation errors but it is quite possible that logical errors can be present in these cases. These errors will be ignored during compile time and it will be difficult to debug them by simply looking at the waveforms. Also there might be certain cases where a dont care condition comes up. These cases are insignificant to us and thus should be neglected . In order to do so we use the Validity. The global clock is also running all the time. There might be instances in our code when we do not need a particular case to run but still does as the clock triggers it. In order to execute a clock physically voltage or current sources are used. These sources use some power during that clock cycle. In complex circuits if such cases are ignored a lot of power will be wasted. So in order to reduce power consumption we remove the clock during such cycles and this process is called as clock gating. The validity helps us with this.
 The output for the following code is as follows:-
@@ -737,7 +736,7 @@ We get the following output after executing the code:-
 
 The program counter points to the next address where the instruction is present in the instruction memory. We need to fetch this instruction in order to process it and make further calculations.
 
-![program counter](https://github.com/user-attachments/assets/37196a54-a585-41e3-a8c7-922741e6ffe7)
+![adding to instruction memory](https://github.com/user-attachments/assets/63eb64d5-3bba-4d9b-ba93-1d3940cfa1a2)
 
 
 
