@@ -673,14 +673,15 @@ Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which re
 ![Screenshot 2024-08-19 183101](https://github.com/user-attachments/assets/27f0ac73-2684-481f-b8a5-828bae0edcc4)
 
 ### inverter
-
+![Screenshot 2024-08-19 181713](https://github.com/user-attachments/assets/f6c32b6e-6142-48da-a821-336332a5b0c4)
 ### 2 input AND gate
-
+![Screenshot 2024-08-19 182051](https://github.com/user-attachments/assets/6546a442-6413-491b-beec-8d755c0f8799)
 ### 2 input OR gate
-
+![Screenshot 2024-08-19 182250](https://github.com/user-attachments/assets/7db4e4e2-a1f7-4708-ba7a-02ba05c4ae0f)
 ### 2:1 MUX
-
+![Screenshot 2024-08-19 182401](https://github.com/user-attachments/assets/9238fc16-a219-4dd0-9ef3-d9f016f99d1a)
 ### 2:1 MUX using Vectors
+![Screenshot 2024-08-19 182501](https://github.com/user-attachments/assets/d616ae66-0769-4a10-889c-b1823a115332)
 
 ## Sequential Circuits in TL-Verilog
 ### Sequential Calculator
