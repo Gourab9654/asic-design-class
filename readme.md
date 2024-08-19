@@ -664,13 +664,22 @@ This is the waveform of our verilog program:
 <details>
 <summary> Assignment 6</summary>
 <br>
-  
-## Combinational Circuits in TL-Verilog
 
 **Introduction to TL-Verilog and Makerchip:**
 Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
 
+## Combinational Circuits in TL-Verilog
+### inverter
 
+### 2 input AND gate
+
+### 2 input OR gate
+
+### 2:1 MUX
+
+### 2:1 MUX using Vectors
+
+## Sequential Circuits in TL-Verilog
 ### Sequential Calculator
 
 Calculators tend to remember the previous result and use it for the next operation. The sequential calculator does this and feeds back the output to the next input. The code for the same is as follows:-
