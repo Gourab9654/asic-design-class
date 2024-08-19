@@ -685,290 +685,33 @@ Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which re
 
 ## Sequential Circuits in TL-Verilog
 ### Sequential Calculator
-
-Calculators tend to remember the previous result and use it for the next operation. The sequential calculator does this and feeds back the output to the next input. The code for the same is as follows:-
-
-```bash
-\m5_TLV_version 1d: tl-x.org
-\m5
-   
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-	
-\TLV
-   //$count[31:0] = 32'b0;
-   
-   // Sequential Clock
-   
-   |calc
-      @1
-         $clk_omkar = *clk;
-         $reset = *reset;
-         $val1[31:0] = >>1$result[31:0];
-         $val2[31:0] = $rand2[3:0];
-         $result[31:0] = $reset ? 32'b0 : ($sel[1:0] == 2'b00)
-                         ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01)
-                         ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10)
-                         ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11)
-                         ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
-         //$count[31:0] = $reset  ? 0 : (>>1$count + 1);
-   
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 40;
-   *failed = 1'b0;
-\SV
-	endmodule;
-
-```
-
 This gives us the following waveforms and block diagram:-
-
-![image](https://github.com/user-attachments/assets/55434301-1098-4344-ae9f-2246f605a276)
-
+![sequential calc](https://github.com/user-attachments/assets/01a5a7ab-6f8f-468b-badb-36ad7c085c7b)
 ### Pipelined Logic:-
-
-Pipelining is used to maximise resource utilisation and thus reduce the delays in performing all the operations in a given task. In order to do so me make sure that every block in our system is working almost in every cycle such that it does not affect the operation of any other block which may be dependent or independent of its result. We have used a pythagorean calculator in our case. The code for the same is as follows.
-
-```bash
-\m5_TLV_version 1d: tl-x.org
-\m5
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-	`include "sqrt32.v"
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-\TLV
-   |calc
-      @1
-         $reset = *reset;
-         $clk_omkar = *clk;
-      ?$valid
-         @1
-            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
-            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
-         @2
-            $cc_sq[31:0] = $aa_sq + $bb_sq;
-         @3
-            $cc[31:0] = sqrt($cc_sq);
-         //@4
-         //$tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
-            
-         //@4
-         //$adder[31:0] = $cc + >>1$tot_dist;
-         //@5
-         //$tot_dist[31:0] = $valid ? ( >>1$tot_dist + $adder ) : >>1$tot_dist
-   
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 16'd30;
-   *failed = 1'b0;
-\SV
-   endmodule
-```
-
 The output for the following code is as follows:-
-
-![Pipelined_logic](https://github.com/user-attachments/assets/291685cf-eb23-46ea-a894-68b6faf91deb)
-
+![pipelined logic](https://github.com/user-attachments/assets/6b3728e4-6aee-4a13-91d0-47664c4d15ba)
 ### Cycle Calculator
-
-In the sequential calculator we have taken the output of the previous result and fed it back to the next input but in this case we are using 3 stages of pipeline instead of 2 and therefore the calculator input will receive input which is 2 cycles older.
-
-```bash
-
-\m5_TLV_version 1d: tl-x.org
-\m5
-   
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-\TLV
-   //$count[31:0] = 32'b0;
-   |calc
-      @1
-         $clk_omkar = *clk;
-         $reset = *reset;
-         $val1[31:0] = >>2$result[31:0];
-         $val2[31:0] = $rand2[3:0];
-         
-      @2
-         $valid = $reset ? 0 : (>>1$valid + 1);
-         $out[31:0] = ($reset | !($valid)) ? 32'b0 : ($sel[1:0] == 2'b00) ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01) ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10) ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11) ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
-         
-   
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 40;
-   *failed = 1'b0;
-\SV
-   endmodule
-
-```
-
 The output for the cycle calculator is as follows:-
-
 ![Cycle_calculator](https://github.com/user-attachments/assets/264f1c05-9198-4440-b2ec-fbf17d0d14ca)
 
 ### Validity
-
 When we generate a waveform as in all the previous cases we are receiving a result for all the clock cycles. Here there are no compilation errors but it is quite possible that logical errors can be present in these cases. These errors will be ignored during compile time and it will be difficult to debug them by simply looking at the waveforms. Also there might be certain cases where a dont care condition comes up. These cases are insignificant to us and thus should be neglected . In order to do so we use the Validity. The global clock is also running all the time. There might be instances in our code when we do not need a particular case to run but still does as the clock triggers it. In order to execute a clock physically voltage or current sources are used. These sources use some power during that clock cycle. In complex circuits if such cases are ignored a lot of power will be wasted. So in order to reduce power consumption we remove the clock during such cycles and this process is called as clock gating. The validity helps us with this.
-
-The code for Validity is as follows for the pythagorean calculator:-
-
-```bash
-\m5_TLV_version 1d: tl-x.org
-\m5
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-	`include "sqrt32.v"
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-\TLV
-   |calc
-      @1
-         $reset = *reset;
-         $clk_omkar = *clk;
-      ?$valid
-         @1
-            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
-            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
-         @2
-            $cc_sq[31:0] = $aa_sq + $bb_sq;
-         @3
-            $cc[31:0] = sqrt($cc_sq);
-            //@4
-            //$tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
-            //@4
-            //$adder[31:0] = $cc + >>1$tot_dist;
-            //@5
-            //$tot_dist[31:0] = $valid ? ( >>1$tot_dist + $adder ) : >>1$tot_dist
-
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 16'd30;
-   *failed = 1'b0;
-\SV
-   endmodule
-```
-
 The output for the following code is as follows:-
 
-![validity_pytha](https://github.com/user-attachments/assets/722d8573-052f-461d-9642-d88027b8fa5d)
+![validity on cycle calculator](https://github.com/user-attachments/assets/ee77ba38-6e1a-483b-9b38-c63dcf1033ba)
 
 ### Total Distance Calculator
-
-Used to calculate the total distance travelled in a series of hops. The code for the same is given as follows:-
-
-```bash
-\m5_TLV_version 1d: tl-x.org
-\m5
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-	`include "sqrt32.v"
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-\TLV
-   |calc
-      @1
-         $reset = *reset;
-         $clk_omkar = *clk;
-      ?$valid
-         @1
-            $aa_sq[31:0] = $aa[3:0] * $aa[3:0];
-            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
-         @2
-            $cc_sq[31:0] = $aa_sq + $bb_sq;
-         @3
-            $cc[31:0] = sqrt($cc_sq);
-         @4
-            $tot_dist[63:0] = $reset ? 0 : $valid ? (>>1$tot_dist + $cc) : >>1$tot_dist;
-
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 16'd30;
-   *failed = 1'b0;
-\SV
-   endmodule
-```
 The output for the above code is as follows:-
-
-![Total_distance_calculator](https://github.com/user-attachments/assets/49ba4c3c-893b-40c0-9742-cb75a2b8d182)
-
+![total distance](https://github.com/user-attachments/assets/a6a5dd73-ae55-47c9-ad2a-f9f752462087)
 
 ### Validity on Cycle Calculator
-
-The code is as follows:-
-
-```bash
-\m5_TLV_version 1d: tl-x.org
-\m5
-   
-   // =================================================
-   // Welcome!  New to Makerchip? Try the "Learn" menu.
-   // =================================================
-   
-   //use(m5-1.0)   /// uncomment to use M5 macro library.
-\SV
-   // Macro providing required top-level module definition, random
-   // stimulus support, and Verilator config.
-   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
-\TLV
-   //$count[31:0] = 32'b0;
-   |calc
-      @1
-         $clk_omkar = *clk;
-         $reset = *reset;
-         $valid = $reset ? 0 : (>>1$valid + 1);
-         $valid_or_reset = $valid || $reset;
-      ?$valid
-         @1
-            $val1[31:0] = >>2$result[31:0];
-            $val2[31:0] = $rand2[3:0];
-         @2
-            $out[31:0] = $valid_or_reset ? 32'b0 : ($sel[1:0] == 2'b00) ? ($val1[31:0] + $val2[31:0]) : ($sel[1:0] == 2'b01) ? ($val1[31:0] - $val2[31:0]) : ($sel[1:0] == 2'b10) ? ($val1[31:0] * $val2[31:0]) : ($sel[1:0] == 2'b11) ? ($val2[31:0] != 0 ? ($val1[31:0] / $val2[31:0]) : 32'bx) :  32'b0;
-   // Assert these to end simulation (before Makerchip cycle limit).
-   *passed = *cyc_cnt > 40;
-   *failed = 1'b0;
-\SV
-   endmodule
-
-```
-
 The output is as follows:-
-
-![validity_cycle_calculator](https://github.com/user-attachments/assets/459c4f68-b246-448a-8845-5665fff4f4f8)
-
-
-
+![validity on cycle calculator](https://github.com/user-attachments/assets/ee77ba38-6e1a-483b-9b38-c63dcf1033ba)
 
 
 ## Basic RISC V architecture
 
-![image](https://github.com/user-attachments/assets/58c6a3f1-ba27-43a9-aff0-1fa285ff7a73)
+![basic risc-v architecture](https://github.com/user-attachments/assets/712abd37-acee-41bc-b65c-9f6a605aa0f0)
 
 
   
@@ -978,7 +721,7 @@ The program counter is supposed to increase its value by 4 to fetch the next ins
 
 The following diagram explains the working of the program counter
 
-![image](https://github.com/user-attachments/assets/72baefa6-30cb-4a22-8caa-b370954765bc)
+![program counter](https://github.com/user-attachments/assets/37196a54-a585-41e3-a8c7-922741e6ffe7)
 
 The following is the code for the working of the program counter
 
@@ -994,7 +737,7 @@ We get the following output after executing the code:-
 
 The program counter points to the next address where the instruction is present in the instruction memory. We need to fetch this instruction in order to process it and make further calculations.
 
-![image](https://github.com/user-attachments/assets/076a1cc9-81f8-4603-8612-394ddd2078fd)
+![program counter](https://github.com/user-attachments/assets/37196a54-a585-41e3-a8c7-922741e6ffe7)
 
 
 
