@@ -744,8 +744,6 @@ $imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
 $instr[31:0] = $imem_rd_data[31:0];
 ```
 
-The output of the following code is as follows:-
-
 
 
 ### Decoding the instruction
@@ -764,9 +762,6 @@ $is_b_instr = $instr[6:2] ==? 5'b11000;
 $is_j_instr = $instr[6:2] ==? 5'b11011;
 $is_u_instr = $instr[6:2] ==? 5'b0x101;
 ```
-
-The output is as follows:-
-
 
 
 ### Immediate Decode Logic
@@ -828,7 +823,6 @@ $is_addi = $dec_bits ==? 11'bx_000_0010011;
 $is_add = $dec_bits ==? 11'b0_000_0110011;
 ```
 
-The output for the above code is as follows:-
 
 
 ### Register File Read and Enable
@@ -846,9 +840,6 @@ $rf_rd_index2[4:0] = $rs2;
 $src1_value[31:0] = $rf_rd_data1;
 $src2_value[31:0] = $rf_rd_data2;
 ```
-
-The output for the code is as follows:-
-
 
 
 ### Arithmetic and Logic Unit
@@ -889,7 +880,7 @@ $taken_branch = $is_beq ? ($src1_value == $src2_value):
 	        1'b0;
 $br_target_pc[31:0] = $pc +$imm;
 ```
-The output is as follows:-
+
 
 
 
