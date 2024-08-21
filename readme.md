@@ -884,9 +884,9 @@ $br_target_pc[31:0] = $pc +$imm;
 
 
 ## RISC-V CPU CORE WITHOUT PIPELINE
-
+![Screenshot 2024-08-21 125355](https://github.com/user-attachments/assets/e6f46a89-fe5f-4be3-98f7-1f0292c8db67)
 ## RISC-V CPU CORE WITH PIPELINE
-
+![Screenshot 2024-08-21 130349](https://github.com/user-attachments/assets/3d7c1b0a-1748-4fb5-8142-931e9e7dfe97)
 
 
 
