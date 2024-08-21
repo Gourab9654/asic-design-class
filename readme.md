@@ -4,7 +4,8 @@
   - GCC (GNU Compiler Collection)
   - RISC-V GNU Compiler Toolchain
   - Spike RISC-V Simulator
-  - Ubuntu OS 
+  - Ubuntu OS
+  - MakerChip IDE
 
 <details>
 <summary> Assignment 1</summary>
