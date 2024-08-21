@@ -687,13 +687,13 @@ Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which re
 ### Sequential Calculator
 This gives us the following waveforms and block diagram:-
 ![sequential calc](https://github.com/user-attachments/assets/01a5a7ab-6f8f-468b-badb-36ad7c085c7b)
-### Pipelined Logic:-
+## Pipelined Logic:-
 The output for the following code is as follows:-
 ![pipelined logic](https://github.com/user-attachments/assets/6b3728e4-6aee-4a13-91d0-47664c4d15ba)
 ### Cycle Calculator
 The output for the cycle calculator is as follows:-
 ![cycle calculator](https://github.com/user-attachments/assets/9cbe36a6-6f96-4770-a1aa-61fa5a8616d9)
-### Validity
+## Validity
 When we generate a waveform as in all the previous cases we are receiving a result for all the clock cycles. Here there are no compilation errors but it is quite possible that logical errors can be present in these cases. These errors will be ignored during compile time and it will be difficult to debug them by simply looking at the waveforms. Also there might be certain cases where a dont care condition comes up. These cases are insignificant to us and thus should be neglected . In order to do so we use the Validity. The global clock is also running all the time. There might be instances in our code when we do not need a particular case to run but still does as the clock triggers it. In order to execute a clock physically voltage or current sources are used. These sources use some power during that clock cycle. In complex circuits if such cases are ignored a lot of power will be wasted. So in order to reduce power consumption we remove the clock during such cycles and this process is called as clock gating. The validity helps us with this.
 The output for the following code is as follows:-
 
@@ -737,7 +737,7 @@ We get the following output after executing the code:-
 The program counter points to the next address where the instruction is present in the instruction memory. We need to fetch this instruction in order to process it and make further calculations.
 
 ![adding to instruction memory](https://github.com/user-attachments/assets/63eb64d5-3bba-4d9b-ba93-1d3940cfa1a2)
-
+![fetch](https://github.com/user-attachments/assets/1f17d4be-a45f-4ed8-b8cc-4a5e3ad9b765)
 ```bash
 $imem_rd_en = >>1$reset ? 0 : 1;
 $imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
@@ -763,7 +763,7 @@ $is_j_instr = $instr[6:2] ==? 5'b11011;
 $is_u_instr = $instr[6:2] ==? 5'b0x101;
 ```
 
-
+![decode](https://github.com/user-attachments/assets/e32df76c-3fd0-4f74-b3cc-57be82c5791c)
 ### Immediate Decode Logic
 
 The instruction sets have an immediate field. In order to decoder this field we use the following code:-
@@ -840,7 +840,7 @@ $rf_rd_index2[4:0] = $rs2;
 $src1_value[31:0] = $rf_rd_data1;
 $src2_value[31:0] = $rf_rd_data2;
 ```
-
+![Register read and write](https://github.com/user-attachments/assets/a8ca4f26-7447-4106-b966-fb78e7bd3931)
 
 ### Arithmetic and Logic Unit
 
@@ -880,7 +880,7 @@ $taken_branch = $is_beq ? ($src1_value == $src2_value):
 	        1'b0;
 $br_target_pc[31:0] = $pc +$imm;
 ```
-
+![Branch Logic](https://github.com/user-attachments/assets/c9725498-e388-4e7f-9f3d-455ea8510e02)
 
 
 
