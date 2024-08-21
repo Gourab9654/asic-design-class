@@ -883,9 +883,9 @@ $br_target_pc[31:0] = $pc +$imm;
 ![Branch Logic](https://github.com/user-attachments/assets/c9725498-e388-4e7f-9f3d-455ea8510e02)
 
 
+## RISC-V CPU CORE WITHOUT PIPELINE
 
-
-
+## RISC-V CPU CORE WITH PIPELINE
 
 
 
