@@ -992,6 +992,12 @@ $br_target_pc[31:0] = $pc +$imm;
 ```
 ## RISC-V CPU CORE WITH PIPELINE
 ![Screenshot 2024-08-21 130349](https://github.com/user-attachments/assets/3d7c1b0a-1748-4fb5-8142-931e9e7dfe97)
+
+**The Sum from 1 to 9 accumulated in R14 register completed in 58 cycles**
+![Screenshot 2024-08-22 105219](https://github.com/user-attachments/assets/486eb095-942e-471b-8612-49edb8694cd3)
+
+**clock as clk_gour**
+![Screenshot 2024-08-22 105043](https://github.com/user-attachments/assets/f4cd9bae-d1b5-441b-afb0-5c840f1e117c)
 ```bash
 \m4_TLV_version 1d: tl-x.org
 \SV
