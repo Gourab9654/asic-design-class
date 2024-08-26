@@ -1033,7 +1033,7 @@ $br_target_pc[31:0] = $pc +$imm;
    |cpu
       @0
          $reset = *reset;
-         $clk_CHA = *clk;
+         $clk_GOUR = *clk;
          
          //PC fetch - branch, jumps and loads introduce 2 cycle bubbles in this pipeline
          $pc[31:0] = >>1$reset ? '0 : (>>3$valid_taken_br ? >>3$br_tgt_pc :
