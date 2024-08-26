@@ -1283,28 +1283,13 @@ $br_target_pc[31:0] = $pc +$imm;
 ![Screenshot 2024-08-22 105043](https://github.com/user-attachments/assets/f4cd9bae-d1b5-441b-afb0-5c840f1e117c)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+</details>
+<details>
+<summary> Assignment 7</summary>
+<br>
 
 
 
 
 
 </details>
-
-
-
-
-
-
