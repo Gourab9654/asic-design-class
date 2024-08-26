@@ -1338,6 +1338,7 @@ To do so run the follwowing command
 ```bash
 gtkwave pre_synth_sim.vcd
 ```
+![Screenshot 2024-08-26 181442](https://github.com/user-attachments/assets/d1b5a147-9f76-4c50-a682-fd8bbec84a2c)
 The following diagram contains:-
 - clk_Gour: This is the clock input to the RISC-V core.
 - reset: This is the input reset signal to the RISC-V core.
