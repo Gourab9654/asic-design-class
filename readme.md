@@ -1345,4 +1345,6 @@ The following diagram contains:-
 
 ![Screenshot 2024-08-26 160001](https://github.com/user-attachments/assets/c1757704-c42b-4463-97f2-10d09434f87e)
 
+TLV waveforms as generated from MakerChip IDE
+![Screenshot 2024-08-26 160915](https://github.com/user-attachments/assets/12901fbf-ab42-45e7-b0ec-31279ed24fcd)
 </details>
