@@ -1278,7 +1278,7 @@ $br_target_pc[31:0] = $pc +$imm;
 ![Screenshot 2024-08-21 130349](https://github.com/user-attachments/assets/3d7c1b0a-1748-4fb5-8142-931e9e7dfe97)
 
 **The Sum  accumulated in R14 register completed in 58 cycles**
-
+![Screenshot 2024-08-26 160915](https://github.com/user-attachments/assets/ff2dcb0f-4334-41f4-9691-9ea38d138e3a)
 **clock as clk_gour**
 ![Screenshot 2024-08-22 105043](https://github.com/user-attachments/assets/f4cd9bae-d1b5-441b-afb0-5c840f1e117c)
 
