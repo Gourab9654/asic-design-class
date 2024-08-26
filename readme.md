@@ -1287,9 +1287,56 @@ $br_target_pc[31:0] = $pc +$imm;
 <details>
 <summary> Assignment 7</summary>
 <br>
+## Conversion from TLV into Verilog using Sandpiper-SaaS compiler.Following the conversion, pre-synthesis simulations will be conducted using the GTKWave simulator to verify the design.
+
+### Step-by-Step Procedure:
+
+1. **Install Required Packages:**
+Begin by installing the necessary packages using pip:
+```bash
+pip3 install pyyaml click sandpiper-saas
+```
+2. **Clone the github repo:** 
+clone this repo containing VSDBabySoC design files and testbench. Move into the VSDBabySoc directory
+```bash
+git clone https://github.com/manili/VSDBabySoC.git
+cd VSDBabySoc
+```
+
+3. **Replace the rvmyth.tlv file in the VSDBabySoC Directory:** 
+replace in src/module with the rvmth.tlv.
+
+4. **Convert .tlv to .v using converter:**
+Now we have written the code in TL-Verilog .tlv which is a high level language and we want to convert into low level verilog that is to translate .tlv definition of rvmyth into .v definition. To do so Run the following command as follows
+
+```bash
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
+
+4. **Make the pre_synth_sim.vcd:**
+We will create the pre_synth_sim.vcd by running the following command
+```bash
+make pre_synth_sim
+```
+The result of the simulation i.e the pre_synth_sim.vcd will be stored in the output/pre_synth_sim directory
 
 
+5 .**Now to compile and simulate RISC-V design run the following code:**
+To compile and simulate vsdbabysoc design.
 
+```bash
+iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+cd output
+./pre_synth_sim.out
+```
+To generate pre_synth_sim.vcd file,which is our simulation waveform file.
+
+
+6. **To open the Simulation file in gtkwave tool:**
+To do so run the follwowing command 
+```bash
+gtkwave pre_synth_sim.vcd
+```
 
 
 </details>
