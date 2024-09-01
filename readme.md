@@ -1342,7 +1342,7 @@ gtkwave pre_synth_sim.vcd
 The following diagram contains:-
 - clk_Gour: This is the clock input to the RISC-V core.
 - reset: This is the input reset signal to the RISC-V core.
-- OUT[9:0]: This is the 10-bit output [9:0] OUT port of the RISC-V core. This port comes from the RISC-V register #14, originally.
+- OUT[9:0]: This is the 10-bit output [9:0] OUT port of the RISC-V core, coming from RISC-V register #14, originally.
 
 ![Screenshot 2024-08-26 160001](https://github.com/user-attachments/assets/c1757704-c42b-4463-97f2-10d09434f87e)
 
