@@ -1380,15 +1380,14 @@ gtkwave pre_synth_sim.vcd
 
 The above process has been executed by me in the following way
 
-![Screenshot from 2024-08-31 18-24-12](https://github.com/user-attachments/assets/780965ae-5145-4cdc-b61b-9bee7bf055be)
-
+![Screenshot from 2024-09-01 14-36-34](https://github.com/user-attachments/assets/d8e12fb0-66f8-494f-8320-67cf5cf0b868)
 
 
 
 The output of the above code is as follows:-
 
 
-![Screenshot from 2024-09-01 14-36-34](https://github.com/user-attachments/assets/d8e12fb0-66f8-494f-8320-67cf5cf0b868)
+
 
 
 
