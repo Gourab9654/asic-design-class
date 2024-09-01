@@ -1349,3 +1349,47 @@ The following diagram contains:-
 TLV waveforms as generated from MakerChip IDE
 ![Screenshot 2024-08-26 160915](https://github.com/user-attachments/assets/12901fbf-ab42-45e7-b0ec-31279ed24fcd)
 </details>
+<details>
+<summary> Assignment 8</summary>
+<br>
+
+## Addition of Peripherals to convert the Digital output to analog output using DAC and PLL
+
+ In this assignment we are adding two peripherals to convert the digital output to the analog output namely PLL and DAC. 
+ 
+ - **Phase locked loop:-** The crystal oscillator present on the board is capable of giving a clock of frequency between 12 - 20 MHZ. The processor operates at frequency near 100MHZ and thus we need an IP/Peripheral to convert this low frequency clock to a high frequency clock. Here the PLL comes into picture. The input to the PLL is the crystal oscillator clock and returns a high frequency clock to our risc v core. This clock is then appended by my name CPU_clk_omkar_a0.
+ - **Digital to Analog Converter:-** The processor works with digital input but we transmit or receive signals in analog form. So in order to convert the digital signal in our risc v core to analog signal we are using the digital to analog converter IP.
+
+Commands used to run the rvmyth.v file
+
+```bash
+iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
+```
+
+After this we dump the ./pre_synth_sim.out file to create the .vcd file using the following command
+
+```bash
+./pre_synth_sim.out
+```
+
+We then run this .vcd file on gtkwave to observe the output
+
+```bash
+gtkwave pre_synth_sim.vcd
+```
+
+The above process has been executed by me in the following way
+
+![Screenshot from 2024-08-31 18-24-12](https://github.com/user-attachments/assets/780965ae-5145-4cdc-b61b-9bee7bf055be)
+
+
+
+
+The output of the above code is as follows:-
+
+
+![Screenshot from 2024-08-31 17-58-40](https://github.com/user-attachments/assets/8f2dc1f8-8e31-4f48-a163-f2109e422d71)
+
+
+
+</details>
