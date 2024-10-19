@@ -2037,5 +2037,750 @@ endmodule
 
     
   </details>
+<details>
+	  <summary>Day 3:</summary>
+Optimization of Various Designs
 
+<li>
+	Design infers 2 input AND Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check.v
+4. synth -top opt_check
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+5. Removes unused or redundant logic in the design and purges any dangling wires or gates.
+ 
+```
+//Design
+module opt_check(input a, input b, output y);
+	assign y = a?b:0;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/3d6a54bf-3ec3-4095-a20a-1f7862c3ca32)
+
+![image](https://github.com/user-attachments/assets/fcb82f85-0790-451b-90d6-4c30e2794809)
+
+![image](https://github.com/user-attachments/assets/b40e05e1-29db-44eb-a7b3-f92fb600f90a)
+
+</li>
+
+<li>
+	Design infers 2 input OR Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check2.v
+4. synth -top opt_check2
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+```
+//Design
+module opt_check2(input a, input b, output y);
+	assign y = a?1:b;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/9c69e45d-e424-4be4-9e0e-971e88f7ba74)
+
+![image](https://github.com/user-attachments/assets/45223852-6776-4739-a70e-b0d96e3686b4)
+
+![image](https://github.com/user-attachments/assets/68b48765-8b90-4cf9-a1f0-66615b9c08bd)
+
+</li>	
+
+<li>
+	Design infers 3 input AND Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check3.v
+4. synth -top opt_check3
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+```
+//Design
+module opt_check2(input a, input b, input c, output y);
+	assign y = a?(b?c:0):0;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/169f2928-8098-4907-8178-2e75e5843005)
+
+![image](https://github.com/user-attachments/assets/5d21faca-631d-4fb3-847f-2b741d26d39b)
+
+
+</li>
+
+<li>
+	Design infers 2 input XNOR Gate (3 input Boolean Logic)
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check4.v
+4. synth -top opt_check4
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+```
+//Design
+module opt_check2(input a, input b, input c, output y);
+	assign y = a ? (b ? ~c : c) : ~c;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/ba9df5f9-cdcc-47db-a390-3aee5b93fe1d)
+
+![image](https://github.com/user-attachments/assets/eda292b5-e49b-4754-8fcf-2d8cd6ffa09a)
+
+![image](https://github.com/user-attachments/assets/c417d6af-feda-4062-9962-76bbbdaaf495)
+
+</li>
+
+<li>
+	Multiple Module Optimization-1
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_module_opt.v
+4. synth -top multiple_module_opt
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+```
+//Design
+
+module sub_module1(input a, input b, output y);
+	assign y = a & b;
+endmodule
+
+module sub_module2 (input a, input b output y);
+	assign y = a^b;
+endmodule
+
+module multiple_module_opt(input a, input b input c, input d output y);
+	wire n1,n2, n3;
+
+	sub_module1 U1 (.a(a), .b(1'b1), .y(n1));
+	sub_module2 U2 (.a(n1), .b(1'b0), .y(n));
+	sub_module2 U3 (.a(b), .b(d), .y(n3));
+
+	assign y = c | (b & n1);
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/88629e12-376e-4c2a-80b0-48ed974a0c34)
+
+![image](https://github.com/user-attachments/assets/5ef44a01-5ebc-47ba-a633-f596bbfad2e0)
+
+</li>
+
+<li>
+	Multiple Module Optimization-2
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_module_opt2.v
+4. synth -top multiple_module_opt2
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+```
+//Design
+module sub_module(input a input b output y);
+	assign y = a & b;
+endmodule
+
+module multiple_module_opt2(input a, input b input c, input d, output y);
+	wire n1,n2, n3;
+
+	sub_module U1 (.a(a), .b(1'b0), y(n));
+	sub_module U2 (.a(b), .b(c), .y(n2));
+	sub_module U3 (.a(n2), .b(d), .y(n));
+	sub_module U4 (.a(n3), .b(n1), .y(y));
+endmodule
+```
+
+<li>
+	D-Flipflop Constant 1 with Asynchronous Reset (active low)
+	
+```
+iverilog dff_const1.v tb_dff_const1.v
+./a.out
+gtkwave tb_dff_const1.vcd
+```
+
+```
+//Design
+module dff_const1(input clk, input reset, output reg q); 
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+endmodule
+//Testbench
+module tb_dff_const1; 
+	reg clk, reset;
+	wire q;
+
+	dff_const1 uut (.clk(clk),.reset(reset),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_const1.vcd");
+		$dumpvars(0,tb_dff_const1);
+		// Initialize Inputs
+		clk = 0;
+		reset = 1;
+		#3000 $finish;
+	end
+
+	always #10 clk = ~clk;
+	always #1547 reset=~reset;
+endmodule
+```
+ 
+![image](https://github.com/user-attachments/assets/02b17971-01cb-4fc4-8315-21f9e17fa47d)
+
+![image](https://github.com/user-attachments/assets/c5545f8c-5036-446e-94e6-64a6f177ea99)
+
+From the waveform, it can be observed that the Q output is always high when reset is zero, and reset doesn't depend on clock edge.
+  
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const1.v
+4. synth -top dff_const1
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/10affe8a-44c6-4e2b-a861-5239a7fc891f)
+
+![image](https://github.com/user-attachments/assets/b1c25388-b970-4884-aaac-5ac1eee3dbf0)
+
+</li>
+
+<li>
+	D-Flipflop Constant 2 with Asynchronous Reset (active high)
+
+```
+iverilog dff_const2.v tb_dff_const2.v
+./a.out
+gtkwave tb_dff_const2.vcd
+```
+
+```
+//Design
+module dff_const2(input clk, input reset, output reg q); 
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+endmodule
+//Testbench
+module tb_dff_const2; 
+	reg clk, reset;
+	wire q;
+
+	dff_const2 uut (.clk(clk),.reset(reset),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_const1.vcd");
+		$dumpvars(0,tb_dff_const1);
+		// Initialize Inputs
+clk = 0;
+		reset = 1;
+		#3000 $finish;
+	end
+
+	always #10 clk = ~clk;
+	always #1547 reset=~reset;
+endmodule
+```
+ 
+![image](https://github.com/user-attachments/assets/a16f3a0c-92cf-4c77-bb2e-d85fac9a92e0)
+
+![image](https://github.com/user-attachments/assets/144e8a14-8939-4dd4-95a0-12ac6c06f4f3)
+
+From the waveform, it can be observed that the Q output is always high irrespective of reset.
+  
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const2.v
+4. synth -top dff_const2
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/8d5c6e91-e19a-4c5b-8c40-860f7f03b0b2)
+
+![image](https://github.com/user-attachments/assets/042aefa3-f668-44c8-af58-a847229745fd)
+
+</li>
+
+<li>
+	D-Flipflop Constant 3 with Asynchronous Reset (active low)
+
+```
+//Design
+module dff_const3(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b0;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const3.v
+4. synth -top dff_const3
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/1af1fed7-1bdb-4322-a181-e86dc215895b)
+
+![image](https://github.com/user-attachments/assets/d3060b67-555b-497c-8fea-998b09aadbac)
+
+This module defines a D flip-flop, for a positive edge of reset, q is set to 1 and q1 is set to 0. On each clock cycle, q1 is set to 1, and q is updated with the value of q1.
+
+
+When synthesized, the design will result in a flip-flop where q becomes 1 after the first clock cycle post-reset and stays 1 afterward.
+
+</li>
+
+<li>
+	D-Flipflop Constant 4 with Asynchronous Reset (active high)
+
+```
+//Design
+module dff_const4(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b1;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const4.v
+4. synth -top dff_const4
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/cc66ffbe-41bd-4586-a380-e998318b0700)
+
+![image](https://github.com/user-attachments/assets/8c71b1d1-f523-4d79-ae2f-ed1bdbd72794)
+
+This module defines a D flip-flop that sets both q and q1 to 1 on a positive edge of reset. On each clock cycle, q1 remains 1, and q is updated with the value of q1 (which is always 1).
+
+When synthesized, the design will result in a flip-flop where q is always 1, regardless of the reset or clock state.
+
+</li>
+
+<li>
+	D-Flipflop Constant 5 with Asynchronous Reset
+
+```
+//Design
+module dff_const5(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b0;
+			q1 <= 1'b0;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_const5.v
+4. synth -top dff_const5
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/a9a40c85-1617-41fd-a020-30be33af4883)
+
+![image](https://github.com/user-attachments/assets/20961f54-39d7-469f-9950-9a753ba71660)
+
+This module defines a D flip-flop that resets both q and q1 to 0 on a positive edge of reset. On each clock cycle, it sets q1 to 1 and then updates q with the value of q1 (which will always be 1 after the first cycle).
+
+When synthesized, the design will result in a flip-flop where q is always 1 after the first clock cycle post-reset.
+
+</li>
+
+<li>
+	Counter Optimization 1:
+
+```
+//Design	
+module counter_opt (input clk, input reset, output q);
+	reg [2:0] count;
+	assign q = count[0];
+	
+	always @(posedge clk,posedge reset)
+	begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+	end
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog counter_opt.v
+4. synth -top counter_opt
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/a5754bb9-dd7c-41e8-8893-1d705f3a9536)
+
+![image](https://github.com/user-attachments/assets/e8871085-5083-4bcc-81a2-9c67b0eba6e4)
+ 
+</li>
+
+<li>
+	Counter Optimization 2:
+
+```
+//Design	
+module counter_opt2 (input clk, input reset, output q);
+	reg [2:0] count;
+	assign q = (count[2:0] == 3'b100);
+	
+	always @(posedge clk,posedge reset)
+	begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+	end
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog counter_opt2.v
+4. synth -top counter_opt2
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+```
+
+![image](https://github.com/user-attachments/assets/1915bab8-3075-4ba7-bfa3-2aa0e2b9184e)
+
+![image](https://github.com/user-attachments/assets/5ed4c2ef-3367-4499-a9cc-900694e12fcb)
+ 
+</li>
+
+</li>
+
+  </details>
+
+  <details>
+	  <summary>Day 4:</summary>
+<li>
+	Design of 2x1 MUX using Ternary Operator:
+
+```
+//Design
+module ternary_operator_mux(input i0, input i1, input sel, output y);
+	assign y = sel?i1:i0;
+endmodule
+```
+
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+These commands perform iverilog and GTKWave simulation.
+
+![image](https://github.com/user-attachments/assets/388e8b04-2b11-4e3a-9d7a-9d14a9012956)
+
+![image](https://github.com/user-attachments/assets/666392dd-07a6-4574-9a14-3e1e6077ccf3)
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog ternary_operator_mux.v
+4. synth -top ternary_operator_mux
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr ternary_operator_mux_net.v
+8. !gvim ternary_operator_mux_net.v
+9. show
+```
+
+```
+//Generated Netlist
+module ternary_operator_mux(i0, il, sel, y);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	wire _3_;
+	input i0; wire i0;
+	input il; wire il;
+	input sel; wire sel;
+	output y; wire y;
+	
+	sky130_fd_sc_hd_mux2_1 _4_ (.AO(_0_),.A1(_1_),.S(_2_),.X(_3_));
+
+	assign _0_ = i0;
+	assign _1_ = il;
+	assign _2_ = sel;
+	assign y = _3_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/5ef7e02d-7804-41dd-b797-565d7d1e0cf9)
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+![image](https://github.com/user-attachments/assets/2609947f-a356-4d6b-a7c5-7891464ec069)
+
+![image](https://github.com/user-attachments/assets/b7ddc329-1778-439d-860e-6e6e9e20afc9)
+
+These waveforms correspond to the GATE LEVEL SYNTHESIS for the Ternary Operator MUX.
+
+</li>	
+
+<li>
+	Design of a Bad 2x1 MUX:
+
+```
+//Design
+module bad_mux(input i0, input i1, input sel, output reg y);
+	always@(sel)
+	begin
+		if(sel)
+			y <= i1;
+		else
+			y <= i0;
+	end
+endmodule
+```
+
+```
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![image](https://github.com/user-attachments/assets/116638fb-2dbd-46ce-aaae-b1bd6e3d59c4)
+
+![image](https://github.com/user-attachments/assets/c236a53d-986b-416e-97b2-61626896808e)
+
+From the waveform it can be observed that the output y changes only when there is a change in select line, completely ignoring the change in i0 and i1, which should also change the output y. Thus, this design is that of a bad MUX.
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog bad_mux.v
+4. synth -top bad_mux
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr bad_mux_net.v
+8. !gvim bad_mux_net.v
+9. show
+```
+
+```
+//Generated Netlist
+module bad_mux(i0, il, sel, y);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	wire _3_;
+	input i0; wire i0;
+	input il; wire il;
+	input sel; wire sel;
+	output y; wire y;
+	
+	sky130_fd_sc_hd_mux2_1 _4_ (.AO(_0_),.A1(_1_),.S(_2_),.X(_3_));
+
+	assign _0_ = i0;
+	assign _1_ = il;
+	assign _2_ = sel;
+	assign y = _3_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/cc266d85-8e21-49d1-843c-96167c8ec292)
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![image](https://github.com/user-attachments/assets/2609947f-a356-4d6b-a7c5-7891464ec069)
+
+![image](https://github.com/user-attachments/assets/b7ddc329-1778-439d-860e-6e6e9e20afc9)
+
+These waveforms correspond to the GATE LEVEL SYNTHESIS for the Bad MUX.
+
+</li>
+
+<li>
+	Blocking Caveat:
+
+```
+//Design
+module blocking_caveat(input a, input b, input c, output reg d);
+	reg x;
+
+	always@(*)
+	begin
+		d = x & c;
+		x = a | b;
+	end
+endmodule
+```
+
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![image](https://github.com/user-attachments/assets/6811ccd8-9db9-436c-930f-6b50382c6831)
+
+![image](https://github.com/user-attachments/assets/daf727a1-8d0c-4e5e-b626-71167015f194)
+
+![image](https://github.com/user-attachments/assets/1ed038db-69e3-4f36-856b-964fbac274e9)
+
+
+As depicted by the purple box in the waveform, when A and B go zero, the OR gate output should be zero (X equal to zero), and the AND gate output should also be zero (same as D output). But, the AND gate input of X takes the previous value of A|B equal to one, based on the design created by the blocking statement, hence the discrepancy in the output.
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog blocking_caveat.v
+4. synth -top blocking_caveat
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. write_verilog -noattr blocking_caveat_net.v
+8. !gvim blocking_caveat_net.v
+9. show
+```
+
+```
+//Generated Netlist
+module blocking_caveat(a,b,c,d);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	wire _3_;
+	wire _4_;
+	input a; wire a;
+	input b; wire b;
+	input c; wire c;
+	input d; wire d;
+	output d; wire d;
+	
+	sky130_fd_sc_hd__o21a_1 _5_ (.A1(_2_),.A2(_1_),.B1(_3_),.X(_4_));
+
+	assign _2_ = b;
+	assign _1_ = a;
+	assign _3_ = c;
+	assign d = _4_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/c6303c2a-5344-4e36-8250-3c5515c08c76)
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![image](https://github.com/user-attachments/assets/f1c71b28-c316-4250-9f23-d49187985694)
+
+![image](https://github.com/user-attachments/assets/59ae3cd0-be44-4689-a71b-d851209aa5b6)
+
+These waveforms correspond to the GATE LEVEL SYNTHESIS for the Blocking Caveat.
+
+</li>
+
+  </details>
 </details>
