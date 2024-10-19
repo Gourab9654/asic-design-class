@@ -1474,14 +1474,14 @@ We can observe the list of files present in the directory.
 	  Introduction to Yosys: This tutorial involved the use of Yosys for synthesising the design we created in Verilog, viewing its netlists and the cells that are generated for the purpose of creating the circuit. The following commands are used:
 
    ```
-1. yosys
-2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-3. read_verilog good_mux.v
-4. synth -top good_mux
-5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-6. show
-7. write_verilog -noattr good_mux_netlist.v
-8. gvim good_mux_netlist.v
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog good_mux.v
+synth -top good_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr good_mux_netlist.v
+!gvim good_mux_netlist.v
   ```
 
 1. Opens Yosys Tool
