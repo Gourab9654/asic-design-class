@@ -1398,6 +1398,11 @@ The output of the above code is as follows:-
 <summary> Assignment 9</summary>
 	
 ## RTL design using Verilog with SKY130 Technology
+Simulator is a tool used to check if it adheres to the designed specifications by simualating the code. Simulator looks for the changes on the input signals and upon change to the input the output is evaluated. RTL design is the Verilog code that implements a circuit. To verify it, a testbench is written and simulated using Icarus Verilog. The VCD(Value Change Dump) file generated is viewed using GTKWave to debug and verify the design's functionality. GTKWave allows users to load and inspect waveforms generated during the simulation, helping them understand signal interactions, timing relationships, and overall circuit behavior.
+
+The below is the Iverilog based Simulation Flow
+
+![image](https://github.com/user-attachments/assets/7da43121-8525-4e69-9543-694f9b843260)
  <details>
 	  <summary>Initial Setup</summary>
 	 Enter the following commands in the Ubuntu terminal as depicted in the screenshot
