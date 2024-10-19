@@ -1411,7 +1411,7 @@ The below is the Iverilog based Simulation Flow
 sudo -i
 sudo apt-get install git
 ls
-cd /home
+cd /home /gourab
 mkdir VLSI
 cd VLSI
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
@@ -2559,7 +2559,7 @@ endmodule
 	  <summary>Day 4:</summary>
 <li>
 	Design of 2x1 MUX using Ternary Operator:
-
+	
 ```
 //Design
 module ternary_operator_mux(input i0, input i1, input sel, output y);
