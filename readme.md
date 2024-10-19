@@ -1394,3 +1394,648 @@ The output of the above code is as follows:-
 
 
 </details>
+<details>
+<summary> Assignment 9</summary>
+	
+## RTL design using Verilog with SKY130 Technology
+ <details>
+	  <summary>Initial Setup</summary>
+	 Enter the following commands in the Ubuntu terminal as depicted in the screenshot
+	  
+```
+sudo -i
+sudo apt-get install git
+ls
+cd /home/aditya
+mkdir VLSI
+cd VLSI
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ls
+```
+![image](https://github.com/user-attachments/assets/8777ca74-07c7-4065-a1af-4e24337f044d)
+
+![image](https://github.com/user-attachments/assets/9ffbc965-2be0-46d4-8ebf-d7d2d571d8fd)
+
+We can observe the list of files present in the directory. 
+
+![image](https://github.com/user-attachments/assets/6f4c562f-d2dc-4535-ba26-410d2282d64b)
+
+</details>
+ <details>
+	  <summary>Day 1:</summary>
+		  
+  <li>
+	  Introduction to iverilog and GTKWave: This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave.
+	  
+	
+      ![image](https://github.com/user-attachments/assets/ae5b3203-97fc-48df-9c8d-e906ab818aeb)
+   	  
+      ![image](https://github.com/user-attachments/assets/d0f40acb-90b8-4376-83c7-2e02c1af1424)
+
+  ```
+  //Design 
+  module good_mux (input i0, input i1, input sel, output reg y);
+	  always@(*)
+	  begin
+	  	if(sel)
+			y<=i1;
+		else
+			y<=i0;
+	  end
+  endmodule
+  //Testbench
+  module tb_good_mux;
+	reg i0,i1,sel;
+	wire y;
+
+     	good_mux uut(.sel(sel),.i0(i0),.i1(i1),.y(y));
+
+	initial begin
+		$dumpfile("tb_good_mux.vcd");
+		$dumpvars(0,tb_good_mux);
+		sel=0;
+		i0=0;
+		i1=0;
+		#300 $finish;
+	end
+	always #75 sel = ~sel;
+	always #10 i0 = ~i0;
+	always #55 i1 = ~i1;
+  endmodule
+  ```
+  </li>
+  <li>
+	  Introduction to Yosys: This tutorial involved the use of Yosys for synthesising the design we created in Verilog, viewing its netlists and the cells that are generated for the purpose of creating the circuit. The following commands are used:
+
+   ```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog good_mux.v
+4. synth -top good_mux
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr good_mux_netlist.v
+8. gvim good_mux_netlist.v
+  ```
+
+1. Opens Yosys Tool
+2. Reads the technology library file (Liberty format) required for synthesis using the specified path.
+3. Loads the Verilog file good_mux.v for synthesis.
+4. Performs synthesis on the design, with good_mux as the top module.
+5. Optimizes the synthesized design using the ABC tool and the specified technology library.
+6. Displays the synthesized design as a schematic.
+7. Writes the synthesized netlist to the file good_mux_netlist.v without attributes.
+8. Opens the netlist file good_mux_netlist.v in the gvim text editor.
+
+```
+//Generated Netlist
+module good_mux(i0, il, sel, y);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	wire_3_;
+	input i0; wire i0;
+	input il; wire il;
+	input sel; wire sel;
+	output y; wire y;
+	
+	sky130_fd_sc_hd__mux2_1 _4_ (.AO(_0_),.A1(_1_),.S(_2_),.X(_3_));
+	
+	assign_0_ = 10;
+	assign 1 = il;
+	assign 2 = sel;
+	assign y = _3_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/e62bdc94-a02c-453e-adf2-99e7047e66b7)
+
+![image](https://github.com/user-attachments/assets/3621042d-9789-4bb3-b66f-71f2f03df78b)
+
+![image](https://github.com/user-attachments/assets/7a2dba22-e0a8-4575-88af-f3316952b6f2)
+
+![image](https://github.com/user-attachments/assets/77e9b19e-365c-498a-b23a-55f9a174c580)
+
+![image](https://github.com/user-attachments/assets/7ffa1ad6-3994-46cc-885a-eb5b5ddce25b)
+
+![image](https://github.com/user-attachments/assets/03d0b4d4-42be-498c-82e1-020a2ab56fae)
+
+![image](https://github.com/user-attachments/assets/6fd94223-82b3-4997-a83a-db94a6508217)
+
+![image](https://github.com/user-attachments/assets/4a42f1e0-786f-49be-af5f-7fd8f7f438ad)
+
+![image](https://github.com/user-attachments/assets/0ecdb6cf-cf44-4cec-8732-001488c982da)
+
+![image](https://github.com/user-attachments/assets/94c76080-b1fe-4c7c-86af-7782b39101a0)
+
+![image](https://github.com/user-attachments/assets/b7eafdaf-61d3-45ad-b09f-63c3f917c343)
+
+  </li>
+  
+  </details>
+
+  <details>
+	  <summary>Day 2:</summary>
+  
+<li>
+	   Yosys Synthesis for Multiple Modules: This tutorial involved the synthesis of a design file that has more than one module.
+
+```
+//Design
+
+module sub_module2 (input a, input b, output y);
+	assign y = a | b;
+endmodule
+
+module sub_module1 (input a, input b, output y);
+	assign y = a&b;
+endmodule
+
+module multiple_modules (input a, input b, input c, output y);
+	wire net1;
+	sub_module1 u1(.a(a),.b(b),.y(net1)); //net1 = a&b
+	sub_module2 u2(.a(net1),.b(c),.y(y)); //y = netic,ie y = a&b + c;
+endmodule
+```
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_modules.v
+4. synth -top multiple_modules
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr multiple_modules_netlist.v
+8. gvim multiple_modules_netlist.v
+```
+
+   </li>
+
+```
+//Generated Netlist
+module multiple_modules (a, b, c, y);
+	input a; wire a;
+	input b; wire b;
+	input c; wire c;
+	wire net1;
+	output y; wire y;
+
+	sub_modulel ul (.a(a),.b(b),.y(net1));
+	sub_module2 u2 (.a(net1),.b(c),.y (y));
+endmodule
+
+module sub_modulel (a, b, y);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	input a; wire a;
+	input b; wire b;
+	output y; wire y;
+	
+	sky130_fd_sc_hd_and2_0_3_(.A(_1_),.B(_0_),.X(_2_));
+	
+	assign _1_ = b;
+	assign _0_ = a;
+	assign y = _2_;
+endmodule
+
+module sub_module2 (a, b, y);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	input a; wire a;
+	input b; wire b;
+	output y;wire y;
+
+	sky130_fd_sc_hd_or2_0_3_ (A(_1_), .B( 0 ), .X( 2 ));
+	assign _1_ = b;
+	assign _0_ = a;
+	assign y = _2_;
+endmodule
+```
+
+
+![image](https://github.com/user-attachments/assets/d4e15e80-521d-4421-b403-5c539c6f6419)
+
+![image](https://github.com/user-attachments/assets/f8ecbbc6-1f71-4a49-a3cd-d06bd4760b62)
+
+![image](https://github.com/user-attachments/assets/4b63f6e1-23d2-42f5-8627-fdb4d697382e)
+
+![image](https://github.com/user-attachments/assets/7e9b0cd5-09b5-48cd-93a2-5d55912a9d50)
+
+<li>
+	Use of Module Level Synthesis: This method is preferred when multiple instances of same module are used. The synthesis is carried out once and is replicate multiple times, and the multiple instances of the same module are stitched together in the top module. This method is helpful when making use of divide and conquer algorithm
+
+ ```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_modules.v
+4. synth -top sub_module1
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+```
+![image](https://github.com/user-attachments/assets/16d03a83-5c76-4f37-8d16-1f61caa6b9cc)
+
+![image](https://github.com/user-attachments/assets/8830a132-281b-41d7-8a91-07650d70e43a)
+
+![image](https://github.com/user-attachments/assets/a206cede-1922-4e6b-8e1d-56d824eea294)
+
+</li>
+
+<li>
+	Use of Flattening: Merges all hierarchical modules in the design into a single module to create a flat netlist.
+ ```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_modules.v
+4. synth -top multiple_modules
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. flatten
+7. show
+8. write_verilog -noattr multiple_modules_netlist.v
+9. gvim multiple_modules_netlist.v
+```
+
+```
+//Generated Netlist
+module multiple_modules (a, b, c, y);
+	wire _0_; wire _1_;
+	wire _2_; wire _3_;
+	wire _4_; wire _5_;
+	input a; wire a;
+	input b; wire b;
+	input c; wire c;
+	wire net1;
+	wire \ul.a;
+	wire \ul.b;
+	wire \ul.y;
+	wire \u2.a;
+	wire \u2.b;
+	wire \u2.y;
+	output y; wire y;
+	
+	sky130_fd_sc_hd_and2_0 _6_ (.A(1),.B(0),.X(_2_));
+	sky130_fd_sc_hd_or2_0 _7_(.A(4),.B(_3_),.X(5));
+
+	assign 4 = \u2.b ;
+	assign 3 = \u2.a ;
+	assign \u2.y = _5_;
+	assign \u2.a = net1;
+	assign \u2.b = c;
+	assign y = \u2.y;
+	assign 1 = \u1.b;
+	assign 0 = \ul.a ;
+	assign \ul.y = _2_;
+	assign \ul.a = a;
+	assign \u1.b = b;
+	assign net1 = \u1.y;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/661565e9-fa5b-4821-ac2f-10bd779b2d2f)
+
+![image](https://github.com/user-attachments/assets/8f88f1ff-6c93-4e3b-a896-544c019cf397)
+
+</li>
+
+<li>
+	Simulation of D-Flipflop using Iverilog and GTKWave: Performed simulations for 3 types of D-Flipflops - Asynchronous Reset, Asynchronous Set and Synchronous Reset.
+
+Asynchronous Reset
+
+```
+iverilog dff_asyncres.v tb_dff_asyncres.v
+./a.out
+gtkwave tb_dff_asyncres.vcd
+```
+
+```
+//Design
+module dff_asyncres(input clk, input async_reset, input d, output reg q);
+	always@(posedge clk, posedge async_reset)
+	begin
+		if(async_reset)
+			q <= 1'b0;
+		else
+			q <= d;
+	end
+endmodule
+//Testbench
+module tb_dff_asyncres; 
+	reg clk, async_reset, d;
+	wire q;
+	dff_asyncres uut (.clk(clk),.async_reset (async_reset),.d(d),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_asyncres.vcd");
+		$dumpvars(0,tb_dff_asyncres);
+		// Initialize Inputs
+		clk = 0;
+		async_reset = 1;
+		d = 0;
+		#3000 $finish;
+	end
+		
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 async_reset=~async_reset; 
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/27de48d3-f468-412e-9270-07c14601cecc)
+
+![image](https://github.com/user-attachments/assets/c460d114-b811-4ccc-b4f8-84e3402ebaf7)
+
+      From the waveform, it can be observed that the Q output changes to zero when the asynchronous reset is set high, independent of the positive/negative clock edge.
+
+Asynchronous Set
+
+```
+iverilog dff_async_set.v tb_dff_async_set.v
+./a.out
+gtkwave tb_dff_async_set.vcd
+```
+
+```
+//Design
+module dff_async_set(input clk, input async_set, input d, output reg q);
+	always@(posedge clk, posedge async_set)
+	begin
+		if(async_set)
+			q <= 1'b1;
+		else
+			q <= d;
+	end
+endmodule
+//Testbench
+module tb_dff_async_set; 
+	reg clk, async_set, d;
+	wire q;
+	dff_async_set uut (.clk(clk),.async_set (async_set),.d(d),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_async_set.vcd");
+		$dumpvars(0,tb_dff_async_set);
+		// Initialize Inputs
+		clk = 0;
+		async_set = 1;
+		d = 0;
+		#3000 $finish;
+	end
+		
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 async_set=~async_set; 
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/149d288a-97e1-43a8-8871-bedd91fb7bac)
+
+![image](https://github.com/user-attachments/assets/947cf6da-f236-4cea-b2e8-620fee2dfe78)
+
+From the waveform, it can be observed that the Q output changes to one when the asynchronous set is set high, independent of the positive/negative clock edge.
+
+Synchronous Reset
+
+```
+iverilog dff_syncres.v tb_dff_syncres.v
+./a.out
+gtkwave tb_dff_syncres.vcd
+```
+
+```
+//Design
+module dff_syncres(input clk, input sync_reset, input d, output reg q);
+	always@(posedge clk)
+	begin
+		if(sync_reset)
+			q <= 1'b0;
+		else
+			q <= d;
+	end
+endmodule
+//Testbench
+module tb_dff_syncres; 
+	reg clk, syncres, d;
+	wire q;
+	dff_asyncres uut (.clk(clk),.sync_reset (sync_reset),.d(d),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_syncres.vcd");
+		$dumpvars(0,tb_dff_syncres);
+		// Initialize Inputs
+		clk = 0;
+		sync_reset = 1;
+		d = 0;
+		#3000 $finish;
+	end
+		
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 sync_reset=~async_reset; 
+endmodule
+```
+      
+![image](https://github.com/user-attachments/assets/78430bfa-a730-4ef5-9d26-49e3517b7584)
+
+![image](https://github.com/user-attachments/assets/a8ca2d39-44d4-462d-9ab3-b9211dc6e758)
+
+From the waveform, it can be observed that the Q output changes to zero when the synchronous reset is set high, only at the positive clock edge.
+
+</li>
+
+<li>
+	Synthesis of D-Flipflop using Yosys: Synthesized 3 types of D-Flipflops - Asynchronous Reset, Asynchronous Set and Synchronous Reset.
+	
+Asynchronous Reset
+	
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_asyncres.v
+4. synth -top dff_asyncres
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+8. write_verilog -noattr dff_asyncres_netlist.v
+9. gvim dff_asyncres_netlist.v
+```
+
+```
+//Generated Netlist   		
+module dff_asyncres (clk, async_reset, d, q);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	input async_reset;
+	input clk;
+	input d;
+	output q;
+	
+	sky130_fd_sc_hd__clkinv_1 _3_ (.A(_0_),.Y(_1_));
+	sky130_fd_sc_hd__dfrtp_1 _4_ (.CLK(clk),.D(d),.RESET_B(_2_),.Q(q));
+	assign _0_ = async_reset;
+	assign _2_ = _1_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/6f67adf6-ebc1-49a4-b8b0-ae1a09f76897)
+
+![image](https://github.com/user-attachments/assets/20a15008-6b31-49e5-b2c4-9ae3d1bfdb55)
+
+![image](https://github.com/user-attachments/assets/d3723b64-5e45-4589-996b-20d327de7485)
+
+Asynchronous Set		
+  
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_async_set.v
+4. synth -top dff_async_set
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+8. write_verilog -noattr dff_async_set_netlist.v
+9. gvim dff_async_set_netlist.v
+```
+
+```
+//Generated Netlist   		
+module dff_async_set (clk, async_set, d, q);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	input async_set;
+	input clk;
+	input d;
+	output q;
+	
+	sky130_fd_sc_hd__clkinv_1 _3_ (.A(_0_),.Y(_1_));
+	sky130_fd_sc_hd__dfrtp_1 _4_ (.CLK(clk),.D(d),.RESET_B(_2_),.Q(q));
+	assign _0_ = async_set;
+	assign _2_ = _1_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/2e048513-b8cd-460a-972c-b119e13efef6)
+
+![image](https://github.com/user-attachments/assets/eb6a5cdd-911c-41b6-939e-5e35686ccd32)
+
+![image](https://github.com/user-attachments/assets/f37b4790-3647-4441-ad3f-466a34e98cd3)
+
+Synchronous Reset
+  
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog dff_syncres.v
+4. synth -top dff_syncres
+5. dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+7. show
+8. write_verilog -noattr dff_syncres_netlist.v
+9. gvim dff_syncres_netlist.v
+```
+
+```
+//Generated Netlist   		
+module dff_syncres (clk, sync_reset, d, q);
+	wire _0_;
+	wire _1_;
+	wire _2_;
+	input sync_reset;
+	input clk;
+	input d;
+	output q;
+	
+	sky130_fd_sc_hd__clkinv_1 _3_ (.A(_0_),.Y(_1_));
+	sky130_fd_sc_hd__dfrtp_1 _4_ (.CLK(clk),.D(d),.RESET_B(_2_),.Q(q));
+	assign _0_ = sync_reset;
+	assign _2_ = _1_;
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/18154798-941b-485a-964c-be8bba5e15de)
+
+![image](https://github.com/user-attachments/assets/77d3b495-0921-4eab-82c4-4c830914516c)
+
+![image](https://github.com/user-attachments/assets/c3b424e1-c096-47d8-92e1-c54265a7fd36)
+
+</li>
+
+<li>
+	Multiplication by 2: This tutorial, we get to know that specific multiplier hardware is not required for multiplication of a number by 2. It can simply be achieved by concatenating the number itself with a zero in the LSB.
+ 
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog mult_2.v
+4. synth -top mul2
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr mul2_net.v
+8. gvim mul2_net.v
+```
+
+```
+//Design
+module mul2(input [2:0]a, output [3:0]y);
+	assign y=a*2;
+endmodule
+```
+
+```
+//Generated Netlist
+module mul2(a,y);
+	input [2:0]a; wire [2:0]a;
+	output [3:0]y; wire [3:0]y;
+
+	assign y = {a,1'h0};
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/363e6e5f-f149-4aee-b099-5ac296d5a5f9)
+
+![image](https://github.com/user-attachments/assets/8ee2e9b1-2555-4bf6-a5f2-738a3df609f8)
+
+</li>
+
+<li>
+	Multiplication by 9: This tutorial, we get to know that specific multiplier hardware is not required for multiplication of a number by 9. It can simply be achieved by concatenating the number with itself.
+ 
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog mult_9.v
+4. synth -top mult9
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+7. write_verilog -noattr mul9_net.v
+8. gvim mul9_net.v
+```
+
+```
+//Design
+module mul2(input [2:0]a, output [5:0]y);
+	assign y=a*9;
+endmodule
+```
+
+```
+//Generated Netlist
+module mul9(a,y);
+	input [2:0]a; wire [2:0]a;
+	output [5:0]y; wire [5:0]y;
+
+	assign y = {a,a};
+endmodule
+```
+
+![image](https://github.com/user-attachments/assets/7c8bdc00-111c-45ac-88d2-cd7a2cf04fd1)
+
+![image](https://github.com/user-attachments/assets/c7eabb0a-48f5-417e-810c-928e4787ea87)
+
+</li>
+
+    
+  </details>
+
+</details>
