@@ -1527,7 +1527,7 @@ endmodule
 
 ![Screenshot from 2024-10-19 15-14-35](https://github.com/user-attachments/assets/7909d585-d794-4345-99e8-6cede3fde17d)
 
-![Screenshot from 2024-10-19 15-17-28](https://github.com/user-attachments/assets/7edf43f9-fc4c-463b-a9f8-984509bb70c3
+![Screenshot from 2024-10-19 15-17-28](https://github.com/user-attachments/assets/7edf43f9-fc4c-463b-a9f8-984509bb70c3)
 
 ![Screenshot from 2024-10-19 15-18-07](https://github.com/user-attachments/assets/e841cb82-7268-4181-b72f-892a875b882d)
 
