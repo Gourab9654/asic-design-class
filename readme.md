@@ -1411,7 +1411,7 @@ The below is the Iverilog based Simulation Flow
 sudo -i
 sudo apt-get install git
 ls
-cd /home /gourab
+cd /home/gourab
 mkdir VLSI
 cd VLSI
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
