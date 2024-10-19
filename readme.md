@@ -1418,13 +1418,10 @@ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ls
 ```
-![image](https://github.com/user-attachments/assets/8777ca74-07c7-4065-a1af-4e24337f044d)
-
-![image](https://github.com/user-attachments/assets/9ffbc965-2be0-46d4-8ebf-d7d2d571d8fd)
 
 We can observe the list of files present in the directory. 
 
-![image](https://github.com/user-attachments/assets/6f4c562f-d2dc-4535-ba26-410d2282d64b)
+![Screenshot from 2024-10-19 14-43-24](https://github.com/user-attachments/assets/b22d3e89-762e-4390-9841-2cd28ff3aeaf)
 
 </details>
  <details>
@@ -1434,9 +1431,9 @@ We can observe the list of files present in the directory.
 	  Introduction to iverilog and GTKWave: This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave.
 	  
 	
-![image](https://github.com/user-attachments/assets/ae5b3203-97fc-48df-9c8d-e906ab818aeb)
+![Screenshot from 2024-10-19 14-56-59](https://github.com/user-attachments/assets/67bf13c1-5d60-4625-a3c9-c37e06e14dfb)
    	  
-![image](https://github.com/user-attachments/assets/d0f40acb-90b8-4376-83c7-2e02c1af1424)
+![Screenshot from 2024-10-19 14-58-00](https://github.com/user-attachments/assets/c198a352-5b68-489b-a601-e30fbbdf9f7b)
 
   ```
   //Design 
@@ -1514,28 +1511,31 @@ module good_mux(i0, il, sel, y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/e62bdc94-a02c-453e-adf2-99e7047e66b7)
+![Screenshot from 2024-10-19 15-11-28](https://github.com/user-attachments/assets/c27eb3e6-1444-4c5e-ad1f-ac3a8bde3f47)
 
-![image](https://github.com/user-attachments/assets/3621042d-9789-4bb3-b66f-71f2f03df78b)
+![Screenshot from 2024-10-19 15-12-17](https://github.com/user-attachments/assets/9c5b47dd-af15-491c-ac25-51cb8810ebcc)
 
-![image](https://github.com/user-attachments/assets/7a2dba22-e0a8-4575-88af-f3316952b6f2)
+![Screenshot from 2024-10-19 15-12-25](https://github.com/user-attachments/assets/f01fab21-40cf-4268-be85-c7ad0eadfac1)
 
-![image](https://github.com/user-attachments/assets/77e9b19e-365c-498a-b23a-55f9a174c580)
+![Screenshot from 2024-10-19 15-12-30](https://github.com/user-attachments/assets/6a945dc7-0637-479d-bce6-4a1a34b3fc72)
 
-![image](https://github.com/user-attachments/assets/7ffa1ad6-3994-46cc-885a-eb5b5ddce25b)
+![Screenshot from 2024-10-19 15-12-39](https://github.com/user-attachments/assets/0a36a047-4090-4bfb-9a39-455f4ac8bd33)
 
-![image](https://github.com/user-attachments/assets/03d0b4d4-42be-498c-82e1-020a2ab56fae)
+![Screenshot from 2024-10-19 15-12-57](https://github.com/user-attachments/assets/8dd6bc7f-1328-43e5-9d26-b90aa0cdaa95)
 
-![image](https://github.com/user-attachments/assets/6fd94223-82b3-4997-a83a-db94a6508217)
+![Screenshot from 2024-10-19 15-13-09](https://github.com/user-attachments/assets/816a5c98-7cab-4717-bda8-7846c9d01b08)
 
-![image](https://github.com/user-attachments/assets/4a42f1e0-786f-49be-af5f-7fd8f7f438ad)
+![Screenshot from 2024-10-19 15-14-35](https://github.com/user-attachments/assets/7909d585-d794-4345-99e8-6cede3fde17d)
 
-![image](https://github.com/user-attachments/assets/0ecdb6cf-cf44-4cec-8732-001488c982da)
+![Screenshot from 2024-10-19 15-17-28](https://github.com/user-attachments/assets/7edf43f9-fc4c-463b-a9f8-984509bb70c3
 
-![image](https://github.com/user-attachments/assets/94c76080-b1fe-4c7c-86af-7782b39101a0)
+![Screenshot from 2024-10-19 15-18-07](https://github.com/user-attachments/assets/e841cb82-7268-4181-b72f-892a875b882d)
 
-![image](https://github.com/user-attachments/assets/b7eafdaf-61d3-45ad-b09f-63c3f917c343)
+![Screenshot from 2024-10-19 16-53-54](https://github.com/user-attachments/assets/baa7d5fd-d72c-4e7e-bdfa-ea8de5454bb5)
 
+![Screenshot from 2024-10-19 16-06-51](https://github.com/user-attachments/assets/f1d2674f-f14f-4f58-ae7f-25b2a056097e)
+
+![Screenshot from 2024-10-19 16-24-46](https://github.com/user-attachments/assets/78d46533-dab0-4882-a153-a9037d20b415)
   </li>
   
   </details>
