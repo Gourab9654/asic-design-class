@@ -1572,7 +1572,7 @@ endmodule
 5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 6. show
 7. write_verilog -noattr multiple_modules_netlist.v
-8. gvim multiple_modules_netlist.v
+8. !gvim multiple_modules_netlist.v
 ```
 
    </li>
@@ -1621,14 +1621,15 @@ endmodule
 ```
 
 
-![image](https://github.com/user-attachments/assets/d4e15e80-521d-4421-b403-5c539c6f6419)
+![Screenshot from 2024-10-20 00-18-44](https://github.com/user-attachments/assets/1358819b-aa3a-49df-ac14-772e20a18157)
 
-![image](https://github.com/user-attachments/assets/f8ecbbc6-1f71-4a49-a3cd-d06bd4760b62)
+![Screenshot from 2024-10-20 00-19-44](https://github.com/user-attachments/assets/fcc9546e-1421-44ec-97a8-da41347f4e18)
 
-![image](https://github.com/user-attachments/assets/4b63f6e1-23d2-42f5-8627-fdb4d697382e)
+![Screenshot from 2024-10-20 00-20-21](https://github.com/user-attachments/assets/66245a17-892a-4221-8c86-9ca2b96e7b12)
 
-![image](https://github.com/user-attachments/assets/7e9b0cd5-09b5-48cd-93a2-5d55912a9d50)
+![Screenshot from 2024-10-20 00-20-57](https://github.com/user-attachments/assets/4cefbd3b-1699-4b86-bb00-7202994a090b)
 
+![Screenshot from 2024-10-20 00-07-15](https://github.com/user-attachments/assets/bb638174-2d5a-4bc0-a7a6-217cc9232c18)
 <li>
 	Use of Module Level Synthesis: This method is preferred when multiple instances of same module are used. The synthesis is carried out once and is replicate multiple times, and the multiple instances of the same module are stitched together in the top module. This method is helpful when making use of divide and conquer algorithm
 
