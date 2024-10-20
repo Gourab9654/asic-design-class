@@ -2176,10 +2176,12 @@ module multiple_module_opt(input a, input b input c, input d output y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/88629e12-376e-4c2a-80b0-48ed974a0c34)
+![Screenshot from 2024-10-20 13-39-25](https://github.com/user-attachments/assets/eff942f7-5eec-4a39-9aa8-3b71891a5df8)
 
-![image](https://github.com/user-attachments/assets/5ef44a01-5ebc-47ba-a633-f596bbfad2e0)
 
+![Screenshot from 2024-10-20 13-40-34](https://github.com/user-attachments/assets/e27a1cda-d65f-4a4b-8c3c-aeffe538bb44)
+
+![Screenshot from 2024-10-20 13-40-53](https://github.com/user-attachments/assets/6f20feb6-10c5-42fd-b5f7-5ea01d6dc3a0)
 </li>
 
 <li>
@@ -2252,9 +2254,9 @@ module tb_dff_const1;
 endmodule
 ```
  
-![image](https://github.com/user-attachments/assets/02b17971-01cb-4fc4-8315-21f9e17fa47d)
+![Screenshot from 2024-10-20 13-44-14](https://github.com/user-attachments/assets/527a0166-d846-4131-a8c0-e7014b1eeb2b)
 
-![image](https://github.com/user-attachments/assets/c5545f8c-5036-446e-94e6-64a6f177ea99)
+![Screenshot from 2024-10-20 13-44-51](https://github.com/user-attachments/assets/ab2cfd0f-123d-4372-a89a-45e656176485)
 
 From the waveform, it can be observed that the Q output is always high when reset is zero, and reset doesn't depend on clock edge.
   
@@ -2267,10 +2269,9 @@ From the waveform, it can be observed that the Q output is always high when rese
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/10affe8a-44c6-4e2b-a861-5239a7fc891f)
+![Screenshot from 2024-10-20 13-47-03](https://github.com/user-attachments/assets/5f32f280-08c6-4d3e-a4db-b46237ff67bf)
 
-![image](https://github.com/user-attachments/assets/b1c25388-b970-4884-aaac-5ac1eee3dbf0)
-
+![Screenshot from 2024-10-20 13-47-22](https://github.com/user-attachments/assets/1d9d4114-44cd-4673-a9c3-c4babb82732a)
 </li>
 
 <li>
@@ -2314,10 +2315,9 @@ clk = 0;
 endmodule
 ```
  
-![image](https://github.com/user-attachments/assets/a16f3a0c-92cf-4c77-bb2e-d85fac9a92e0)
+![Screenshot from 2024-10-20 13-47-54](https://github.com/user-attachments/assets/917abe8b-085d-4eaa-9ed2-6f6f098f9938)
 
-![image](https://github.com/user-attachments/assets/144e8a14-8939-4dd4-95a0-12ac6c06f4f3)
-
+![Screenshot from 2024-10-20 13-48-25](https://github.com/user-attachments/assets/3d17fa5d-3135-43be-ac17-aa6e2423163d)
 From the waveform, it can be observed that the Q output is always high irrespective of reset.
   
 ```
@@ -2329,9 +2329,8 @@ From the waveform, it can be observed that the Q output is always high irrespect
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/8d5c6e91-e19a-4c5b-8c40-860f7f03b0b2)
-
-![image](https://github.com/user-attachments/assets/042aefa3-f668-44c8-af58-a847229745fd)
+![Screenshot from 2024-10-20 13-51-56](https://github.com/user-attachments/assets/bf4eb299-b590-4e3a-9482-47901535ff71)
+![Screenshot from 2024-10-20 13-50-35](https://github.com/user-attachments/assets/b53eaaf7-bdc5-409c-b528-96b96aaca217)
 
 </li>
 
