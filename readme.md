@@ -1625,6 +1625,8 @@ endmodule
 
 ![Screenshot from 2024-10-20 00-19-44](https://github.com/user-attachments/assets/fcc9546e-1421-44ec-97a8-da41347f4e18)
 
+![Screenshot from 2024-10-20 10-56-11](https://github.com/user-attachments/assets/b8894646-2dd2-4218-b0ae-a6480900cc99)
+
 ![Screenshot from 2024-10-20 00-20-21](https://github.com/user-attachments/assets/66245a17-892a-4221-8c86-9ca2b96e7b12)
 
 ![Screenshot from 2024-10-20 00-20-57](https://github.com/user-attachments/assets/4cefbd3b-1699-4b86-bb00-7202994a090b)
@@ -1641,12 +1643,7 @@ endmodule
 5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 6. show
 ```
-![image](https://github.com/user-attachments/assets/16d03a83-5c76-4f37-8d16-1f61caa6b9cc)
-
-![image](https://github.com/user-attachments/assets/8830a132-281b-41d7-8a91-07650d70e43a)
-
-![image](https://github.com/user-attachments/assets/a206cede-1922-4e6b-8e1d-56d824eea294)
-
+![Screenshot from 2024-10-20 00-21-53](https://github.com/user-attachments/assets/928fe246-1a6d-4ea1-9292-3c219723027d)
 </li>
 
 <li>
@@ -1699,10 +1696,9 @@ module multiple_modules (a, b, c, y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/661565e9-fa5b-4821-ac2f-10bd779b2d2f)
-
-![image](https://github.com/user-attachments/assets/8f88f1ff-6c93-4e3b-a896-544c019cf397)
-
+![Screenshot from 2024-10-20 00-24-13](https://github.com/user-attachments/assets/e033e09c-e4ab-4a2d-ad4b-38794444b2c8)
+![Screenshot from 2024-10-20 00-08-53](https://github.com/user-attachments/assets/fba372b6-5fb7-47ca-8b4e-41559fe8a291)
+![Screenshot from 2024-10-19 23-50-39](https://github.com/user-attachments/assets/7dd8e450-7e1f-45f2-91fd-f0f4c4230011)
 </li>
 
 <li>
