@@ -2554,9 +2554,9 @@ gtkwave tb_ternary_operator_mux.vcd
 
 These commands perform iverilog and GTKWave simulation.
 
-![image](https://github.com/user-attachments/assets/388e8b04-2b11-4e3a-9d7a-9d14a9012956)
+![Screenshot from 2024-10-20 14-47-41](https://github.com/user-attachments/assets/135af422-39af-4181-96cb-4cd570be26cb)
 
-![image](https://github.com/user-attachments/assets/666392dd-07a6-4574-9a14-3e1e6077ccf3)
+![Screenshot from 2024-10-20 14-48-07](https://github.com/user-attachments/assets/d9311642-5568-4b86-b387-06313afb4866)
 
 ```
 1. yosys
@@ -2591,7 +2591,7 @@ module ternary_operator_mux(i0, il, sel, y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/5ef7e02d-7804-41dd-b797-565d7d1e0cf9)
+![Screenshot from 2024-10-20 14-51-09](https://github.com/user-attachments/assets/ee242f1e-b4be-4490-9eec-c41c64a52603)
 
 ```
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
@@ -2599,9 +2599,9 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 gtkwave tb_ternary_operator_mux.vcd
 ```
 
-![image](https://github.com/user-attachments/assets/2609947f-a356-4d6b-a7c5-7891464ec069)
+![Screenshot from 2024-10-20 14-52-00](https://github.com/user-attachments/assets/24ec3204-b9b1-401a-8923-bf9d3bab757c)
 
-![image](https://github.com/user-attachments/assets/b7ddc329-1778-439d-860e-6e6e9e20afc9)
+![Screenshot from 2024-10-20 15-13-10](https://github.com/user-attachments/assets/84d3783d-83bb-41de-bba5-9d47657ef1dd)
 
 These waveforms correspond to the GATE LEVEL SYNTHESIS for the Ternary Operator MUX.
 
@@ -2629,9 +2629,8 @@ iverilog bad_mux.v tb_bad_mux.v
 gtkwave tb_bad_mux.vcd
 ```
 
-![image](https://github.com/user-attachments/assets/116638fb-2dbd-46ce-aaae-b1bd6e3d59c4)
-
-![image](https://github.com/user-attachments/assets/c236a53d-986b-416e-97b2-61626896808e)
+![Screenshot from 2024-10-20 15-03-49](https://github.com/user-attachments/assets/aee93f19-1fe0-4271-93a5-86bbada7acd9)
+![Screenshot from 2024-10-20 15-03-22](https://github.com/user-attachments/assets/009ae054-238f-41af-82db-5541626878ac)
 
 From the waveform it can be observed that the output y changes only when there is a change in select line, completely ignoring the change in i0 and i1, which should also change the output y. Thus, this design is that of a bad MUX.
 
@@ -2668,7 +2667,7 @@ module bad_mux(i0, il, sel, y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/cc266d85-8e21-49d1-843c-96167c8ec292)
+![Screenshot from 2024-10-20 15-07-21](https://github.com/user-attachments/assets/acf4336d-398d-4366-883f-ae9d121bd55f)
 
 ```
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux.v tb_bad_mux.v
@@ -2678,7 +2677,7 @@ gtkwave tb_bad_mux.vcd
 
 ![image](https://github.com/user-attachments/assets/2609947f-a356-4d6b-a7c5-7891464ec069)
 
-![image](https://github.com/user-attachments/assets/b7ddc329-1778-439d-860e-6e6e9e20afc9)
+![Screenshot from 2024-10-20 15-09-13](https://github.com/user-attachments/assets/850e946b-813e-4038-af0b-714b38a46173)
 
 These waveforms correspond to the GATE LEVEL SYNTHESIS for the Bad MUX.
 
