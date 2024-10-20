@@ -2052,11 +2052,11 @@ module opt_check(input a, input b, output y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/3d6a54bf-3ec3-4095-a20a-1f7862c3ca32)
+![Screenshot from 2024-10-20 12-08-05](https://github.com/user-attachments/assets/d18e235a-452a-4628-8604-98f07b4477cf)
 
-![image](https://github.com/user-attachments/assets/fcb82f85-0790-451b-90d6-4c30e2794809)
+![Screenshot from 2024-10-20 12-18-23](https://github.com/user-attachments/assets/25834df5-3ea0-4c5e-b0e2-4ac89e86859a)
 
-![image](https://github.com/user-attachments/assets/b40e05e1-29db-44eb-a7b3-f92fb600f90a)
+![Screenshot from 2024-10-20 12-09-30](https://github.com/user-attachments/assets/1140c306-1f2c-4b2a-9d88-66481d14754d)
 
 </li>
 
@@ -2080,12 +2080,11 @@ module opt_check2(input a, input b, output y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/9c69e45d-e424-4be4-9e0e-971e88f7ba74)
+![Screenshot from 2024-10-20 12-10-34](https://github.com/user-attachments/assets/76558d1c-856d-4681-9eff-f2658d62a113)
 
-![image](https://github.com/user-attachments/assets/45223852-6776-4739-a70e-b0d96e3686b4)
+![Screenshot from 2024-10-20 12-11-03](https://github.com/user-attachments/assets/76f173a1-e161-485b-a401-b4b937720947)
 
-![image](https://github.com/user-attachments/assets/68b48765-8b90-4cf9-a1f0-66615b9c08bd)
-
+![Screenshot from 2024-10-20 12-11-19](https://github.com/user-attachments/assets/99ca2145-e75f-471e-ad85-037a21a9d69a)
 </li>	
 
 <li>
@@ -2108,10 +2107,11 @@ module opt_check2(input a, input b, input c, output y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/169f2928-8098-4907-8178-2e75e5843005)
+![Screenshot from 2024-10-20 12-13-14](https://github.com/user-attachments/assets/a34875a6-9813-4e1b-af1d-c403cf1bb6b5)
 
-![image](https://github.com/user-attachments/assets/5d21faca-631d-4fb3-847f-2b741d26d39b)
+![Screenshot from 2024-10-20 12-13-47](https://github.com/user-attachments/assets/0e296d77-fc24-46bf-b459-bb693fd67582)
 
+![Screenshot from 2024-10-20 12-14-01](https://github.com/user-attachments/assets/2f03c177-8a13-4889-b1e6-fb494c8d4ae5)
 
 </li>
 
@@ -2135,11 +2135,9 @@ module opt_check2(input a, input b, input c, output y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/ba9df5f9-cdcc-47db-a390-3aee5b93fe1d)
-
-![image](https://github.com/user-attachments/assets/eda292b5-e49b-4754-8fcf-2d8cd6ffa09a)
-
-![image](https://github.com/user-attachments/assets/c417d6af-feda-4062-9962-76bbbdaaf495)
+![Screenshot from 2024-10-20 12-16-33](https://github.com/user-attachments/assets/5f43c59a-7cfa-48ca-982a-adba4609891f)
+![Screenshot from 2024-10-20 12-16-20](https://github.com/user-attachments/assets/79c137fe-bbe6-4322-ad2b-ca8e5aa3dcda)
+![Screenshot from 2024-10-20 12-15-58](https://github.com/user-attachments/assets/8c16efa0-8c2c-4cf3-9266-0e4a38567bb0)
 
 </li>
 
