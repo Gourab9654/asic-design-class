@@ -2367,9 +2367,9 @@ endmodule
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/1af1fed7-1bdb-4322-a181-e86dc215895b)
+![Screenshot from 2024-10-20 13-52-56](https://github.com/user-attachments/assets/4ef16aba-d82b-4158-8f62-e9346db7190d)
 
-![image](https://github.com/user-attachments/assets/d3060b67-555b-497c-8fea-998b09aadbac)
+![Screenshot from 2024-10-20 13-53-38](https://github.com/user-attachments/assets/4e6881a1-776b-4568-894b-dda3f32ad83b)
 
 This module defines a D flip-flop, for a positive edge of reset, q is set to 1 and q1 is set to 0. On each clock cycle, q1 is set to 1, and q is updated with the value of q1.
 
@@ -2411,9 +2411,9 @@ endmodule
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/cc66ffbe-41bd-4586-a380-e998318b0700)
+![Screenshot from 2024-10-20 13-54-42](https://github.com/user-attachments/assets/8ddb0d7e-6b72-4156-a37d-c6df99fb1d37)
 
-![image](https://github.com/user-attachments/assets/8c71b1d1-f523-4d79-ae2f-ed1bdbd72794)
+![Screenshot from 2024-10-20 13-55-18](https://github.com/user-attachments/assets/b1cd8666-1059-4abd-b31c-94c3eb77fd2b)
 
 This module defines a D flip-flop that sets both q and q1 to 1 on a positive edge of reset. On each clock cycle, q1 remains 1, and q is updated with the value of q1 (which is always 1).
 
@@ -2454,10 +2454,9 @@ endmodule
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/a9a40c85-1617-41fd-a020-30be33af4883)
+![Screenshot from 2024-10-20 13-56-47](https://github.com/user-attachments/assets/3b5096df-07e8-4c91-b76d-ba0f9e9e6016)
 
-![image](https://github.com/user-attachments/assets/20961f54-39d7-469f-9950-9a753ba71660)
-
+![Screenshot from 2024-10-20 13-57-12](https://github.com/user-attachments/assets/05d5df3c-6860-424c-b723-b8f0ef025d68)
 This module defines a D flip-flop that resets both q and q1 to 0 on a positive edge of reset. On each clock cycle, it sets q1 to 1 and then updates q with the value of q1 (which will always be 1 after the first cycle).
 
 When synthesized, the design will result in a flip-flop where q is always 1 after the first clock cycle post-reset.
@@ -2492,10 +2491,9 @@ endmodule
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/a5754bb9-dd7c-41e8-8893-1d705f3a9536)
+![Screenshot from 2024-10-20 13-58-16](https://github.com/user-attachments/assets/91822b70-16c8-4925-b05a-4b53559e78f6)
 
-![image](https://github.com/user-attachments/assets/e8871085-5083-4bcc-81a2-9c67b0eba6e4)
- 
+![Screenshot from 2024-10-20 13-58-30](https://github.com/user-attachments/assets/a30bb60b-9377-4e2f-9b05-e0e76f7e9133)
 </li>
 
 <li>
@@ -2526,9 +2524,9 @@ endmodule
 7. show
 ```
 
-![image](https://github.com/user-attachments/assets/1915bab8-3075-4ba7-bfa3-2aa0e2b9184e)
+![Screenshot from 2024-10-20 14-04-56](https://github.com/user-attachments/assets/233723bf-fbd6-4b38-bd7a-33eadf112094)
 
-![image](https://github.com/user-attachments/assets/5ed4c2ef-3367-4499-a9cc-900694e12fcb)
+![Screenshot from 2024-10-20 14-05-45](https://github.com/user-attachments/assets/06d71651-0967-4069-8f51-6f0606e2456d)
  
 </li>
 
