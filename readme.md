@@ -2675,7 +2675,7 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 gtkwave tb_bad_mux.vcd
 ```
 
-![image](https://github.com/user-attachments/assets/2609947f-a356-4d6b-a7c5-7891464ec069)
+![Screenshot from 2024-10-20 15-49-52](https://github.com/user-attachments/assets/013350b6-9761-41b4-a0e4-245e15dc4418)
 
 ![Screenshot from 2024-10-20 15-09-13](https://github.com/user-attachments/assets/850e946b-813e-4038-af0b-714b38a46173)
 
