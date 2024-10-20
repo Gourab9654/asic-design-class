@@ -1745,9 +1745,9 @@ module tb_dff_asyncres;
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/27de48d3-f468-412e-9270-07c14601cecc)
+![Screenshot from 2024-10-20 00-35-37](https://github.com/user-attachments/assets/674eb7bf-84a8-4c99-97a4-b26e429589af)
 
-![image](https://github.com/user-attachments/assets/c460d114-b811-4ccc-b4f8-84e3402ebaf7)
+![Screenshot from 2024-10-20 00-33-36](https://github.com/user-attachments/assets/c6a96a2e-527a-4525-aae7-26f5b31f2bd3)
 
       From the waveform, it can be observed that the Q output changes to zero when the asynchronous reset is set high, independent of the positive/negative clock edge.
 
@@ -1792,9 +1792,9 @@ module tb_dff_async_set;
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/149d288a-97e1-43a8-8871-bedd91fb7bac)
+![Screenshot from 2024-10-20 00-35-37](https://github.com/user-attachments/assets/674eb7bf-84a8-4c99-97a4-b26e429589af)
 
-![image](https://github.com/user-attachments/assets/947cf6da-f236-4cea-b2e8-620fee2dfe78)
+![Screenshot from 2024-10-20 00-34-53](https://github.com/user-attachments/assets/fe61c8d9-0d36-497b-9932-db0e5f96ae4e)
 
 From the waveform, it can be observed that the Q output changes to one when the asynchronous set is set high, independent of the positive/negative clock edge.
 
@@ -1839,9 +1839,9 @@ module tb_dff_syncres;
 endmodule
 ```
       
-![image](https://github.com/user-attachments/assets/78430bfa-a730-4ef5-9d26-49e3517b7584)
+![Screenshot from 2024-10-20 00-35-37](https://github.com/user-attachments/assets/674eb7bf-84a8-4c99-97a4-b26e429589af)
 
-![image](https://github.com/user-attachments/assets/a8ca2d39-44d4-462d-9ab3-b9211dc6e758)
+![Screenshot from 2024-10-20 00-36-05](https://github.com/user-attachments/assets/76b47b02-743c-465a-951d-0056f2f8b1ce)
 
 From the waveform, it can be observed that the Q output changes to zero when the synchronous reset is set high, only at the positive clock edge.
 
@@ -1881,11 +1881,8 @@ module dff_asyncres (clk, async_reset, d, q);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/6f67adf6-ebc1-49a4-b8b0-ae1a09f76897)
-
-![image](https://github.com/user-attachments/assets/20a15008-6b31-49e5-b2c4-9ae3d1bfdb55)
-
-![image](https://github.com/user-attachments/assets/d3723b64-5e45-4589-996b-20d327de7485)
+![Screenshot from 2024-10-20 00-45-05](https://github.com/user-attachments/assets/9fef968f-69a7-48ec-a826-b73720db62f4)
+![Screenshot from 2024-10-20 00-44-22](https://github.com/user-attachments/assets/8d157f34-8466-4d8e-a956-83cb8f1afd35)
 
 Asynchronous Set		
   
@@ -1918,12 +1915,7 @@ module dff_async_set (clk, async_set, d, q);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/2e048513-b8cd-460a-972c-b119e13efef6)
-
-![image](https://github.com/user-attachments/assets/eb6a5cdd-911c-41b6-939e-5e35686ccd32)
-
-![image](https://github.com/user-attachments/assets/f37b4790-3647-4441-ad3f-466a34e98cd3)
-
+![Screenshot from 2024-10-20 00-56-43](https://github.com/user-attachments/assets/dd23a723-6358-4d07-acc1-57dedc039210)
 Synchronous Reset
   
 ```
@@ -1955,11 +1947,7 @@ module dff_syncres (clk, sync_reset, d, q);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/18154798-941b-485a-964c-be8bba5e15de)
-
-![image](https://github.com/user-attachments/assets/77d3b495-0921-4eab-82c4-4c830914516c)
-
-![image](https://github.com/user-attachments/assets/c3b424e1-c096-47d8-92e1-c54265a7fd36)
+![Screenshot from 2024-10-20 01-03-23](https://github.com/user-attachments/assets/12b84888-85d6-4ab0-bc03-fb1fe70f89b0)
 
 </li>
 
@@ -1994,9 +1982,9 @@ module mul2(a,y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/363e6e5f-f149-4aee-b099-5ac296d5a5f9)
+![Screenshot from 2024-10-20 01-05-24](https://github.com/user-attachments/assets/5ccb7409-3bf7-44d5-9f87-3aede1ba570a)
 
-![image](https://github.com/user-attachments/assets/8ee2e9b1-2555-4bf6-a5f2-738a3df609f8)
+![Screenshot from 2024-10-20 01-06-00](https://github.com/user-attachments/assets/2dd47629-9d35-409f-aae7-f6f6edafabe0)
 
 </li>
 
@@ -2031,9 +2019,8 @@ module mul9(a,y);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/7c8bdc00-111c-45ac-88d2-cd7a2cf04fd1)
-
-![image](https://github.com/user-attachments/assets/c7eabb0a-48f5-417e-810c-928e4787ea87)
+![Screenshot from 2024-10-20 01-35-32](https://github.com/user-attachments/assets/9a0513b8-82a6-4af8-bfed-925e97d54f09)
+![Screenshot from 2024-10-20 01-29-38](https://github.com/user-attachments/assets/59cf5edc-ced5-4e92-b06d-bd574ffb56ac)
 
 </li>
 
