@@ -2705,14 +2705,13 @@ iverilog blocking_caveat.v tb_blocking_caveat.v
 gtkwave tb_blocking_caveat.vcd
 ```
 
-![image](https://github.com/user-attachments/assets/6811ccd8-9db9-436c-930f-6b50382c6831)
+![Screenshot from 2024-10-20 15-57-26](https://github.com/user-attachments/assets/1c3acb0f-915f-4212-87db-6535cb8f8705)
 
-![image](https://github.com/user-attachments/assets/daf727a1-8d0c-4e5e-b626-71167015f194)
+![Screenshot from 2024-10-20 16-02-54](https://github.com/user-attachments/assets/fbbf0035-d8e2-4935-9be4-d9adb49efe21)
 
-![image](https://github.com/user-attachments/assets/1ed038db-69e3-4f36-856b-964fbac274e9)
+![Screenshot from 2024-10-20 16-02-47](https://github.com/user-attachments/assets/e3b2aa99-cd89-4a5c-b428-26d2f6880780)
 
-
-As depicted by the purple box in the waveform, when A and B go zero, the OR gate output should be zero (X equal to zero), and the AND gate output should also be zero (same as D output). But, the AND gate input of X takes the previous value of A|B equal to one, based on the design created by the blocking statement, hence the discrepancy in the output.
+As depicted in the waveform, when A and B go zero, the OR gate output should be zero (X equal to zero), and the AND gate output should also be zero (same as D output). But, the AND gate input of X takes the previous value of A|B equal to one, based on the design created by the blocking statement, hence the discrepancy in the output.
 
 ```
 1. yosys
@@ -2749,18 +2748,16 @@ module blocking_caveat(a,b,c,d);
 endmodule
 ```
 
-![image](https://github.com/user-attachments/assets/c6303c2a-5344-4e36-8250-3c5515c08c76)
-
+![Screenshot from 2024-10-20 16-07-43](https://github.com/user-attachments/assets/14860dcb-b550-4679-8ebf-512dbff3820f)
 ```
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat.v tb_blocking_caveat.v
 ./a.out
 gtkwave tb_blocking_caveat.vcd
 ```
 
-![image](https://github.com/user-attachments/assets/f1c71b28-c316-4250-9f23-d49187985694)
+![Screenshot from 2024-10-20 16-04-20](https://github.com/user-attachments/assets/0a41a5f7-738c-448d-b88f-b548474cc14b)
 
-![image](https://github.com/user-attachments/assets/59ae3cd0-be44-4689-a71b-d851209aa5b6)
-
+![Screenshot from 2024-10-20 16-05-32](https://github.com/user-attachments/assets/3e9cde6d-af32-4c44-aaa6-4bb96397c244)
 These waveforms correspond to the GATE LEVEL SYNTHESIS for the Blocking Caveat.
 
 </li>
