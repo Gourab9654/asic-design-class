@@ -1430,12 +1430,17 @@ We can observe the list of files present in the directory.
   <li>
 	  Introduction to iverilog and GTKWave: This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave.
 	  
-	
+```
+iverilog good_mux.v tb_good_mux.v
+./a.out
+gtkwave tb_good_mux.vcd
+```
 ![Screenshot from 2024-10-19 14-56-59](https://github.com/user-attachments/assets/67bf13c1-5d60-4625-a3c9-c37e06e14dfb)
    	  
 ![Screenshot from 2024-10-19 14-58-00](https://github.com/user-attachments/assets/c198a352-5b68-489b-a601-e30fbbdf9f7b)
 
   ```
+
   //Design 
   module good_mux (input i0, input i1, input sel, output reg y);
 	  always@(*)
