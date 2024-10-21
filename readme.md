@@ -1425,7 +1425,7 @@ We can observe the list of files present in the directory.
 
 </details>
  <details>
-	  <summary>Day 1:</summary>
+	  <summary>Day 1: Installing the files, running the RTL Design in iverilog & GTKWave and thereby converting into netlist using Yosys synthesizer</summary>
 		  
   <li>
 	  Introduction to iverilog and GTKWave: This tutorial involved learning about how to simulate the design and testbench for a 2x1 multiplexer, using iverilog, and displaying the waveform on GTKWave.
@@ -1546,7 +1546,7 @@ endmodule
   </details>
 
   <details>
-	  <summary>Day 2:</summary>
+	  <summary>Day 2: Hierarchial vs Flat Synthesis, Flop coding styles and optimisation</summary>
   
 <li>
 	   Yosys Synthesis for Multiple Modules: This tutorial involved the synthesis of a design file that has more than one module.
@@ -2032,7 +2032,7 @@ endmodule
     
   </details>
 <details>
-	  <summary>Day 3:</summary>
+	  <summary>Day 3: Combinational and Sequential Optimisations</summary>
 Optimization of Various Designs
 
 <li>
@@ -2540,7 +2540,7 @@ endmodule
   </details>
 
   <details>
-	  <summary>Day 4:</summary>
+	  <summary>Day 4: GLS , Blocking vs Non-blocking and Synthesis-Simulation mismatch</summary>
 <li>
 	Design of 2x1 MUX using Ternary Operator:
 	
