@@ -2791,14 +2791,19 @@ write_verilog -noattr vsdbabysoc.synth.v
 These commands will generate the vsdbaby soc top level netlist file vsdbabysoc.synth.v which can be used for the post synthesis simulation of the RISC-V processor.
 The synthesized module is shown below:
 
-![synth_image](https://github.com/user-attachments/assets/5a53f7b9-1406-4b55-906f-ce33e8775a52)
+![Screenshot from 2024-10-24 01-02-48](https://github.com/user-attachments/assets/fc1dcb7f-fa78-4814-b341-101dda636b63)
 
   ------
 The netlist generated in the terminal window is shown below:
 
-![netlist_terminal](https://github.com/user-attachments/assets/0681ac71-daa7-4739-8ae1-c9757f9f30fc)
+![Screenshot from 2024-10-24 01-16-41](https://github.com/user-attachments/assets/34f0de64-fa51-4e20-9574-7caa0ef2d947)
 
-![netlist2](https://github.com/user-attachments/assets/83a7d12a-1052-4e5c-84b8-9b20608174b7)
+
+![Screenshot from 2024-10-24 01-18-32](https://github.com/user-attachments/assets/9b8d4b31-333a-4513-a9ed-40cd466d12cd)
+
+![Screenshot from 2024-10-24 01-18-44](https://github.com/user-attachments/assets/9330c041-cb37-46cf-8105-a044a660a86e)
+
+![Screenshot from 2024-10-24 01-20-04](https://github.com/user-attachments/assets/71b2684a-295e-4851-a0ce-b2f54080d015)
 
 -----
 ## Post-synthesis simulation (GLS)
@@ -2822,6 +2827,8 @@ gtkwave post_synth_sim.vcd
 The simulation waveforms are:
 
 1. clk_gour,reset,VCO_IN & Output signals:
+![Screenshot from 2024-10-24 01-04-41](https://github.com/user-attachments/assets/44fea0ce-e9d8-4ea8-9bd2-6cfab6bf91a9)
+![Screenshot from 2024-10-24 01-05-17](https://github.com/user-attachments/assets/7d6c3fd0-c1ce-48a3-93a5-c64909f994cb)
 -----
 In the above waveforms, we can see the following signals:
 
@@ -2833,6 +2840,8 @@ In the above waveforms, we can see the following signals:
 **The pre synthesis simulation waveforms and the post synthesis simulation waveforms were found to be identical.
 The pre synthesis simulation waveforms are shown here for reference:**
 
+![Screenshot from 2024-10-23 20-17-25](https://github.com/user-attachments/assets/5fd5a4be-aa0c-4dd9-99a0-5447c80cdc1d)
+![Screenshot from 2024-10-23 20-16-58](https://github.com/user-attachments/assets/9d626725-cdf8-44cb-b4c3-949748b8a21f)
 
       
 </details>
