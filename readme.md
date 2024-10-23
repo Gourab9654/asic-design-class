@@ -2792,7 +2792,10 @@ These commands will generate the vsdbaby soc top level netlist file vsdbabysoc.s
 The synthesized module is shown below:
 
 ![Screenshot from 2024-10-24 01-02-48](https://github.com/user-attachments/assets/fc1dcb7f-fa78-4814-b341-101dda636b63)
-
+Generated Netlist
+![Screenshot from 2024-10-24 02-18-24](https://github.com/user-attachments/assets/15473c9c-2084-46ba-8728-4cc582f5a3d8)
+![Screenshot from 2024-10-24 02-18-39](https://github.com/user-attachments/assets/8ec27eea-c232-4417-8ee9-d1be174a758f)
+![Screenshot from 2024-10-24 02-18-49](https://github.com/user-attachments/assets/69582f72-cdb0-45ff-ad34-273fa42daaf5)
   ------
 The netlist generated in the terminal window is shown below:
 
