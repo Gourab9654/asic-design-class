@@ -2763,3 +2763,76 @@ These waveforms correspond to the GATE LEVEL SYNTHESIS for the Blocking Caveat.
 
   </details>
 </details>
+<details>
+<summary> Assignment 10</summary>
+<br>
+
+## Synthesis of RISC-V using yosys and Post synthesis simulation of Babysoc using iverilog GTKwave
+First step in the Post synthesis simulation design flow is to synthesize the generated RTL code of RISC-V and after that we will simulate the result. This way we can find more about our code and its bugs. So in this section we are going to synthesize our code then do a post-synthesis simulation to look for any issues. The post and pre (modeling section) synthesis results should be identical.
+
+
+  To perform the synthesis process do the following:
+  ```
+cd ~/VSDBabySoC/src
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../lib/avsddac.lib
+read_liberty -lib ../lib/avsdpll.lib  
+read_verilog ../verilog_files/vsdbabysoc.v
+read_verilog ../verilog_files/rvmyth.v
+read_verilog ../verilog_files/clk_gate.v 
+synth -top vsdbabysoc
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show vsdbabysoc
+write_verilog -noattr vsdbabysoc.synth.v
+```
+
+These commands will generate the vsdbaby soc top level netlist file vsdbabysoc.synth.v which can be used for the post synthesis simulation of the RISC-V processor.
+The synthesized module is shown below:
+
+![synth_image](https://github.com/user-attachments/assets/5a53f7b9-1406-4b55-906f-ce33e8775a52)
+
+  ------
+The netlist generated in the terminal window is shown below:
+
+![netlist_terminal](https://github.com/user-attachments/assets/0681ac71-daa7-4739-8ae1-c9757f9f30fc)
+
+![netlist2](https://github.com/user-attachments/assets/83a7d12a-1052-4e5c-84b8-9b20608174b7)
+
+-----
+## Post-synthesis simulation (GLS)
+--------
+For Post-synthesis simulation, we use the vsdbabysoc.v as the top module, which includes RISC-V, DAC and PLL as submodules and the testbench which we used for the pre synthsis simulation of the vsdbabysoc.
+
+The commands for simulating the synthesized module of RISC-V are:
+```
+cd ~/VSDBabySoC
+
+mkdir -p output/post_synth_sim && iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I src/module/include -I src/module -I src/gls_model src/module/testbench.v && cd output/post_synth_sim && ./post_synth_sim.out
+```
+
+The result of the simulation (i.e. post_synth_sim.vcd) will be stored in the output/post_synth_sim directory and the waveform could be seen by the following command:
+```
+gtkwave post_synth_sim.vcd
+```
+![terminal_gtk](https://github.com/user-attachments/assets/3b934499-adc0-43cd-96e0-ff8576eca7ea)
+
+----
+The simulation waveforms are:
+
+1. clk_gour,reset,VCO_IN & Output signals:
+-----
+In the above waveforms, we can see the following signals:
+
+**clk_gour:**     
+**reset:**     
+**RV_to_DAC[9:0]:** 
+**OUT:** 
+
+**The pre synthesis simulation waveforms and the post synthesis simulation waveforms were found to be identical.
+The pre synthesis simulation waveforms are shown here for reference:**
+
+
+      
+</details>
