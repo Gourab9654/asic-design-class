@@ -2848,3 +2848,8 @@ The pre synthesis simulation waveforms are shown here for reference:**
 
       
 </details>
+<details>
+<summary> Assignment 11</summary>
+<br>
+
+</details>
