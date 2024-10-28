@@ -2896,7 +2896,7 @@ Reg2reg paths are essential for ensuring proper data flow and synchronization in
 1. **Sequential Logic**: Reg2reg paths are part of sequential circuits where data is stored in registers and passed from one register to another after being processed by combinational logic.
 
 2. **Setup and Hold Timing**:
-   * **Hold Time**: Reg2reg paths are analyzed for setup time constraints to ensure that the data output from the first register (FF1) arrives at the second register (FF2) before the clock edge that triggers FF2.
+   * **Setup Time**: Reg2reg paths are analyzed for setup time constraints to ensure that the data output from the first register (FF1) arrives at the second register (FF2) before the clock edge that triggers FF2.
    * **Hold Time**: These paths are also evaluated for hold time constraints to ensure that the data remains stable at the input of FF2 for a specified period after the clock edge that triggers FF1.
 
 3. **Combinational Logic Delay**: The timing analysis of a reg2reg path includes the propagation delay through the combinational logic that connects the two registers. This delay can vary based on the logic elements and their configuration.
@@ -2948,7 +2948,6 @@ make
 app/sta
 ```
 
-![Screenshot from 2024-10-28 21-47-06](https://github.com/user-attachments/assets/cd9cffaf-52e6-4e12-992f-d4792d0d0777)
 
 ```
 cd /home/gourab/OpenSTA
@@ -2965,6 +2964,7 @@ Download all the **[required files](https://github.com/thelikith/asic-design-cla
 cd /home/gourab/OpenSTA/app
 ./sta
 
+
 read_liberty /home/gourab/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog /home/gourab/OpenSTA/lab11/gourab_riscv_netlist.v 
 link_design rvmyth
@@ -2978,6 +2978,11 @@ set_input_transition [expr 0.08 * 9.00] [all_inputs]
 report_checks -path_delay max
 report_checks -path_delay min
 ```
+![Screenshot from 2024-10-28 21-47-06](https://github.com/user-attachments/assets/cd9cffaf-52e6-4e12-992f-d4792d0d0777)
+
+### reg2reg setup report
+![Screenshot from 2024-10-28 23-43-24](https://github.com/user-attachments/assets/957c8610-1a2c-4b86-9190-32404c378f7f)
+### reg2reg hold report
 ![Screenshot from 2024-10-28 21-47-12](https://github.com/user-attachments/assets/efedb849-2b69-4c4b-a379-d18c05a32704)
 
 </details>
