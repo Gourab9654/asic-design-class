@@ -2886,6 +2886,8 @@ Static Timing Analysis (STA) is performed for several critical reasons in digita
 
 In summary, STA is essential for ensuring the functionality, reliability, and performance of digital circuits, enabling designers to create high-quality, efficient designs.
 ![Screenshot from 2024-10-29 00-05-02](https://github.com/user-attachments/assets/c6af4bc7-c98e-420a-8658-69bdb7d5c221)
+![Screenshot from 2024-10-29 00-15-10](https://github.com/user-attachments/assets/b858a290-01be-4249-86af-f210f0e1e95d)
+
 ### What is reg2reg Path ?
 
 A reg2reg path (register-to-register path) refers to a timing path in a digital circuit that connects two sequential elements, specifically flip-flops or registers. This path is crucial in the context of Static Timing Analysis (STA) because it represents the flow of data from one register to another through combinational logic.
