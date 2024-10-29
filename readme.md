@@ -2885,6 +2885,7 @@ Static Timing Analysis (STA) is performed for several critical reasons in digita
 8. Support for Variability: STA can incorporate variations in manufacturing processes, temperature, and voltage (PVT variations) to ensure robust performance across different conditions.
 
 In summary, STA is essential for ensuring the functionality, reliability, and performance of digital circuits, enabling designers to create high-quality, efficient designs.
+
 ![Screenshot from 2024-10-29 00-05-02](https://github.com/user-attachments/assets/c6af4bc7-c98e-420a-8658-69bdb7d5c221)
 ![Screenshot from 2024-10-29 00-15-10](https://github.com/user-attachments/assets/b858a290-01be-4249-86af-f210f0e1e95d)
 
@@ -2960,8 +2961,9 @@ Download all the **[required files](https://github.com/thelikith/asic-design-cla
 
 **Steps to do Timing Analysis**
 - Clock period = 9.00ns
-- Setup uncertainty and clock transition will be 5% of clock
-- Hold uncertainty and data transition will be 8% of clock. 
+- Setup uncertainty and clock transition will be 5% of clock = 0.45ns.
+- Hold uncertainty and data transition will be 8% of clock = 0.72ns.
+
 
 ```
 cd /home/gourab/OpenSTA/app
@@ -2983,9 +2985,9 @@ report_checks -path_delay min
 ```
 ![Screenshot from 2024-10-28 21-47-06](https://github.com/user-attachments/assets/cd9cffaf-52e6-4e12-992f-d4792d0d0777)
 
-### reg2reg setup report
+### reg2reg setup report--max timing report
 ![Screenshot from 2024-10-28 23-43-24](https://github.com/user-attachments/assets/957c8610-1a2c-4b86-9190-32404c378f7f)
-### reg2reg hold report
+### reg2reg hold report--min timing report
 ![Screenshot from 2024-10-28 21-47-12](https://github.com/user-attachments/assets/efedb849-2b69-4c4b-a379-d18c05a32704)
 
 </details>
