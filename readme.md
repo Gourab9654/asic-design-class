@@ -3110,7 +3110,7 @@ source /home/gourab/OpenSTA/lab12/sta.tcl
 ```
 
 
-| Library                          | TNS         | WNS         | Worst Slack | Final Worst Slack |
+| Library                          | TNS         | WNS         | Worst max Slack | Worst min Slack |
 |----------------------------------|-------------|-------------|-------------|-------------------|
 | sky130_fd_sc_hd__tt_025C_1v80.lib | -18.5196    | -0.5108     | -0.5108     | -0.4104           |
 | sky130_fd_sc_hd__tt_100C_1v80.lib | -11.0892    | -0.3565     | -0.3565     | -0.4055           |
