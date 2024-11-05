@@ -3109,6 +3109,8 @@ cd /home/gourab/OpenSTA/app
 source /home/gourab/OpenSTA/lab12/sta.tcl
 ```
 
+![Screenshot from 2024-11-05 11-16-31](https://github.com/user-attachments/assets/86456dd8-9ea0-4402-be39-aa46c3553063)
+
 
 | Library                          | TNS         | WNS         | Worst max Slack | Worst min Slack |
 |----------------------------------|-------------|-------------|-------------|-------------------|
@@ -3128,6 +3130,11 @@ source /home/gourab/OpenSTA/lab12/sta.tcl
 | sky130_fd_sc_hd__ss_n40C_1v44.lib | -5212.2480  | -26.3579    | -26.3579    | 0.2709            |
 | sky130_fd_sc_hd__ss_n40C_1v60.lib | -2006.3447  | -13.0590    | -13.0590    | -0.0572           |
 | sky130_fd_sc_hd__ss_n40C_1v76.lib | -828.1414   | -6.8319     | -6.8319     | -0.2162           |
+
+![Screenshot from 2024-11-05 13-58-31](https://github.com/user-attachments/assets/3347f5f6-ae42-4789-8c81-9500351d253b)
+![Screenshot from 2024-11-05 14-04-45](https://github.com/user-attachments/assets/1d154555-64dc-49fe-a1df-60bb3c5caa74)
+![Screenshot from 2024-11-05 14-17-00](https://github.com/user-attachments/assets/e4244faa-a3dc-454b-aef9-fd31da29bef5)
+![Screenshot from 2024-11-05 14-17-17](https://github.com/user-attachments/assets/8b62ea5b-6bc2-4f3d-bc93-e8025fa433d5)
 
 
 </details>
