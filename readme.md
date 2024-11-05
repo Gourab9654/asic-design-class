@@ -3012,7 +3012,7 @@ mkdir output
 - Setup uncertainty and clock transition is 5% of clock
 - Hold uncertainty and data transition is 8% of clock.
   
-  ```
+```
 # Create clock with new period
 create_clock [get_pins pll/CLK] -name clk -period 9.00 -waveform {0 4.5}
 
