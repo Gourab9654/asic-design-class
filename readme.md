@@ -3901,25 +3901,6 @@ drc why
 12. Post-CTS OpenROAD timing analysis.
 13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
 
-* Section 4 - Tasks 1 to 4 files, reports and logs can be found in the following folder:
-
-[Section 4 - Tasks 1 to 4 \(vsdstdcelldesign\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign)
-
-* Section 4 - Task 4 files, reports and logs can be found in the following folder:
-
-[Section 4 - Task 4 \(src\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src)
-
-* Section 4 - Task 5 files, reports and logs can be found in the following folder:
-
-[Section 4 - Task 5 \(picorv32a\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a)
-
-* Section 4 - Tasks 6 to 8 & 11 to 13 logs, reports and results can be found in following run folder:
-
-[Section 4 - Tasks 6 to 8 & 11 to 13 Run \(24-03_10-03\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03)
-
-* Section 4 - Tasks 9 to 11 logs, reports and results can be found in following run folder:
-
-[Section 4 - Tasks 9 to 11 Run \(25-03_18-52\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52)
 
 #### 1. Fix up small DRC errors and verify the design is ready to be inserted into our flow.
 
