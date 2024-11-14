@@ -3677,13 +3677,12 @@ Rise\ transition\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ ta
 
 20% Screenshots
 
-![Screenshot from 2024-03-19 15-15-02](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/261c420f-219f-4c26-ae32-6c0db82a722e)
-![Screenshot from 2024-03-19 15-20-04](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/bbb078c4-b3aa-436b-8832-23e5d7777081)
-
+![Screenshot from 2024-11-13 22-31-48](https://github.com/user-attachments/assets/39b9c8e0-3b4e-4c1c-a168-981ea0af0407)
+![Screenshot from 2024-11-13 22-32-14](https://github.com/user-attachments/assets/aca69d67-b828-40e4-9be4-35f0fb5c776d)
 80% Screenshots
 
-![Screenshot from 2024-03-19 15-23-34](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d10a0ff1-0523-4fe4-96f4-eefc63f647f7)
-![Screenshot from 2024-03-19 15-24-13](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/929042ad-2032-49aa-ae07-2a2163b9603e)
+![Screenshot from 2024-11-13 22-35-48](https://github.com/user-attachments/assets/5ee90d7b-ae91-4879-931f-99ea290b596b)
+![Screenshot from 2024-11-13 22-37-00](https://github.com/user-attachments/assets/780c3ba5-93ed-48e0-b88a-d0b0a790e7c2)
 
 ```math
 Rise\ transition\ time = 2.24638 - 2.18242 = 0.06396\ ns = 63.96\ ps
@@ -3703,14 +3702,13 @@ Fall\ transition\ time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ ta
 
 20% Screenshots
 
-![Screenshot from 2024-03-19 15-34-22](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/0180052c-4b8c-4bd8-928c-cd8ab34d5a17)
-![Screenshot from 2024-03-19 15-34-34](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/83760cf7-18c9-45d1-8063-04baafe1dd1f)
+![Screenshot from 2024-11-13 22-51-06](https://github.com/user-attachments/assets/cf732259-7171-41ab-8a9b-68f025a06cd6)
+![Screenshot from 2024-11-13 22-51-13](https://github.com/user-attachments/assets/bcb7cbc5-4559-4b4f-b14f-3a006491df37)
 
 80% Screenshots
 
-![Screenshot from 2024-03-19 15-36-29](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/7bc0eeee-c7cd-464e-a90b-cac8d4f83144)
-![Screenshot from 2024-03-19 15-36-41](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9a7dc3b0-9936-4704-97cd-1cd03cc6a8cb)
-
+![Screenshot from 2024-11-13 22-55-19](https://github.com/user-attachments/assets/b2d60cd0-3424-4af5-9de4-f22a70281c0e)
+![Screenshot from 2024-11-13 22-55-30](https://github.com/user-attachments/assets/62a48644-c3b5-45d3-bdfc-b551a9e35155)
 ```math
 Fall\ transition\ time = 4.0955 - 4.0536 = 0.0419\ ns = 41.9\ ps
 ```
@@ -3726,8 +3724,8 @@ Rise\ Cell\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ 
 
 50% Screenshots
 
-![Screenshot from 2024-03-19 16-02-35](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e34363cd-a70f-4939-b8e5-efb10620ce93)
-![Screenshot from 2024-03-19 16-03-46](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/f7452b60-3612-4bcf-a71d-b8ff021d5297)
+![Screenshot from 2024-11-13 22-59-23](https://github.com/user-attachments/assets/4ffd3bfe-b82b-42e4-ae9f-7d594847f2ec)
+![Screenshot from 2024-11-13 22-59-29](https://github.com/user-attachments/assets/1e39fa1d-8f58-48d8-80ca-e41d5f9a1899)
 
 ```math
 Rise\ Cell\ Delay = 2.21144 - 2.15008 = 0.06136\ ns = 61.36\ ps
@@ -3743,9 +3741,8 @@ Fall\ Cell\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ 
 ```
 
 50% Screenshots
-
-![Screenshot from 2024-03-19 16-09-08](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/3d2ff2e5-dab6-497a-b5a4-74959f69c2a2)
-![Screenshot from 2024-03-19 16-10-03](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/aa88c26b-0cc4-4cf7-80d7-b2058e8fbc47)
+![Screenshot from 2024-11-13 23-05-54](https://github.com/user-attachments/assets/8c7766fb-85c9-40f9-8c2f-d0d2ab570c2e)
+![Screenshot from 2024-11-13 23-06-11](https://github.com/user-attachments/assets/86875067-4e2e-43d0-a718-cb2e5d17e5a7)
 
 ```math
 Fall\ Cell\ Delay = 4.07 - 4.05 = 0.02\ ns = 20\ ps
@@ -3782,23 +3779,23 @@ magic -d XR &
 
 Screenshots of commands run
 
-![Screenshot from 2024-03-21 22-33-57](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/1b4cf68e-fa83-4d44-9b08-ca2b63ceb471)
-![Screenshot from 2024-03-21 22-34-09](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/1bc14ddb-feb6-4052-bc12-0f018f09c343)
+![Screenshot from 2024-11-13 23-11-42](https://github.com/user-attachments/assets/a5319fed-17f6-4f66-ad97-47f65b830771)
 
 Screenshot of .magicrc file
 
-![Screenshot from 2024-03-21 22-35-58](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/89b46a0f-63b7-445c-bf2b-e6cda16853c7)
+![Screenshot from 2024-11-13 23-12-13](https://github.com/user-attachments/assets/0702ba32-7489-4a41-b10a-b5ea62fa4e71)
 
 **Incorrectly implemented poly.9 simple rule correction**
 
 Screenshot of poly rules
 
-![Screenshot from 2024-03-21 22-54-49](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9260cf37-5933-44a1-8362-597183644334)
+![Screenshot from 2024-11-13 23-32-47](https://github.com/user-attachments/assets/07e08b7f-a115-4aaa-b3a4-32ee3cf49ddb)
 
 Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u
 
-![Screenshot from 2024-03-21 22-54-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/acfbcf69-020e-4b62-96bd-b7630aa74ef0)
-![Screenshot from 2024-03-21 23-54-11](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a05bd29a-b181-4e26-826a-d32f12696b2c)
+![Screenshot from 2024-11-14 00-41-35](https://github.com/user-attachments/assets/b0e7fd8c-df99-45ab-9b6c-9d0ea717e117)
+![Screenshot from 2024-11-14 00-42-54](https://github.com/user-attachments/assets/1b42dd7d-e624-4493-914c-f51aa69e8c00)
+![Screenshot from 2024-11-14 01-31-38](https://github.com/user-attachments/assets/7eb46dcf-b2c6-451d-9b9a-82ac98522f23)
 
 New commands inserted in sky130A.tech file to update drc
 
@@ -3821,17 +3818,16 @@ drc why
 Screenshot of magic window with rule implemented
 
 ![Screenshot from 2024-03-21 23-13-11](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/b18e8e07-ef0f-40fb-9b6d-8aae878a23c6)
-![Screenshot from 2024-03-22 00-00-40](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d5afe8d8-691b-485d-a89a-8f901e18b56e)
+![Screenshot from 2024-11-14 01-46-24](https://github.com/user-attachments/assets/70b2090f-8b98-4540-a481-7181c721732c)
 
 **Incorrectly implemented difftap.2 simple rule correction**
 
 Screenshot of difftap rules
 
-![Screenshot from 2024-03-22 00-14-47](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/086b7a66-b60a-470a-b5c0-a5ac938ebec3)
-
+![Screenshot from 2024-11-14 01-40-10](https://github.com/user-attachments/assets/7be4dd74-9207-45f3-9362-68f842a54995)
 Incorrectly implemented difftap.2 rule no drc violation even though spacing < 0.42u
 
-![Screenshot from 2024-03-22 00-14-36](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a2d0d739-2df5-4eb5-ab78-c80d366e24e4)
+![Screenshot from 2024-11-14 02-26-56](https://github.com/user-attachments/assets/6512f778-f754-4fd0-a996-9531be113b65)
 
 New commands inserted in sky130A.tech file to update drc
 
@@ -3850,19 +3846,17 @@ drc check
 drc why
 ```
 
-Screenshot of magic window with rule implemented
-
-![Screenshot from 2024-03-22 00-29-22](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a3f92160-6701-48fb-b6cf-e4c41dc4a531)
 
 **Incorrectly implemented nwell.4 complex rule correction**
 
 Screenshot of nwell rules
 
-![Screenshot from 2024-03-22 00-51-34](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/4ad4901d-0b9a-4339-89e3-7bb3fce2766d)
+![Screenshot from 2024-11-14 02-30-15](https://github.com/user-attachments/assets/6bd3b3c2-3cbe-4a54-905f-cd9966c4a691)
 
 Incorrectly implemented nwell.4 rule no drc violation even though no tap present in nwell
 
-![Screenshot from 2024-03-22 00-52-51](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/87da8944-0ad8-455d-97ec-3909eac656c3)
+![Screenshot from 2024-11-14 02-31-33](https://github.com/user-attachments/assets/559d8612-5d2f-40ec-b223-4ce998f0cc9a)
+![Screenshot from 2024-11-14 02-52-09](https://github.com/user-attachments/assets/de62851c-807a-4102-b3a6-28f838316fa0)
 
 New commands inserted in sky130A.tech file to update drc
 
@@ -3885,11 +3879,8 @@ drc check
 drc why
 ```
 
-Screenshot of magic window with rule implemented
 
-![Screenshot from 2024-03-22 01-10-25](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/49b1004d-f860-4ca7-86f4-4d79784a01cf)
-
-## Section 4 - Pre-layout timing analysis and importance of good clock tree (22/03/2024 - 24/03/2024)
+## Section 4 - Pre-layout timing analysis and importance of good clock tree
 
 ### Theory
 
