@@ -3543,8 +3543,7 @@ exit
 exit
 ```
 
-## Section 3 - Design library cell using Magic Layout and ngspice characterization (18/03/2024 - 21/03/2024)
-
+## Section 3 - Design library cell using Magic Layout and ngspice characterization 
 ### Theory
 
 ### Implementation
@@ -3557,13 +3556,6 @@ exit
 5. Post-layout ngspice simulations.
 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
 
-* Section 3 - Tasks 1 to 5 files, reports and logs can be found in the following folder:
-
-[Section 3 - Tasks 1 to 5 \(vsdstdcelldesign\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign)
-
-* Section 3 - Task 6 files, reports and logs can be found in the following folder:
-
-[Section 3 - Task 6 \(drc_tests\)](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/drc_tests)
 
 #### 1. Clone custom inverter standard cell design from github repository
 
