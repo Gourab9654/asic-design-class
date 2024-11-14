@@ -3531,6 +3531,7 @@ Standard cells legally placed
 
 Inverter with my name--> sky130_gourab_vsdinv
 ![Screenshot from 2024-11-14 22-58-08](https://github.com/user-attachments/assets/c7b573cd-f72a-45c7-9114-d28e3c1c7a54)
+![Screenshot from 2024-11-14 23-45-58](https://github.com/user-attachments/assets/abaf49b6-56b4-4597-903d-4f3a13b1d2ce)
 
 Commands to exit from current run
 
