@@ -3478,29 +3478,24 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of floorplan def in magic
 
-![Screenshot from 2024-03-17 18-05-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/93af15d9-ba65-49d4-8e98-ad1d0c4b0097)
+![Screenshot from 2024-11-13 16-33-36](https://github.com/user-attachments/assets/4ea5efe6-7564-4281-be89-d774d8219545)
 
 Equidistant placement of ports
 
-![Screenshot from 2024-03-17 18-14-28](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/6183e357-315c-40df-9bc3-e7993d76b19c)
+![Screenshot from 2024-11-13 17-31-23](https://github.com/user-attachments/assets/4033cb3b-0cdf-4456-a5b2-6968504a543a)
 
-Port layer as set through config.tcl
-
-![Screenshot from 2024-03-17 18-17-46](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/4e35528c-1bb1-4eaa-84be-14a95e532b75)
-![Screenshot from 2024-03-17 18-19-50](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a88afbbd-6d63-4ce5-a1ec-620dd8c37f45)
 
 Decap Cells and Tap Cells
+![Screenshot from 2024-11-13 17-31-23](https://github.com/user-attachments/assets/4033cb3b-0cdf-4456-a5b2-6968504a543a)
 
-![Screenshot from 2024-03-17 18-22-57](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/c1714ed1-7cdd-4b3c-8e0b-e4f97270ef82)
 
 Diogonally equidistant Tap cells
 
-![Screenshot from 2024-03-17 18-25-28](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/6f62f639-81cc-4e5d-8b5c-ea5b209125ba)
+![Screenshot from 2024-11-13 17-48-34](https://github.com/user-attachments/assets/1e18f1e6-9be9-436c-87e1-47516d9b7e3b)
 
 Unplaced standard cells at the origin
 
-![Screenshot from 2024-03-17 18-31-41](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/f875937c-cec4-4c2c-8c4b-6808d81821d6)
-
+![Screenshot from 2024-11-13 17-43-35](https://github.com/user-attachments/assets/65473230-e45a-423f-b993-42fa06e95621)
 #### 4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
 
 Command to run placement
@@ -3512,16 +3507,14 @@ run_placement
 
 Screenshots of placement run
 
-![Screenshot from 2024-03-17 22-44-17](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/3ddaf32e-fdbb-4410-bfe6-7ea6b2640438)
-![Screenshot from 2024-03-17 22-46-27](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e6b36b9b-b9bc-4390-84fd-a10d23e2246f)
-
-#### 5. Load generated placement def in magic tool and explore the placement.
+![Screenshot from 2024-11-13 18-53-09](https://github.com/user-attachments/assets/010fb628-d7c9-4d97-913c-a1edef21d87a)
+![Screenshot from 2024-11-13 18-44-30](https://github.com/user-attachments/assets/21aea7c2-3c33-4751-91b8-f4f2c3231ba2)
 
 Commands to load placement def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated placement def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_10-15/results/placement/
 
 # Command to load the placement def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
@@ -3529,11 +3522,15 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of floorplan def in magic
 
-![Screenshot from 2024-03-17 22-58-44](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e703ef0b-3968-4132-a9c7-05b53f50b214)
+![Screenshot from 2024-11-13 19-11-27](https://github.com/user-attachments/assets/c7c64216-1229-467d-96b6-aa3862ec3b37)
+
 
 Standard cells legally placed 
 
-![Screenshot from 2024-03-17 23-04-20](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/54911138-f942-48b9-b4e9-61d741a4b5ac)
+![Screenshot from 2024-11-13 19-29-33](https://github.com/user-attachments/assets/1ba583ef-afa8-460f-b7bc-29274d88bb7d)
+
+Inverter with my name--> sky130_gourab_vsdinv
+![Screenshot from 2024-11-14 22-58-08](https://github.com/user-attachments/assets/c7b573cd-f72a-45c7-9114-d28e3c1c7a54)
 
 Commands to exit from current run
 
