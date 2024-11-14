@@ -3141,11 +3141,10 @@ source /home/gourab/OpenSTA/lab12/sta.tcl
 <details>
 <summary> Assignment 13</summary>
 <br>
-<!---
+
+
 ![Digital_VLSI_SoC_Design_ _Planning_(RTL2GDSII_Flow)1](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/92eb860b-7a88-4c6f-8143-ad3e09fd9c5b)
 ![Digital_VLSI_SoC_Design_ _Planning_(RTL2GDSII_Flow) (1)1](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/4285c5e4-d5df-43e4-b460-ead45ff67f9b)
--->
-![Digital_VLSI_SoC_Design_ _Planning_(RTL2GDSII_Flow) (1)2](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/5b8bdb5f-95c7-41c0-b809-711b2b8ad171)
 # Digital VLSI SoC Design and Planning
 
 ![Static Badge](https://img.shields.io/badge/OS-linux-orange)
@@ -3163,7 +3162,7 @@ Comments
 
 > 2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM
 
-## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK (14/03/2024 - 15/03/2024)
+## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK 
 
 ### Theory
 
@@ -3320,9 +3319,6 @@ Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
 Percentage\ of\ DFF's = Flop\ Ratio * 100
 ```
 
-* All section 1 logs, reports and results can be found in following run folder:
-
-[Section 1 Run - 15-03_15-51](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-03_15-51)
 
 #### 1. Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 
@@ -3357,17 +3353,17 @@ exit
 ```
 
 Screenshots of running each commands
+![Screenshot from 2024-11-13 15-36-03](https://github.com/user-attachments/assets/7708a678-9cdb-4bbc-87eb-4387fb58021f)
 
-![1](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d19f6d0f-16f8-4e79-aa5a-f2a34b9fb203)
-![2](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/5e03c8ca-8c7f-4579-a7bc-10161007910e)
-![3](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/5f196a31-059e-4192-a208-8a15ba1a0dd7)
 
+![Screenshot from 2024-11-13 15-56-06](https://github.com/user-attachments/assets/faf93e24-338a-4e8b-b7d1-1a00d1aa868e)
 #### 2. Calculate the flop ratio.
 
 Screenshots of synthesis statistics report file with required values highlighted
 
-![Screenshot from 2024-03-15 22-02-42](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9280fefc-80b2-44ef-af34-ef3bddd3c14e)
-![Screenshot from 2024-03-15 22-03-39](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/3275f46c-19d7-42c5-8984-96d455f6e09b)
+![Screenshot from 2024-11-13 15-59-15](https://github.com/user-attachments/assets/739e09a2-55a0-454e-af0e-9d560a6add8e)
+![Screenshot from 2024-11-13 15-59-18](https://github.com/user-attachments/assets/6ef7d30a-553c-4cf3-a8ec-463706959c5c)
+
 
 Calculation of Flop Ratio and DFF % from synthesis statistics report file
 
@@ -3378,7 +3374,7 @@ Flop\ Ratio = \frac{1613}{14876} = 0.108429685
 Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
 ```
 
-## Section 2 - Good floorplan vs bad floorplan and introduction to library cells (16/03/2024 - 17/03/2024)
+## Section 2 - Good floorplan vs bad floorplan and introduction to library cells
 
 ### Theory
 
@@ -3395,9 +3391,6 @@ Section 2 tasks:-
 Area\ of\ die\ in\ microns = Die\ width\ in\ microns * Die\ height\ in\ microns
 ```
 
-* All section 2 logs, reports and results can be found in following run folder:
-
-[Section 2 Run - 17-03_12-06](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06)
 
 #### 1. Run 'picorv32a' design floorplan using OpenLANE flow and generate necessary outputs.
 
@@ -3429,15 +3422,24 @@ run_floorplan
 ```
 
 Screenshot of floorplan run
+![Screenshot from 2024-11-13 16-10-20](https://github.com/user-attachments/assets/12096132-cdb6-47c5-942f-4e1da58d2746)
 
-![Screenshot from 2024-03-17 18-06-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/7deda325-2ae8-4e98-aa71-7a54f5c34fcb)
-![Screenshot from 2024-03-17 18-06-36](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/c1fe538f-c58f-46b9-9466-b0873a88eb6c)
+![Screenshot from 2024-11-13 16-10-44](https://github.com/user-attachments/assets/1ad24bbd-b081-408b-9055-db06f0d161a9)
+
+![Screenshot from 2024-11-13 16-10-54](https://github.com/user-attachments/assets/5433b9df-9648-44c4-803d-b660a010af99)
+
+![Screenshot from 2024-11-13 16-11-04](https://github.com/user-attachments/assets/462d4980-77fe-48b1-8756-b94897c88edf)
+
+![Screenshot from 2024-11-13 16-11-06](https://github.com/user-attachments/assets/6d29cb3b-356b-414e-9983-9410ad2cefa6)
+
+
 
 #### 2. Calculate the die area in microns from the values in floorplan def.
 
 Screenshot of contents of floorplan def
 
-![Screenshot from 2024-03-17 18-34-53](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9a0baa93-7db6-4148-b155-49b18c130522)
+![Screenshot from 2024-11-13 16-16-46](https://github.com/user-attachments/assets/80a4af19-14e7-4ec7-adda-0d40288d1bd0)
+
 
 According to floorplan def
 ```math
