@@ -3981,7 +3981,7 @@ magic -T sky130A.tech sky130_vsdinv.mag &
 
 Screenshot of newly saved layout
 
-![Screenshot from 2024-03-24 14-33-20](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/0beb4300-2ebc-4364-8e3d-37fdb6d52f5b)
+![Screenshot from 2024-11-15 01-12-05](https://github.com/user-attachments/assets/e72326e6-0b79-4569-ac9a-69fb5b9e9554)
 
 #### 3. Generate lef from the layout.
 
@@ -3994,11 +3994,11 @@ lef write
 
 Screenshot of command run
 
-![Screenshot from 2024-03-24 14-35-55](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/6928c3dc-e633-414d-9ac1-71349cad4b9b)
+![Screenshot from 2024-11-14 03-26-51](https://github.com/user-attachments/assets/12a23a12-40c1-4319-bcc1-4e8a951eb9df)
 
 Screenshot of newly created lef file
 
-![Screenshot from 2024-03-24 14-37-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/15557990-33b4-4402-8c72-39b75da9ed07)
+![Screenshot from 2024-11-14 03-31-48](https://github.com/user-attachments/assets/e1b16b80-4655-43ea-8fde-48ed9bdd6e34)
 
 #### 4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
 
@@ -4018,10 +4018,6 @@ cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/de
 ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 ```
 
-Screenshot of commands run
-
-![Screenshot from 2024-03-24 14-55-23](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/78559cee-ad3f-4301-83ae-df99f8417be3)
-
 #### 5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
 
 Commands to be added to config.tcl to include our custom cell in the openlane flow
@@ -4035,9 +4031,6 @@ set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc
 set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
 ```
 
-Edited config.tcl to include the added lef and change library to ones we added in src directory
-
-![Screenshot from 2024-03-24 15-29-56](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/7b18f216-1160-4a65-91fd-998495ad3175)
 
 #### 6. Run openlane flow synthesis with newly inserted custom inverter cell.
 
@@ -4070,24 +4063,22 @@ run_synthesis
 ```
 
 Screenshots of commands run
-
-![Screenshot from 2024-03-24 15-36-46](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/4170c3c5-1a95-4165-9461-03b298cc20ef)
-![Screenshot from 2024-03-24 15-37-32](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/8f52942c-4b28-4abd-b9a0-d48f20a8255f)
-![Screenshot from 2024-03-24 15-37-44](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/47849bfd-dc47-4d9c-9077-7fb672df4ead)
-![Screenshot from 2024-03-24 15-45-08](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/0bc13ad3-d800-4681-b39d-8b64c9c9104f)
+![Screenshot from 2024-11-14 03-57-49](https://github.com/user-attachments/assets/fe38af18-31cf-4007-998c-e2831cf0741f)
+![Screenshot from 2024-11-15 01-22-31](https://github.com/user-attachments/assets/5c9b6c5d-1983-4e7f-85cb-abdb6ecbb748)
+![Screenshot from 2024-11-15 01-23-55](https://github.com/user-attachments/assets/3f917dcd-6ad6-48d5-a8aa-d82be89fb700)
 
 #### 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
 Noting down current design values generated before modifying parameters to improve timing
 
-![Screenshot from 2024-03-24 16-00-18](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/33fe575a-7459-4c59-8329-f142ba2099e5)
-![Screenshot from 2024-03-24 16-13-01](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/13e42f0a-69e7-410d-b901-bc6c4976b7e1)
+![Screenshot from 2024-11-15 01-22-31](https://github.com/user-attachments/assets/5c9b6c5d-1983-4e7f-85cb-abdb6ecbb748)
+![Screenshot from 2024-11-15 01-23-55](https://github.com/user-attachments/assets/3f917dcd-6ad6-48d5-a8aa-d82be89fb700)
 
 Commands to view and change parameters to improve timing and run synthesis
 
 ```tcl
 # Now once again we have to prep design so as to update variables
-prep -design picorv32a -tag 24-03_10-03 -overwrite
+prep -design picorv32a -tag 13-11_10-35 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
@@ -4117,18 +4108,16 @@ run_synthesis
 
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
 
-![Screenshot from 2024-03-24 23-46-25](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/55de3fc6-498d-4456-8e79-ae6e175d2ca6)
-
+![Screenshot from 2024-11-14 04-16-21](https://github.com/user-attachments/assets/c2aff62b-8f85-4278-a207-c25ce00b002b)
 Screenshots of commands run
 
-![Screenshot from 2024-03-24 17-09-04](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/62209cce-90c2-4c52-a218-25805b57ef3f)
-![Screenshot from 2024-03-24 17-09-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/2d933bd5-a3b5-4d6d-a22f-5332bc3bf279)
-![Screenshot from 2024-03-24 17-10-46](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a25b66af-9cf9-4ba9-adb6-f38ff85fa7cd)
+![Screenshot from 2024-11-15 01-32-41](https://github.com/user-attachments/assets/586d2abe-8308-4ffa-941b-031af8211bf6)
+![Screenshot from 2024-11-15 01-33-02](https://github.com/user-attachments/assets/e08935d7-cb83-4723-9131-abb425f65ee2)
+![Screenshot from 2024-11-15 01-33-11](https://github.com/user-attachments/assets/5fb690a2-46e4-4283-850b-56b6752813fc)
 
 Comparing to previously noted run values area has increased and worst negative slack has become 0
-
-![Screenshot from 2024-03-24 17-11-08](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/81418082-747e-4702-b5ad-bb3e450eceb3)
-![Screenshot from 2024-03-24 17-11-19](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a1bdb538-527c-4edd-877d-d4263e777321)
+![Screenshot from 2024-11-15 01-34-34](https://github.com/user-attachments/assets/67f80a45-237c-41a6-81db-bc64b8e7895d)
+![Screenshot from 2024-11-15 01-34-28](https://github.com/user-attachments/assets/0abc66fb-2d4a-420b-b533-579ab3d79c4b)
 
 #### 8. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
 
@@ -4140,9 +4129,8 @@ run_floorplan
 ```
 
 Screenshots of command run
-
-![Screenshot from 2024-03-24 17-12-09](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/10a18995-0b7c-4f44-8ef4-cca9239652da)
-![Screenshot from 2024-03-24 17-37-50](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/72966b69-cea0-4ae7-8dc0-c7130a8c750a)
+![Screenshot from 2024-11-15 01-37-16](https://github.com/user-attachments/assets/55e16625-29ec-4815-bb61-992572381b8a)
+![Screenshot from 2024-11-15 01-37-02](https://github.com/user-attachments/assets/8fa93848-571c-4a8d-8482-5fd2e7171293)
 
 Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
 
@@ -4155,9 +4143,8 @@ tap_decap_or
 
 Screenshots of commands run
 
-![Screenshot from 2024-03-24 23-38-07](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/07534ca7-b0db-4ea2-bbcd-ea7d44241d6c)
-![Screenshot from 2024-03-24 23-38-54](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/c9705150-f953-4372-a811-88cae6378d2f)
-![Screenshot from 2024-03-24 23-39-56](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/c16bccc6-c650-4a65-b1de-7035609520d7)
+![Screenshot from 2024-11-15 01-39-12](https://github.com/user-attachments/assets/8807821a-aef9-45ce-a28f-24f463616580)
+![Screenshot from 2024-11-15 01-37-16](https://github.com/user-attachments/assets/9b2e709f-3427-4eab-8972-b6f0b9324777)
 
 Now that floorplan is done we can do placement using following command
 
@@ -4168,8 +4155,8 @@ run_placement
 
 Screenshots of command run
 
-![Screenshot from 2024-03-24 23-49-29](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/12788798-aac5-4cfb-9254-69fb3d4e8e70)
-![Screenshot from 2024-03-24 23-51-08](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/41eaeae7-d398-417c-b89f-e9014a92a699)
+![Screenshot from 2024-11-15 01-39-40](https://github.com/user-attachments/assets/c2dd00a2-bcc4-46c0-81a8-5936bd6656fd)
+![Screenshot from 2024-11-15 01-40-36](https://github.com/user-attachments/assets/1d57e466-558b-49ec-b32c-517a0cda87b6)
 
 Commands to load placement def in magic in another terminal
 
