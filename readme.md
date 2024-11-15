@@ -4707,7 +4707,7 @@ Commands to load routed def in magic in another terminal
 
 ```bash
 # Change directory to path containing routed def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_10-15/results/routing/
 
 # Command to load the routed def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
@@ -4722,7 +4722,7 @@ Screenshots of routed def
 ![Screenshot from 2024-11-14 12-02-15](https://github.com/user-attachments/assets/707798fc-e95d-48a6-93d2-f630f805aee6)
 ![Screenshot from 2024-11-14 12-02-19](https://github.com/user-attachments/assets/6fc1c89d-894a-457c-8b6f-9235b33e1f65)
 
-Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/26-03_08-45/tmp/routing` directory
+Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/13-11_10-15/tmp/routing` directory
 
 ![Screenshot from 2024-11-14 12-09-02](https://github.com/user-attachments/assets/fbc0ef75-84d2-49d1-baa7-34e05fc7ebbe)
 
@@ -4735,7 +4735,7 @@ Commands for SPEF extraction using external tool
 cd Desktop/work/tools/SPEF_EXTRACTOR
 
 # Command extract spef
-python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_10-15/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_10-15/results/routing/picorv32a.def
 ```
 
 #### 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
@@ -4747,10 +4747,10 @@ Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrat
 openroad
 
 # Reading lef file
-read_lef /openLANE_flow/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef
+read_lef /openLANE_flow/designs/picorv32a/runs/13-11_10-15/tmp/merged.lef
 
 # Reading def file
-read_def /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+read_def /openLANE_flow/designs/picorv32a/runs/13-11_10-15/results/routing/picorv32a.def
 
 # Creating an OpenROAD database to work with
 write_db pico_route.db
@@ -4759,7 +4759,7 @@ write_db pico_route.db
 read_db pico_route.db
 
 # Read netlist post CTS
-read_verilog /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/synthesis/picorv32a.synthesis_preroute.v
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-11_10-15/results/synthesis/picorv32a.synthesis_preroute.v
 
 # Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
