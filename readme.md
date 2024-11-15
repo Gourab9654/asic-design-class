@@ -3685,7 +3685,7 @@ Rise\ transition\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ ta
 ![Screenshot from 2024-11-13 22-37-00](https://github.com/user-attachments/assets/780c3ba5-93ed-48e0-b88a-d0b0a790e7c2)
 
 ```math
-Rise\ transition\ time = 2.24638 - 2.18242 = 0.06396\ ns = 63.96\ ps
+Rise\ transition\ time = 2.245 - 2.18209 = 0.06291\ ns = 62.91\ ps
 ```
 
 Fall transition time calculation
@@ -3710,7 +3710,7 @@ Fall\ transition\ time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ ta
 ![Screenshot from 2024-11-13 22-55-19](https://github.com/user-attachments/assets/b2d60cd0-3424-4af5-9de4-f22a70281c0e)
 ![Screenshot from 2024-11-13 22-55-30](https://github.com/user-attachments/assets/62a48644-c3b5-45d3-bdfc-b551a9e35155)
 ```math
-Fall\ transition\ time = 4.0955 - 4.0536 = 0.0419\ ns = 41.9\ ps
+Fall\ transition\ time = 4.0956 - 4.0543  = 0.0413\ ns = 41.3\ ps
 ```
 
 Rise Cell Delay Calculation
@@ -3728,7 +3728,7 @@ Rise\ Cell\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ 
 ![Screenshot from 2024-11-13 22-59-29](https://github.com/user-attachments/assets/1e39fa1d-8f58-48d8-80ca-e41d5f9a1899)
 
 ```math
-Rise\ Cell\ Delay = 2.21144 - 2.15008 = 0.06136\ ns = 61.36\ ps
+Rise\ Cell\ Delay = 2.21165 - 2.15 = 0.06165\ ns = 61.65\ ps
 ```
 
 Fall Cell Delay Calculation
@@ -3860,8 +3860,9 @@ Incorrectly implemented nwell.4 rule no drc violation even though no tap present
 
 New commands inserted in sky130A.tech file to update drc
 
-![Screenshot from 2024-03-22 01-03-42](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/886c6930-6314-4a6f-97d9-6b8423444ac0)
-![Screenshot from 2024-03-22 01-04-04](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d9808e9a-42c2-4421-9b82-2ef65a5a1ad7)
+![Screenshot 2024-11-15 145641](https://github.com/user-attachments/assets/b5bbfffb-3411-453d-95a5-c8529b15deac)
+![Screenshot 2024-11-15 145551](https://github.com/user-attachments/assets/120069b0-32a8-4a13-bb38-ead1b859310e)
+
 
 Commands to run in tkcon window
 
