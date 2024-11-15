@@ -4162,7 +4162,7 @@ Commands to load placement def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated placement def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_10-35/results/placement/
 
 # Command to load the placement def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
@@ -4170,11 +4170,14 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshot of placement def in magic
 
-![Screenshot from 2024-03-25 00-16-54](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9cb8b463-a0dd-402f-b881-2504686b8d04)
+![Screenshot from 2024-11-14 04-37-36](https://github.com/user-attachments/assets/0674736d-ffad-4e75-bf04-259587a5f3b1)
 
 Screenshot of custom inverter inserted in placement def with proper abutment
 
-![Screenshot from 2024-03-25 00-00-10](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/2fb0fc71-4784-4987-a55e-5d71dd35edbf)
+![Screenshot from 2024-11-14 04-39-30](https://github.com/user-attachments/assets/11d5cbb5-0950-4406-b204-33f63fb8aef7)
+
+Inverter with my name
+![Screenshot from 2024-11-14 05-49-31](https://github.com/user-attachments/assets/7e2e2e2e-ce99-4449-84e1-9aee26439322)
 
 Command for tkcon window to view internal layers of cells
 
@@ -4183,9 +4186,5 @@ Command for tkcon window to view internal layers of cells
 expand
 ```
 
-Abutment of power pins with other cell from library clearly visible
-
-![Screenshot from 2024-03-25 00-01-46](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/b52d756d-430c-4e43-b514-db0084dc1794)
-![Screenshot from 2024-03-25 00-05-35](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/b8342668-c3fe-437e-b701-8c8be3740682)
 
 </details>
