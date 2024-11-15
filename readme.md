@@ -3531,8 +3531,8 @@ Standard cells legally placed
 
 Inverter with my name--> sky130_gourab_vsdinv
 ![Screenshot from 2024-11-14 22-58-08](https://github.com/user-attachments/assets/c7b573cd-f72a-45c7-9114-d28e3c1c7a54)
-![Screenshot from 2024-11-14 23-45-58](https://github.com/user-attachments/assets/abaf49b6-56b4-4597-903d-4f3a13b1d2ce)
 
+![Screenshot from 2024-11-15 15-18-33](https://github.com/user-attachments/assets/df20932b-e27f-4d92-a48a-82151b9d616a)
 Commands to exit from current run
 
 ```tcl
@@ -4718,6 +4718,8 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 Screenshots of routed def
 
 ![Screenshot from 2024-11-14 11-59-56](https://github.com/user-attachments/assets/993c6bee-0147-4f35-a498-d302ebdae409)
+Inverter with my name
+![Screenshot from 2024-11-14 23-45-58](https://github.com/user-attachments/assets/abaf49b6-56b4-4597-903d-4f3a13b1d2ce)
 ![Screenshot from 2024-11-14 12-00-28](https://github.com/user-attachments/assets/5c436a19-8c6f-4daf-86a8-1067d839db8a)
 ![Screenshot from 2024-11-14 12-01-11](https://github.com/user-attachments/assets/963561cf-42a8-4509-9725-0009f324b8b9)
 ![Screenshot from 2024-11-14 12-02-15](https://github.com/user-attachments/assets/707798fc-e95d-48a6-93d2-f630f805aee6)
