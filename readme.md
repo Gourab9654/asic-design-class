@@ -4367,21 +4367,21 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-
+![Screenshot from 2024-11-14 10-14-01](https://github.com/user-attachments/assets/b9454abe-d2ad-483a-8062-003a51f4c0c5)
 ![Screenshot from 2024-11-14 10-14-22](https://github.com/user-attachments/assets/3e98350f-3bde-40c7-ac25-2fe8b393df60)
 
 Commands to verify instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
 
 ```tcl
 # Generating custom timing report
-report_checks -from _29043_ -to _30440_ -through _14506_
+report_checks -from _30537_ -to _30440_ -through _14509_
 ```
 
 Screenshot of replaced instance
 
 ![Screenshot from 2024-11-14 10-18-37](https://github.com/user-attachments/assets/fb4f678b-06ea-4d49-b162-338b0c421c2c)
 
-*We started ECO fixes at wns -23.9000 and now we stand at wns -22.6173 we reduced around 1.2827 ns of violation*
+*We started ECO fixes at wns -22.72 and now we stand at wns -21.45 we reduced around 1.27 ns of violation*
 
 #### 11. Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
 
