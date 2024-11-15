@@ -4668,9 +4668,8 @@ gen_pdn
 ```
 
 Screenshots of power distribution network run
-
-![Screenshot from 2024-11-14 13-09-34](https://github.com/user-attachments/assets/b4947947-d87a-47fb-835b-f4f1d39711a9) 
-![Screenshot from 2024-11-14 13-08-14](https://github.com/user-attachments/assets/3327da0b-8830-483f-8126-2cd336adf1d0)
+![Screenshot from 2024-11-14 11-28-20](https://github.com/user-attachments/assets/37e0cc12-fab2-4725-a208-39ca89f3bbf9)
+![Screenshot from 2024-11-14 11-28-27](https://github.com/user-attachments/assets/31f4cb41-7daa-4b1a-bd1e-6498000c7b27)
 
 Commands to load PDN def in magic in another terminal
 
@@ -4683,10 +4682,9 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 
 Screenshots of PDN def
-
-![Screenshot from 2024-11-14 13-08-11](https://github.com/user-attachments/assets/03ad52de-51f7-41d6-8230-ae1cb098db39) 
-![Screenshot from 2024-11-14 13-08-06](https://github.com/user-attachments/assets/fbef85fe-e78f-4515-b6cf-ec39c93889fd) 
-![Screenshot from 2024-11-14 12-09-02](https://github.com/user-attachments/assets/fbc0ef75-84d2-49d1-baa7-34e05fc7ebbe)
+![Screenshot from 2024-11-14 11-35-33](https://github.com/user-attachments/assets/4c10adf6-f768-4415-aaaf-35619176c9dc)
+![Screenshot from 2024-11-14 11-36-41](https://github.com/user-attachments/assets/a3006dbd-b711-446c-86ab-219ceff4750f)
+![Screenshot from 2024-11-14 11-37-32](https://github.com/user-attachments/assets/5feb84d6-e78e-44c1-ac0b-e7f93b597147)
 
 #### 2. Perfrom detailed routing using TritonRoute and explore the routed layout.
 
@@ -4705,9 +4703,11 @@ run_routing
 
 Screenshots of routing run
 
-![Screenshot from 2024-11-14 12-02-19](https://github.com/user-attachments/assets/6fc1c89d-894a-457c-8b6f-9235b33e1f65) 
-![Screenshot from 2024-11-14 12-02-15](https://github.com/user-attachments/assets/707798fc-e95d-48a6-93d2-f630f805aee6)
+![Screenshot from 2024-11-14 11-41-27](https://github.com/user-attachments/assets/1c12d7b7-d8db-4728-a861-0ecaaf48b03b)
+![Screenshot from 2024-11-14 11-55-21](https://github.com/user-attachments/assets/43ad6f3d-2195-4b08-af18-72565755771c)
+
 Commands to load routed def in magic in another terminal
+
 
 ```bash
 # Change directory to path containing routed def
@@ -4719,15 +4719,15 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of routed def
 
-![Screenshot from 2024-11-14 12-01-11](https://github.com/user-attachments/assets/963561cf-42a8-4509-9725-0009f324b8b9) 
-![Screenshot from 2024-11-14 12-00-28](https://github.com/user-attachments/assets/5c436a19-8c6f-4daf-86a8-1067d839db8a) 
-![Screenshot from 2024-11-14 11-59-56](https://github.com/user-attachments/assets/993c6bee-0147-4f35-a498-d302ebdae409) 
-![Screenshot from 2024-11-14 11-55-21](https://github.com/user-attachments/assets/43ad6f3d-2195-4b08-af18-72565755771c) 
-![Screenshot from 2024-11-14 11-41-27](https://github.com/user-attachments/assets/1c12d7b7-d8db-4728-a861-0ecaaf48b03b)
+![Screenshot from 2024-11-14 11-59-56](https://github.com/user-attachments/assets/993c6bee-0147-4f35-a498-d302ebdae409)
+![Screenshot from 2024-11-14 12-00-28](https://github.com/user-attachments/assets/5c436a19-8c6f-4daf-86a8-1067d839db8a)
+![Screenshot from 2024-11-14 12-01-11](https://github.com/user-attachments/assets/963561cf-42a8-4509-9725-0009f324b8b9)
+![Screenshot from 2024-11-14 12-02-15](https://github.com/user-attachments/assets/707798fc-e95d-48a6-93d2-f630f805aee6)
+![Screenshot from 2024-11-14 12-02-19](https://github.com/user-attachments/assets/6fc1c89d-894a-457c-8b6f-9235b33e1f65)
 
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/26-03_08-45/tmp/routing` directory
 
-![Screenshot from 2024-11-14 11-37-32](https://github.com/user-attachments/assets/5feb84d6-e78e-44c1-ac0b-e7f93b597147)
+![Screenshot from 2024-11-14 12-09-02](https://github.com/user-attachments/assets/fbc0ef75-84d2-49d1-baa7-34e05fc7ebbe)
 
 #### 3. Post-Route parasitic extraction using SPEF extractor.
 
@@ -4787,9 +4787,9 @@ exit
 ```
 
 Screenshots of commands run and timing report generated
+![Screenshot from 2024-11-14 13-08-06](https://github.com/user-attachments/assets/fbef85fe-e78f-4515-b6cf-ec39c93889fd)
+![Screenshot from 2024-11-14 13-08-11](https://github.com/user-attachments/assets/03ad52de-51f7-41d6-8230-ae1cb098db39)
+![Screenshot from 2024-11-14 13-08-14](https://github.com/user-attachments/assets/3327da0b-8830-483f-8126-2cd336adf1d0)
+![Screenshot from 2024-11-14 13-09-34](https://github.com/user-attachments/assets/b4947947-d87a-47fb-835b-f4f1d39711a9)
 
-![Screenshot from 2024-11-14 11-36-41](https://github.com/user-attachments/assets/a3006dbd-b711-446c-86ab-219ceff4750f) 
-![Screenshot from 2024-11-14 11-35-33](https://github.com/user-attachments/assets/4c10adf6-f768-4415-aaaf-35619176c9dc) 
-![Screenshot from 2024-11-14 11-28-27](https://github.com/user-attachments/assets/31f4cb41-7daa-4b1a-bd1e-6498000c7b27) 
-![Screenshot from 2024-11-14 11-28-20](https://github.com/user-attachments/assets/37e0cc12-fab2-4725-a208-39ca89f3bbf9)
 </details>
