@@ -4427,7 +4427,7 @@ Commands load the design and run necessary stages
 
 ```tcl
 # Now once again we have to prep design so as to update variables
-prep -design picorv32a -tag 24-03_10-03 -overwrite
+prep -design picorv32a -tag 13-11_10-15 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
