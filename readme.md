@@ -4109,7 +4109,7 @@ run_synthesis
 
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
 
-![Screenshot from 2024-11-14 04-16-21](https://github.com/user-attachments/assets/c2aff62b-8f85-4278-a207-c25ce00b002b)
+![Screenshot from 2024-11-15 16-03-02](https://github.com/user-attachments/assets/6d6101e9-774b-4f74-969c-20a357b4aa46)
 Screenshots of commands run
 
 ![Screenshot from 2024-11-15 01-32-41](https://github.com/user-attachments/assets/586d2abe-8308-4ffa-941b-031af8211bf6)
@@ -4175,7 +4175,7 @@ Inverter instancewith my name
 ![Screenshot from 2024-11-14 05-49-31](https://github.com/user-attachments/assets/7e2e2e2e-ce99-4449-84e1-9aee26439322)
 Screenshot of inverter with my name 
 ![Screenshot from 2024-11-15 15-24-14](https://github.com/user-attachments/assets/4b018eb3-7941-414f-b621-8fcfa2fcc6c9)
-
+![Screenshot from 2024-11-15 15-24-29](https://github.com/user-attachments/assets/6b5a72d3-0e30-4aaa-bded-bd157c31f5e7)
 Command for tkcon window to view internal layers of cells
 
 ```tcl
