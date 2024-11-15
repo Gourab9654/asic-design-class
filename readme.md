@@ -4784,9 +4784,9 @@ exit
 ```
 
 Screenshots of commands run and timing report generated
-![Screenshot from 2024-11-14 13-08-06](https://github.com/user-attachments/assets/fbef85fe-e78f-4515-b6cf-ec39c93889fd)
-![Screenshot from 2024-11-14 13-08-11](https://github.com/user-attachments/assets/03ad52de-51f7-41d6-8230-ae1cb098db39)
-![Screenshot from 2024-11-14 13-08-14](https://github.com/user-attachments/assets/3327da0b-8830-483f-8126-2cd336adf1d0)
-![Screenshot from 2024-11-14 13-09-34](https://github.com/user-attachments/assets/b4947947-d87a-47fb-835b-f4f1d39711a9)
+![Screenshot from 2024-11-14 13-08-06](https://github.com/user-attachments/assets/219501da-19dd-4561-bd23-271d03be4d13)
+![Screenshot from 2024-11-14 13-08-11](https://github.com/user-attachments/assets/8beb076c-5368-44ae-8327-64a8cc0ee393)
+![Screenshot from 2024-11-14 13-09-34](https://github.com/user-attachments/assets/2d956470-ea7d-4d8f-b22e-b230194eadfc)
+![Screenshot from 2024-11-14 13-08-14](https://github.com/user-attachments/assets/5803c58b-3312-4270-9d74-5180bafb4aa5)
 
 </details>
