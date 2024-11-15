@@ -4170,15 +4170,11 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 
 Screenshot of placement def in magic
-
 ![Screenshot from 2024-11-14 04-37-36](https://github.com/user-attachments/assets/0674736d-ffad-4e75-bf04-259587a5f3b1)
-
-Screenshot of custom inverter inserted in placement def with proper abutment
-
-![Screenshot from 2024-11-14 04-39-30](https://github.com/user-attachments/assets/11d5cbb5-0950-4406-b204-33f63fb8aef7)
-
-Inverter with my name
+Inverter instancewith my name
 ![Screenshot from 2024-11-14 05-49-31](https://github.com/user-attachments/assets/7e2e2e2e-ce99-4449-84e1-9aee26439322)
+Screenshot of inverter with my name 
+![Screenshot from 2024-11-15 15-24-14](https://github.com/user-attachments/assets/4b018eb3-7941-414f-b621-8fcfa2fcc6c9)
 
 Command for tkcon window to view internal layers of cells
 
@@ -4247,7 +4243,7 @@ Commands to include new lef and perform synthesis
 
 ```tcl
 # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
-prep -design picorv32a -tag 25-03_18-52 -overwrite
+prep -design picorv32a -tag 13-11_10-15 -overwrite
 
 # Adiitional commands to include newly added lef to openlane flow
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
@@ -4681,6 +4677,8 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of PDN def
 ![Screenshot from 2024-11-14 11-35-33](https://github.com/user-attachments/assets/4c10adf6-f768-4415-aaaf-35619176c9dc)
+Inverter with my name
+![Screenshot from 2024-11-14 23-45-58](https://github.com/user-attachments/assets/abaf49b6-56b4-4597-903d-4f3a13b1d2ce)
 ![Screenshot from 2024-11-14 11-36-41](https://github.com/user-attachments/assets/a3006dbd-b711-446c-86ab-219ceff4750f)
 ![Screenshot from 2024-11-14 11-37-32](https://github.com/user-attachments/assets/5feb84d6-e78e-44c1-ac0b-e7f93b597147)
 
@@ -4718,8 +4716,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 Screenshots of routed def
 
 ![Screenshot from 2024-11-14 11-59-56](https://github.com/user-attachments/assets/993c6bee-0147-4f35-a498-d302ebdae409)
-Inverter with my name
-![Screenshot from 2024-11-14 23-45-58](https://github.com/user-attachments/assets/abaf49b6-56b4-4597-903d-4f3a13b1d2ce)
+
 ![Screenshot from 2024-11-14 12-00-28](https://github.com/user-attachments/assets/5c436a19-8c6f-4daf-86a8-1067d839db8a)
 ![Screenshot from 2024-11-14 12-01-11](https://github.com/user-attachments/assets/963561cf-42a8-4509-9725-0009f324b8b9)
 ![Screenshot from 2024-11-14 12-02-15](https://github.com/user-attachments/assets/707798fc-e95d-48a6-93d2-f630f805aee6)
