@@ -4343,10 +4343,6 @@ replace_cell _14481_ sky130_fd_sc_hd__or4_4
 report_checks -fields {net cap slew input_pins} -digits 4
 ```
 
-Result - slack reduced
-
-![Screenshot from 2024-03-26 10-29-31](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/c63cf6a1-582d-43e5-907f-e292b94cc086)
-![Screenshot from 2024-03-26 10-29-55](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/6495c2e8-78c8-41d2-b783-628f36b982c5)
 
 OR gate of drive strength 2 driving OA gate has more delay
 
