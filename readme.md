@@ -4289,7 +4289,7 @@ Commands to perform analysis and optimize timing by replacing with OR gate of dr
 
 ```tcl
 # Reports all the connections to a net
-report_net -connections _11673_
+report_net -connections _11675_
 
 # Checking command syntax
 help replace_cell
