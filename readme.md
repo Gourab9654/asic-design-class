@@ -3921,7 +3921,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of tracks.info of sky130_fd_sc_hd
 
-![Screenshot from 2024-03-24 13-38-09](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/2a35eb22-dd5f-4b67-9712-cbd2a84b526a)
+![Screenshot from 2024-11-14 03-03-52](https://github.com/user-attachments/assets/08dbdd5e-e866-4fb8-a9a8-dd23ac28f8f6)
 
 Commands for tkcon window to set grid as tracks of locali layer
 
@@ -3935,11 +3935,11 @@ grid 0.46um 0.34um 0.23um 0.17um
 
 Screenshot of commands run
 
-![Screenshot from 2024-03-24 13-49-55](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d0d9c106-4e05-4e73-a7ed-3f718cb69b42)
+![Screenshot from 2024-11-14 03-10-13](https://github.com/user-attachments/assets/ef082f46-0f85-489c-8c3e-d41a6722d1d3)
 
 Condition 1 verified
 
-![Screenshot from 2024-03-24 13-51-55](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/b74b31c8-cdc7-4dcb-9467-5a1787bfa5fe)
+![Screenshot from 2024-11-14 03-14-31](https://github.com/user-attachments/assets/1a4e090d-b339-402c-accf-a40a0ba256a6)
 
 Condition 2 verified
 
@@ -3947,8 +3947,7 @@ Condition 2 verified
 Horizontal\ track\ pitch = 0.46\ um
 ```
 
-![Screenshot from 2024-03-24 13-55-07](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e045e5b6-3592-4242-995d-de2049438ec5)
-
+![Screenshot from 2024-11-14 03-17-06](https://github.com/user-attachments/assets/3906ae44-491f-4f30-89cb-39f0bcc3474c)
 ```math
 Width\ of\ standard\ cell = 1.38\ um = 0.46 * 3
 ```
@@ -3959,8 +3958,7 @@ Condition 3 verified
 Vertical\ track\ pitch = 0.34\ um
 ```
 
-![Screenshot from 2024-03-24 13-58-32](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/a471b022-91ac-466a-8dd9-72b90f9c16c1)
-
+![Screenshot from 2024-11-14 03-18-31](https://github.com/user-attachments/assets/8c802256-848a-41ed-a331-f9ebea111bab)
 ```math
 Height\ of\ standard\ cell = 2.72\ um = 0.34 * 8
 ```
@@ -3971,7 +3969,7 @@ Command for tkcon window to save the layout with custom name
 
 ```tcl
 # Command to save as
-save sky130_vsdinv.mag
+save sky130_gourab_vsdinv.mag
 ```
 
 Command to open the newly saved layout
