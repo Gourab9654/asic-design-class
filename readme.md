@@ -5206,14 +5206,43 @@ By adopting BS-PDNs, semiconductor manufacturers can develop high-performance an
 
 **Installing and setting up Open Road Flow Scripts**
 
-    ```
+```
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
-  cd OpenROAD-flow-scripts
-  sudo ./setup.sh
-      
-      ```
+cd OpenROAD-flow-scripts
+sudo ./setup.sh
+```
 
+![Screenshot from 2024-11-24 14-41-17](https://github.com/user-attachments/assets/4262ec3c-5926-4e0d-98e5-b17be7475b1c)
 
+![Screenshot from 2024-11-24 14-42-49](https://github.com/user-attachments/assets/3a2cae44-ecc1-487f-8a0c-c9074a2564c1)
+
+![Screenshot from 2024-11-24 14-43-05](https://github.com/user-attachments/assets/78f9c02e-8fa2-4fd9-957e-4aa81afa3624)
+
+![Screenshot from 2024-11-24 14-43-28](https://github.com/user-attachments/assets/d8f717bc-bb22-4f46-a3ba-e2cbaef2fb1a)
+
+```
+./build_openroad.sh --local
+```
+![Screenshot from 2024-11-24 14-10-46](https://github.com/user-attachments/assets/edeb8c66-5cf2-45c3-8541-db590da7e9a9)
+
+**Verify Installation**
+
+```
+source ./env.sh
+yosys -help
+openroad -help
+cd flow
+make
+```
+![Screenshot from 2024-11-24 14-18-17](https://github.com/user-attachments/assets/fdb7ec9f-4427-4c2a-8833-8e9f63e950e7)
+
+![Screenshot from 2024-11-24 14-18-27](https://github.com/user-attachments/assets/33a5858c-8807-47b5-a47e-653e45695e4f)
+
+```
+make gui_final
+```
+
+![Screenshot from 2024-11-24 14-19-29](https://github.com/user-attachments/assets/d8e6d5d1-0f88-4dc4-ada7-1ae6f815a5a3)
 
 
 </details>
