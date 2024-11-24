@@ -5273,4 +5273,17 @@ Now, go to flow directory
 │   ├── util            
 │   ├── scripts             
 ```
+
+Flow structure
+```
+gvim Makefile
+cd designs
+cd nandgate45
+cd designs/src/gcd
+gvim config.mk
+```
+![Screenshot from 2024-11-24 17-33-25](https://github.com/user-attachments/assets/443406b8-acb3-4995-a77d-b8dbdbd0ed8f)
+
+![Screenshot from 2024-11-24 17-37-01](https://github.com/user-attachments/assets/c70f03b8-289e-4e9b-a84f-91be0a1fc954)
+
 </details>
