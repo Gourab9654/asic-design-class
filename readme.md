@@ -4794,7 +4794,7 @@ Screenshots of commands run and timing report generated
 <summary> Assignment 14</summary>
 <br>
 	
-## Task-13: OpenRoad Physical Design
+## Task-14: OpenRoad Physical Design
 **Introduction:**
 
 - **Bombe:** The Bombe was an electro-mechanical machine designed during World War II to decrypt German Enigma-encrypted messages. It was refined and built by Alan Turing and Gordon Welchman at Bletchley Park, UK. The Bombe systematically tested possible rotor settings of the Enigma machine by exploiting known plaintext patterns. Its logical operations helped narrow down the vast number of possible keys, significantly accelerating the decryption process. The Bombe played a critical role in the Allied war effort.
@@ -5320,6 +5320,10 @@ sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ![Screenshot from 2024-11-26 00-09-59](https://github.com/user-attachments/assets/083027eb-04e7-49d3-b1c4-fc426cea33a3)
 ![Screenshot from 2024-11-26 00-12-44](https://github.com/user-attachments/assets/63f3b8ff-5e92-4ea2-9fee-e163a4fe7d5d)
 ![Screenshot from 2024-11-26 00-15-09](https://github.com/user-attachments/assets/2db6e153-c2d8-40f6-8126-d5840c1bbaad)
+![image](https://github.com/user-attachments/assets/69888d52-0835-4ffa-9bdf-3a5b09707a7e)
+![image](https://github.com/user-attachments/assets/4dde9b52-c461-4753-9d95-6a6ce44730dc)
+![image](https://github.com/user-attachments/assets/b332fe0a-eec0-419a-b815-0669c302ef8d)
+
 
 ## For Placement
 command
@@ -5380,5 +5384,6 @@ For Route
 ```
 make gui_route
 ```
+![image](https://github.com/user-attachments/assets/a46dcc2b-a365-42c8-b39f-efd12e25f9b1)
 
 </details>
