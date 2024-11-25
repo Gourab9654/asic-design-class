@@ -5375,6 +5375,10 @@ Route Command
 sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ```
 ![image](https://github.com/user-attachments/assets/b8b4d0f1-6f7b-4902-b50b-cbc1b80c152b)
+For Route
 
+```
+make gui_route
+```
 
 </details>
