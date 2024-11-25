@@ -5298,7 +5298,14 @@ gvim config.mk
 ![Screenshot from 2024-11-25 23-54-43](https://github.com/user-attachments/assets/70a06e32-8545-4212-b97f-136826abfe7a)
 
 
-![image](https://github.com/user-attachments/assets/2cb1a7ef-9fc9-4655-b872-63bd53a0cd3e)
+
+![image](https://github.com/user-attachments/assets/1a1fda56-5216-4662-9a6e-62d6d2f8eabe)
+![image](https://github.com/user-attachments/assets/b2e80dbb-de4b-4dec-ac4d-a284970328fe)
+![Screenshot from 2024-11-26 00-04-05](https://github.com/user-attachments/assets/f16f8e11-2f6e-4351-99a3-523d5902dcee)
+![Screenshot from 2024-11-26 00-09-59](https://github.com/user-attachments/assets/083027eb-04e7-49d3-b1c4-fc426cea33a3)
+![Screenshot from 2024-11-26 00-12-44](https://github.com/user-attachments/assets/63f3b8ff-5e92-4ea2-9fee-e163a4fe7d5d)
+![Screenshot from 2024-11-26 00-15-09](https://github.com/user-attachments/assets/2db6e153-c2d8-40f6-8126-d5840c1bbaad)
+
 
 
 
