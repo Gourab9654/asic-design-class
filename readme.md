@@ -5287,7 +5287,11 @@ gvim config.mk
 ![Screenshot from 2024-11-24 17-37-01](https://github.com/user-attachments/assets/c70f03b8-289e-4e9b-a84f-91be0a1fc954)
 
 
+## Commands for synthesis:
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 
+```
 ![image](https://github.com/user-attachments/assets/7b43fa3a-5daf-463b-8cdf-6704a5456f09)
 ![image](https://github.com/user-attachments/assets/d83558ad-554f-4e75-9140-112bdfe0fce1)
 ![Screenshot from 2024-11-25 23-54-14](https://github.com/user-attachments/assets/2beb74ee-b349-4b4a-a189-40d93cf42ab3)
@@ -5297,27 +5301,58 @@ gvim config.mk
 ![Screenshot from 2024-11-25 23-39-49](https://github.com/user-attachments/assets/71ffcd3c-074f-445a-9f13-7af17e5a921d)
 ![Screenshot from 2024-11-25 23-54-43](https://github.com/user-attachments/assets/70a06e32-8545-4212-b97f-136826abfe7a)
 
-
-
+## Commands for floorplan:
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
+```
 ![image](https://github.com/user-attachments/assets/1a1fda56-5216-4662-9a6e-62d6d2f8eabe)
 ![image](https://github.com/user-attachments/assets/b2e80dbb-de4b-4dec-ac4d-a284970328fe)
+## Floorplan
+
+```
+make gui_floorplan
+```
 ![Screenshot from 2024-11-26 00-04-05](https://github.com/user-attachments/assets/f16f8e11-2f6e-4351-99a3-523d5902dcee)
+```
+sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
+
+```
 ![Screenshot from 2024-11-26 00-09-59](https://github.com/user-attachments/assets/083027eb-04e7-49d3-b1c4-fc426cea33a3)
 ![Screenshot from 2024-11-26 00-12-44](https://github.com/user-attachments/assets/63f3b8ff-5e92-4ea2-9fee-e163a4fe7d5d)
 ![Screenshot from 2024-11-26 00-15-09](https://github.com/user-attachments/assets/2db6e153-c2d8-40f6-8126-d5840c1bbaad)
 
+## For Placement
+command
 
+```
 
+sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
+
+```
 ![image](https://github.com/user-attachments/assets/4f9cad16-9820-49cf-8560-9ac746bba8a7)
 ![Screenshot 2024-11-25 214257](https://github.com/user-attachments/assets/87dd3943-ffb5-4ed8-9f09-74fd4e04c6ee)
+```
+make gui_place
+```
 ![Screenshot from 2024-11-26 00-25-10](https://github.com/user-attachments/assets/027da18d-505d-4218-9338-1d9690820f34)
+CTS Command
 
-
+```
+sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
+```
 ![image](https://github.com/user-attachments/assets/8404f8a0-3330-4d7c-b13c-2045c93843a0)
+```
+make gui_cts
+```
 ![Screenshot from 2024-11-26 00-33-03](https://github.com/user-attachments/assets/6950978d-1839-430c-875c-1c0af4d0444d)
 ![Screenshot from 2024-11-26 00-35-01](https://github.com/user-attachments/assets/67bdfd41-8cae-4c67-9c4d-923290840680)
 ![Screenshot from 2024-11-26 00-37-23](https://github.com/user-attachments/assets/cc7c536d-7dbf-460f-a097-a893840880ec)
 ![Screenshot from 2024-11-26 00-37-54](https://github.com/user-attachments/assets/27350540-41f3-4aed-881f-b441183a4b9f)
+For Final Layout
+
+```
+make gui_final
+```
 ![Screenshot from 2024-11-26 00-49-36](https://github.com/user-attachments/assets/5b71e46c-345a-4805-bfa3-d71eeb5baf0a)
 ![Screenshot from 2024-11-26 00-50-17](https://github.com/user-attachments/assets/21fdd7db-bd56-42b5-948f-4e55d663c40d)
 ![Screenshot from 2024-11-26 00-51-25](https://github.com/user-attachments/assets/2be7f7c4-442b-4aee-8176-113860ada621)
@@ -5327,9 +5362,18 @@ gvim config.mk
 
 
 
+To give the GDS file in the klayout type the following commands
+```
 
+ klayout -e -nn ./platforms/nangate45/FreePDK45.lyt -l ./platforms/nangate45/FreePDK45.lyp ./results/nangate45/gcd/base/6_final.gds
+```
 ![Screenshot from 2024-11-26 00-58-03](https://github.com/user-attachments/assets/f08a343b-e0c8-4bb0-a43d-5ddf4aa64ef9)
 ![Screenshot from 2024-11-26 00-56-47](https://github.com/user-attachments/assets/b61b2963-f7fc-4ad9-9573-7273062c2058)
+Route Command
+
+```
+sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
+```
 ![image](https://github.com/user-attachments/assets/b8b4d0f1-6f7b-4902-b50b-cbc1b80c152b)
 
 
