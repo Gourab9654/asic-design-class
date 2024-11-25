@@ -5311,6 +5311,7 @@ gvim config.mk
 ![image](https://github.com/user-attachments/assets/4f9cad16-9820-49cf-8560-9ac746bba8a7)
 
 ![Screenshot 2024-11-25 214257](https://github.com/user-attachments/assets/87dd3943-ffb5-4ed8-9f09-74fd4e04c6ee)
+![Screenshot from 2024-11-26 00-25-10](https://github.com/user-attachments/assets/027da18d-505d-4218-9338-1d9690820f34)
 
 
 
