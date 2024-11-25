@@ -5326,4 +5326,11 @@ gvim config.mk
 ![Screenshot from 2024-11-26 00-56-14](https://github.com/user-attachments/assets/980d7900-4af2-4534-831d-cc9180991630)
 
 
+
+
+![Screenshot from 2024-11-26 00-58-03](https://github.com/user-attachments/assets/f08a343b-e0c8-4bb0-a43d-5ddf4aa64ef9)
+![Screenshot from 2024-11-26 00-56-47](https://github.com/user-attachments/assets/b61b2963-f7fc-4ad9-9573-7273062c2058)
+![image](https://github.com/user-attachments/assets/b8b4d0f1-6f7b-4902-b50b-cbc1b80c152b)
+
+
 </details>
