@@ -5309,10 +5309,21 @@ gvim config.mk
 
 
 ![image](https://github.com/user-attachments/assets/4f9cad16-9820-49cf-8560-9ac746bba8a7)
-
 ![Screenshot 2024-11-25 214257](https://github.com/user-attachments/assets/87dd3943-ffb5-4ed8-9f09-74fd4e04c6ee)
 ![Screenshot from 2024-11-26 00-25-10](https://github.com/user-attachments/assets/027da18d-505d-4218-9338-1d9690820f34)
 
+
+![image](https://github.com/user-attachments/assets/8404f8a0-3330-4d7c-b13c-2045c93843a0)
+![Screenshot from 2024-11-26 00-33-03](https://github.com/user-attachments/assets/6950978d-1839-430c-875c-1c0af4d0444d)
+![Screenshot from 2024-11-26 00-35-01](https://github.com/user-attachments/assets/67bdfd41-8cae-4c67-9c4d-923290840680)
+![Screenshot from 2024-11-26 00-37-23](https://github.com/user-attachments/assets/cc7c536d-7dbf-460f-a097-a893840880ec)
+![Screenshot from 2024-11-26 00-37-54](https://github.com/user-attachments/assets/27350540-41f3-4aed-881f-b441183a4b9f)
+![Screenshot from 2024-11-26 00-49-36](https://github.com/user-attachments/assets/5b71e46c-345a-4805-bfa3-d71eeb5baf0a)
+![Screenshot from 2024-11-26 00-50-17](https://github.com/user-attachments/assets/21fdd7db-bd56-42b5-948f-4e55d663c40d)
+![Screenshot from 2024-11-26 00-51-25](https://github.com/user-attachments/assets/2be7f7c4-442b-4aee-8176-113860ada621)
+![Screenshot from 2024-11-26 00-51-45](https://github.com/user-attachments/assets/8ff00dbb-ef40-43f4-88e0-15bf1030a2df)
+![Screenshot from 2024-11-26 00-53-38](https://github.com/user-attachments/assets/4d0fb280-4822-493a-99d4-f745dc5bc44c)
+![Screenshot from 2024-11-26 00-56-14](https://github.com/user-attachments/assets/980d7900-4af2-4534-831d-cc9180991630)
 
 
 </details>
