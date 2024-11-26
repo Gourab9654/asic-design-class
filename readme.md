@@ -5400,5 +5400,7 @@ For Route
 make gui_route
 ```
 ![image](https://github.com/user-attachments/assets/a46dcc2b-a365-42c8-b39f-efd12e25f9b1)
+QoR Report
+![image](https://github.com/user-attachments/assets/68876b9a-0748-4696-8e2d-2b658e9e46c6)
 
 </details>
