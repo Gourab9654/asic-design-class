@@ -5340,6 +5340,14 @@ sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 make gui_place
 ```
 ![Screenshot from 2024-11-26 00-25-10](https://github.com/user-attachments/assets/027da18d-505d-4218-9338-1d9690820f34)
+place
+![Screenshot from 2024-11-26 15-25-17](https://github.com/user-attachments/assets/3070a40d-8a7e-4ef8-ad2b-cad4aa345c19)
+power
+![Screenshot from 2024-11-26 15-25-24](https://github.com/user-attachments/assets/4b2ad7fa-79e0-495a-867d-825f248b6cfa)
+Estimation
+![Screenshot from 2024-11-26 15-25-46](https://github.com/user-attachments/assets/7b41826d-90c8-4939-a2ce-6f2d3cc65382)
+
+
 CTS Command
 
 ```
@@ -5380,6 +5388,12 @@ Route Command
 sudo make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ```
 ![image](https://github.com/user-attachments/assets/b8b4d0f1-6f7b-4902-b50b-cbc1b80c152b)
+place
+![Screenshot from 2024-11-26 15-25-17](https://github.com/user-attachments/assets/3070a40d-8a7e-4ef8-ad2b-cad4aa345c19)
+power
+![Screenshot from 2024-11-26 15-25-24](https://github.com/user-attachments/assets/4b2ad7fa-79e0-495a-867d-825f248b6cfa)
+Estimation
+![Screenshot from 2024-11-26 15-25-46](https://github.com/user-attachments/assets/7b41826d-90c8-4939-a2ce-6f2d3cc65382)
 For Route
 
 ```
